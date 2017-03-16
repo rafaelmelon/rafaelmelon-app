@@ -1,6 +1,6 @@
 $(document).ready(function() {
 
-  $('.countdown').countdown('2017/01/07', function(event) {
+  $('.countdown').countdown('2017/07/01', function(event) {
     $(this).html(event.strftime('<h3><span>%w</span> semanas, <span>%d</span> días y <span>%M:%H:%S</span></h3>'));
   });
 
