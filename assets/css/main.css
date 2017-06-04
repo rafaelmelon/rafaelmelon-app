@@ -1,64 +1,4 @@
 /* ==========================================================================
-FONTS
-========================================================================== */
-/* cyrillic-ext */
-@font-face {
-  font-family: 'Roboto';
-  font-style: normal;
-  font-weight: 400;
-  src: local('Roboto'), local('Roboto-Regular'), url(https://fonts.gstatic.com/s/roboto/v15/ek4gzZ-GeXAPcSbHtCeQI_esZW2xOQ-xsNqO47m55DA.woff2) format('woff2');
-  unicode-range: U+0460-052F, U+20B4, U+2DE0-2DFF, U+A640-A69F;
-}
-/* cyrillic */
-@font-face {
-  font-family: 'Roboto';
-  font-style: normal;
-  font-weight: 400;
-  src: local('Roboto'), local('Roboto-Regular'), url(https://fonts.gstatic.com/s/roboto/v15/mErvLBYg_cXG3rLvUsKT_fesZW2xOQ-xsNqO47m55DA.woff2) format('woff2');
-  unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
-}
-/* greek-ext */
-@font-face {
-  font-family: 'Roboto';
-  font-style: normal;
-  font-weight: 400;
-  src: local('Roboto'), local('Roboto-Regular'), url(https://fonts.gstatic.com/s/roboto/v15/-2n2p-_Y08sg57CNWQfKNvesZW2xOQ-xsNqO47m55DA.woff2) format('woff2');
-  unicode-range: U+1F00-1FFF;
-}
-/* greek */
-@font-face {
-  font-family: 'Roboto';
-  font-style: normal;
-  font-weight: 400;
-  src: local('Roboto'), local('Roboto-Regular'), url(https://fonts.gstatic.com/s/roboto/v15/u0TOpm082MNkS5K0Q4rhqvesZW2xOQ-xsNqO47m55DA.woff2) format('woff2');
-  unicode-range: U+0370-03FF;
-}
-/* vietnamese */
-@font-face {
-  font-family: 'Roboto';
-  font-style: normal;
-  font-weight: 400;
-  src: local('Roboto'), local('Roboto-Regular'), url(https://fonts.gstatic.com/s/roboto/v15/NdF9MtnOpLzo-noMoG0miPesZW2xOQ-xsNqO47m55DA.woff2) format('woff2');
-  unicode-range: U+0102-0103, U+1EA0-1EF9, U+20AB;
-}
-/* latin-ext */
-@font-face {
-  font-family: 'Roboto';
-  font-style: normal;
-  font-weight: 400;
-  src: local('Roboto'), local('Roboto-Regular'), url(https://fonts.gstatic.com/s/roboto/v15/Fcx7Wwv8OzT71A3E1XOAjvesZW2xOQ-xsNqO47m55DA.woff2) format('woff2');
-  unicode-range: U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF;
-}
-/* latin */
-@font-face {
-  font-family: 'Roboto';
-  font-style: normal;
-  font-weight: 400;
-  src: local('Roboto'), local('Roboto-Regular'), url(https://fonts.gstatic.com/s/roboto/v15/CWB0XYA8bzo0kSThX0UTuA.woff2) format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
-}
-
-/* ==========================================================================
 MAIN
 ========================================================================== */
 html,body {
@@ -67,15 +7,19 @@ html,body {
 	height: 100%;
 }
 body {
-    font-family: 'Roboto', sans-serif;
-    font-weight: 400;
-    color: #252525;
-    -webkit-font-smoothing: antialiased;
-    -webkit-overflow-scrolling: touch;
-    background-color: #dcf27e;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+  color: #F08545;
+  -webkit-font-smoothing: antialiased;
+  -webkit-overflow-scrolling: touch;
+  background-color: #FFFFFF;
+  letter-spacing: 1px;
 }
 .wrapper {
   text-align: center;
+}
+.wrapper .h1, .wrapper .h2, .wrapper .h3 {
+  margin: 0;
 }
 .wrapper .btn {
   padding: 10px 20px;
@@ -83,44 +27,41 @@ body {
   border-radius: 0;
 }
 .wrapper .btn-primary  {
-  color: #ffffff;
-  background-color: #252525;
-  border-color: none;
+  color: #FFFFFF;
+  background-color: #F08545;
+  border: none;
   transition: background 0.3s;
 }
 .wrapper .btn-primary:hover  {
-  color: #252525;
-  background-color: #ffffff;
-  border-color: none;
+  color: #FFFFFF;
+  background-color: #DEDF50;
 }
-.wrapper .tit h1 svg {
-  max-width: 200px;
-  max-height: 200px;
+.wrapper .tit .svg-logo {
+  max-width: 150px;
+  max-height: 150px;
 }
-.wrapper .tit h2 {
-  font-size: 24px;
-  letter-spacing: 2px;
-  font-weight: 600;
+.wrapper .tit .h1 {
+  font-size: 30px;
+  font-weight: 700;
 }
-.wrapper .countdown {
-  margin: 40px 0 40px;
+.wrapper .tit p {
+  font-size: 18px;
+  margin-bottom: 20px;
 }
-.wrapper .countdown h3 {
-  font-size: 22px;
+.wrapper .tit .h2 {
+  font-size: 15px;
+  margin-bottom: 20px;
 }
-.wrapper .countdown h3 span {
-  font-size: 24px;
-  letter-spacing: 2px;
-  font-weight: 600;
+.wrapper .countdown .h3 {
+  font-size: 50px;
+  margin-bottom: 20px;
 }
 .wrapper .form {
   max-width: 600px;
   margin: 0 auto;
 }
-.wrapper .form h2 {
-  font-size: 24px;
-  letter-spacing: 2px;
-  font-weight: 600;
+.wrapper .form .form-group {
+  margin-bottom: 20px;
 }
 .wrapper .form .form-group .form-control {
   display: inline-block;
@@ -128,45 +69,44 @@ body {
   height: 45px;
   border-radius: 0;
   border: none;
-  border-bottom: 3px solid #dcf27e;
+  border-bottom: 1px solid #F08545;
   box-shadow: inherit;
   font-size: 14px;
   text-align: center;
+  padding: 0;
+  text-transform: uppercase;
+  color: #F08545;
 }
 .wrapper .form .form-group .form-control:focus {
-  border-bottom: 3px solid #252525;
-  //box-shadow: inset 0 1px 1px rgba(37, 37, 37, 0.075), 0 0 8px rgba(37, 37, 37, 0.6);
+  color: #DEDF50;
+  border-bottom: 1px solid #DEDF50;
+}
+.wrapper .form .form-group .help-block li {
+  color: #CCCCCC;
 }
 .wrapper .form .form-group.has-error .form-control:focus {
-  border-bottom: 3px solid #a94442;
-  //box-shadow: inset 0 1px 1px rgba(169, 68, 66, 0.075), 0 0 8px rgba(169, 68, 66, 0.6);
+  color: #CCCCCC;
+  border-bottom: 1px solid #CCCCCC;
 }
 .wrapper .social {
-  margin: 40px 0 40px;
+
 }
 .wrapper .social a {
-    font-size: 24px;
-    color: #252525;
-    padding: 0 5px;
-    transition: all 0.3s;
+  font-size: 24px;
+  color: #F08545;
+  padding: 0 5px;
+  transition: all 0.3s;
 }
 .wrapper .social a:hover {
-    color: #ffffff;
+  color: #DEDF50;
 }
 
 /* ==========================================================================
 MEDIA QUERIES
 ========================================================================== */
 @media (max-width: 768px) {
-  .wrapper .tit h1 {
-    margin: 0;
-  }
-  .wrapper .tit h1 svg {
-    max-width: 180px;
-    max-height: 180px;
-  }
-  .wrapper .tit h2 {
-    margin-top: 0;
+  .wrapper .countdown .h3 {
+    font-size: 26px;
   }
 }
 
