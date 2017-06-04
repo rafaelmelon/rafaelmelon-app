@@ -3,7 +3,7 @@
 $name = $_POST['name'];
 $email = $_POST['email'];
 $to = 'rafaelmelonweb@gmail.com';
-$subject = 'Nuevo contacto desde la web';
+$subject = 'New contact from rafaelmelon.es';
 
 // validation
 $validationOK=true;
@@ -13,8 +13,8 @@ if (!$validationOK) {
 }
 
 // prepare email body text
-$body .= "Información:<br/><br/>";
-$body .= "Nombre: ".$name."<br/><br/>";
+$body .= "Information:<br/><br/>";
+$body .= "Name: ".$name."<br/><br/>";
 $body .= "Email: ".$email."<br/><br/>";
 
 $header = "From: ". $name . " <" . $email . ">\r\n";
