@@ -26,7 +26,7 @@ $(document).ready(function() {
 
   $.ajax({
     type: 'POST',
-    url: 'https://api.medium.com/code=8798598aad9&client_id=330b71016c24&client_secret=e2aed88ad08781d397e4b6c67f8ee1ab6824f2e3&grant_type=authorization_code&redirect_uri=http://rafaelmelon.es/medium',
+    url: 'https://api.medium.com/v1/tokens/code=8798598aad9&client_id=330b71016c24&client_secret=e2aed88ad08781d397e4b6c67f8ee1ab6824f2e3&grant_type=authorization_code&redirect_uri=http://rafaelmelon.es/medium',
     dataType: 'xml/html/script/json', // expected format for response
     contentType: 'application/json', // send as JSON
     success: function (response) {
