@@ -23,4 +23,17 @@ $(document).ready(function() {
       console.log(error)
     }
   })
+
+  $.ajax({
+    type: 'POST',
+    url: '/medium/code=8798598aad9&client_id=330b71016c24&client_secret=e2aed88ad08781d397e4b6c67f8ee1ab6824f2e3&grant_type=authorization_code&redirect_uri=http://rafaelmelon.es/medium',
+    dataType: 'text',
+    contentType: 'application/json',
+    success: function (response) {
+      console.log(response)
+    },
+    error: function (error) {
+      console.log(error)
+    }
+  })
 })
