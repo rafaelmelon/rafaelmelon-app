@@ -5,6 +5,12 @@
   "main": "index.js",
   "author": "Rafael Melón <info@rafaelmelon.es> (http://rafaelmelon.es/)",
   "license": "MIT",
+  "keywords": [
+    "react",
+    "webpack",
+    "es6",
+    "css"
+  ],
   "scripts": {
     "watch": "webpack --progress --watch",
     "build": "webpack --config webpack.production.config.js --progress --profile --colors",
