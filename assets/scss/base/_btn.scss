@@ -1,0 +1,22 @@
+.rm-btn {
+  width: 90%;
+  background-color: inherit;
+  border: 5px solid $white;
+  border-radius: 0;
+  font-weight: $font-semibold;
+  letter-spacing: 0.1rem;
+  padding: 1rem 2rem;
+  cursor: pointer;
+  outline: inherit;
+  box-shadow: 2px 2px 0px rgba(0,0,0,0.1);
+  @media (min-width: 575px) {
+    width: 100%;
+    max-width: 250px;
+  }
+  &:hover {
+    background-color: inherit;
+    color: $rm-yellow;
+    border: 5px solid $rm-yellow;
+    box-shadow: none;
+  }
+}

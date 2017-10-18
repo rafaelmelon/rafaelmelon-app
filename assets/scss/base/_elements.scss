@@ -1,0 +1,24 @@
+html, body {
+  margin: 0px;
+	padding: 0px;
+	height: 100%;
+}
+body {
+  font-family: $ff-brand;
+  font-weight: $font-semibold;
+  color: $white;
+  text-align: center;
+  -webkit-font-smoothing: antialiased;
+  -webkit-overflow-scrolling: touch;
+  letter-spacing: 0.1rem;
+  // background: linear-gradient(180deg, $rm-orange, $rm-yellow);
+  // background-size: 400% 400%;
+  // animation: bg-animation 20s ease infinite;
+  background-color: $rm-orange;
+  text-shadow: 2px 2px 0px rgba(0,0,0,0.1);
+}
+a{
+  &:hover{
+    text-decoration: none;
+  }
+}
