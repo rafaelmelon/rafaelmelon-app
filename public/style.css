@@ -6069,8 +6069,8 @@ input:focus {
       max-width: 250px; } }
   .rm-btn:hover {
     background-color: inherit;
-    color: #dedf50;
-    border: 5px solid #dedf50;
+    color: #eaeb5c;
+    border: 5px solid #eaeb5c;
     box-shadow: none; }
 
 .rm-header {
@@ -6113,7 +6113,7 @@ input:focus {
     position: relative;
     top: 20px; }
   .rm-count span {
-    font-size: 2.5rem;
+    font-size: 3rem;
     text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.1); }
     @media (min-width: 575px) {
       .rm-count span {
@@ -6142,11 +6142,9 @@ input:focus {
       flex: calc(100%);
       color: #f08545;
       position: relative;
-      margin: 1% 0;
+      margin: 0 0 4% 0;
       padding: 1rem;
-      border-bottom: 5px solid #fff; }
-      .rm-project__grid__item:first-child {
-        border-top: 5px solid #fff; }
+      transition: all 0.5s ease; }
       .rm-project__grid__item__title {
         width: 100%;
         margin-bottom: 20px; }
@@ -6163,7 +6161,7 @@ input:focus {
       .rm-project__grid__item__links {
         width: 100%; }
         .rm-project__grid__item__links .rm-btn {
-          width: 100%;
+          width: 98%;
           display: block;
           color: #fff;
           text-shadow: none;
@@ -6174,10 +6172,10 @@ input:focus {
           .rm-project__grid__item__links .rm-btn:nth-child(2) {
             margin-bottom: 20px; }
           .rm-project__grid__item__links .rm-btn:hover {
-            color: #dedf50; }
+            color: #eaeb5c; }
       @media (min-width: 576px) {
         .rm-project__grid__item__title h3 {
-          font-size: 3rem; }
+          font-size: 2.3rem; }
         .rm-project__grid__item__title small {
           font-size: 1rem; } }
       @media (min-width: 768px) {
@@ -6189,8 +6187,6 @@ input:focus {
           padding: 0;
           border: none;
           margin: 1%; }
-          .rm-project__grid__item:first-child {
-            border-top: none; }
           .rm-project__grid__item__title {
             height: 100%;
             position: absolute;
@@ -6205,7 +6201,7 @@ input:focus {
             .rm-project__grid__item__title small {
               color: #f08545; }
             .rm-project__grid__item__title.web {
-              background-color: #dedf50; }
+              background-color: #eaeb5c; }
           .rm-project__grid__item__links {
             width: 100%;
             position: absolute;
@@ -6284,13 +6280,13 @@ input:focus {
     .rm-contact input:focus, .rm-contact textarea:focus {
       color: #000;
       background-color: inherit;
-      border-bottom: 5px solid #f08545; }
+      border-bottom: 5px solid #eaeb5c; }
       .rm-contact input:focus::-webkit-input-placeholder, .rm-contact textarea:focus::-webkit-input-placeholder {
-        color: #f08545; }
+        color: #eaeb5c; }
       .rm-contact input:focus::-moz-placeholder, .rm-contact textarea:focus::-moz-placeholder {
-        color: #f08545; }
+        color: #eaeb5c; }
       .rm-contact input:focus:-ms-input-placeholder, .rm-contact textarea:focus:-ms-input-placeholder {
-        color: #f08545; }
+        color: #eaeb5c; }
   .rm-contact textarea {
     height: inherit; }
   .rm-contact .rm-btn {
@@ -6322,10 +6318,10 @@ input:focus {
         transform: translate(-50%, -50%);
         transition: all 0.5s ease; }
     .rm-footer__icon a:hover {
-      border: 5px solid #dedf50;
+      border: 5px solid #eaeb5c;
       box-shadow: none; }
       .rm-footer__icon a:hover span {
-        color: #dedf50;
+        color: #eaeb5c;
         transform: rotate(-45deg); }
         .rm-footer__icon a:hover span:before {
           animation: letter-animation 0.4s ease-out infinite alternate; }

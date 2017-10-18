@@ -83,7 +83,7 @@
           opacity: 1;
           transition: opacity 0.5s ease;
           z-index: 2;
-          padding: 2rem;
+          padding: 1.8rem;
           margin-bottom: 0;
           h3 {
             color: $rm-orange;
@@ -111,8 +111,11 @@
         }
         &:hover & {
           &__title  {
-            opacity: 0;
+            opacity: 0.1;
             transition: opacity 0.5s ease;
+            h3, small {
+              opacity: 0;
+            }
           }
           &__links  {
             opacity: 1;
@@ -134,30 +137,7 @@
         height: 20vw;
         -ms-flex: calc(20%);
         flex: calc(20%);
-        &__title {
-          h3 {
-            font-size: 2.6rem;
-          }
-        }
       }
     }
   }
 }
-
-.rm-project__grid__item-example-enter {
-   opacity: 0.01;
- }
-
-.rm-project__grid__item-example-enter.example-enter-active {
-   opacity: 1;
-   transition: opacity 500ms ease-in;
- }
-
-.rm-project__grid__item-example-exit {
-   opacity: 1;
- }
-
-.rm-project__grid__item-example-exit.example-exit-active {
-   opacity: 0.01;
-   transition: opacity 300ms ease-in;
- }
