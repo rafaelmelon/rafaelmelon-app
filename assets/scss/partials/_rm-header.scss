@@ -1,0 +1,26 @@
+.rm-header {
+  margin-bottom: 40px;
+  margin-top: 20px;
+  .h1 {
+    font-size: 2rem;
+    font-weight: $font-semibold;
+    line-height: 0.6;
+  }
+  .h2 {
+    font-size: 1.22rem;
+  }
+  &__svgLogo {
+    max-width: 150px;
+    max-height: 150px;
+    &__path1 {
+      stroke-dasharray: 864 866;
+      stroke-dashoffset: 865;
+      animation: logo-animation 666ms linear 0ms forwards;
+    }
+    &__path2 {
+      stroke-dasharray: 794 796;
+      stroke-dashoffset: 795;
+      animation: logo-animation 666ms linear 333ms forwards;
+    }
+  }
+}

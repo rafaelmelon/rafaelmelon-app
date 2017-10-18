@@ -1,0 +1,51 @@
+.rm-footer {
+  &__icon {
+    margin-bottom: 100px;
+    a {
+      height: 60px;
+      width: 60px;
+      display: inline-block;
+      margin: 0 15px;
+      border: 5px solid $white;
+      border-radius: 50%;
+      box-shadow: 2px 2px 0px rgba(0,0,0,0.1);
+      transition: all 0.5s ease;
+      position: relative;
+      span {
+        color: $white;
+        text-shadow: none;
+        &:before{
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          transition: all 0.5s ease;
+        }
+      }
+      &:hover {
+        border: 5px solid $rm-yellow;;
+        box-shadow: none;
+        span {
+          color: $rm-yellow;
+          transform: rotate(-45deg);
+          &:before{
+            animation: letter-animation 0.4s ease-out infinite alternate;
+          }
+        }
+      }
+      // &:nth-child(4) {
+      //   &:hover {
+      //     span {
+      //       transform: none;
+      //       &:before{
+      //         animation: letter-animation-download 0.4s ease-out infinite alternate;
+      //       }
+      //     }
+      //   }
+      // }
+    }
+  }
+  p {
+    font-size: 1rem;
+  }
+}
