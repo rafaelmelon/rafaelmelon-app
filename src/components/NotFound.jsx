@@ -8,10 +8,16 @@ const NotFound = () => {
   return (
     <div>
       <Header />
-      <div className="rm-container">
-        <h2 className="h2 mb-5">Sorry, the page not found</h2>
-        <Link className="rm-btn btn btn-primary" to="/">Go home</Link>
-      </div>
+        <Container>
+          <div className="rm-container">
+            <Row>
+              <Col>
+                <h2 className="h2 mb-5">Sorry, the page not found</h2>
+                <Link className="rm-btn btn btn-primary" to="/">Go home</Link>
+              </Col>
+            </Row>
+          </div>
+        </Container>
       <Footer />
     </div>
   )
