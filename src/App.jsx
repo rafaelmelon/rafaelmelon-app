@@ -1,18 +1,17 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
+import { Switch, Route } from 'react-router-dom'
 
-import Header from './components/common/Header'
-import Footer from './components/common/Footer'
 import HomeContainer from './components/HomeContainer'
+import NotFound from './components/NotFound'
 
 class App extends Component {
   render(){
     return (
-      <div>
-        <Header />
-        <HomeContainer />
-        <Footer />
-      </div>
+      <Switch>
+        <Route exact path="/" component={ HomeContainer }/>
+        <Route component={NotFound}/>
+      </Switch>
     )
   }
 }

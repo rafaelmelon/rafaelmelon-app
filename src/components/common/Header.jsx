@@ -4,7 +4,7 @@ import { Container, Row, Col } from 'reactstrap'
 const Header = () => {
   return(
     <Container>
-      <header className="rm-header">
+      <header className="rm-header mb-4 mt-4">
         <Row>
           <Col>
             <a href="">

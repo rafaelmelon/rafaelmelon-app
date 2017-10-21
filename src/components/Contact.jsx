@@ -87,9 +87,9 @@ class Contact extends Component {
 
   render() {
     return (
-      <div className="rm-contact">
+      <Container>
         <Fade>
-          <Container>
+          <div className="rm-contact mb-5">
             <Row>
               <Col>
                 <Form name="form" action="contact.php" onSubmit={this.handleSubmit}>
@@ -115,11 +115,11 @@ class Contact extends Component {
                     />
                     { (this.state.ERRORrmEmail) ? <FormFeedback>I need your email to answer you</FormFeedback> : '' }
                   </FormGroup>
-                  <Button className="rm-btn" color="primary">Send</Button>
+                  <Button className="rm-btn mt-4" color="primary">Send</Button>
                 </Form>
               </Col>
             </Row>
-          </Container>
+          </div>
         </Fade>
         <Modal isOpen={this.state.modal} toggle={this.toggle} className="rm-modal">
           <ModalHeader toggle={this.toggle}></ModalHeader>
@@ -127,7 +127,7 @@ class Contact extends Component {
             Thanks for contacting me, I will send you an answer soon
           </ModalBody>
         </Modal>
-      </div>
+      </Container>
     )
   }
 }

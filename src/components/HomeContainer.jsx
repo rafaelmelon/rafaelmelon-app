@@ -3,6 +3,8 @@ import ReactDOM from 'react-dom'
 import { Container, Row, Col, Button } from 'reactstrap'
 import { Fade } from 'react-reveal'
 
+import Header from './common/Header'
+import Footer from './common/Footer'
 import Count from './Count'
 import Contact from './Contact'
 import Project from './Project'
@@ -38,25 +40,27 @@ class HomeContainer extends Component {
   render(){
     return(
       <div>
+        <Header />
         <Count />
-        <Fade>
           { (this.state.buttons) ?
-            <div className="rm-container">
-              <Container>
-                <Row>
-                  <Col xs="12" sm="6" md="6">
-                    <Button className="rm-btn pr" color="primary" onClick={this.handleToggleProject}>View projects</Button>
-                  </Col>
-                  <Col xs="12" sm="6" md="6">
-                    <Button className="rm-btn pl" color="primary" onClick={this.handleToggleContact}>Contact me</Button>
-                  </Col>
-                </Row>
-              </Container>
-            </div>
+            <Container>
+              <Fade>
+                <div className="rm-container">
+                  <Row>
+                    <Col xs="12" sm="6" md="6">
+                      <Button className="rm-btn pr" color="primary" onClick={this.handleToggleProject}>View projects</Button>
+                    </Col>
+                    <Col xs="12" sm="6" md="6">
+                      <Button className="rm-btn pl" color="primary" onClick={this.handleToggleContact}>Contact me</Button>
+                    </Col>
+                  </Row>
+                </div>
+              </Fade>
+            </Container>
             :
             (this.state.project) ? <Project lang={ this.state.lang } /> : <Contact lang={ this.state.lang }/>
           }
-        </Fade>
+        <Footer />
       </div>
     )
   }

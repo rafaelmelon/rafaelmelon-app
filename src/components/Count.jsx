@@ -13,8 +13,8 @@ class Count extends Component {
       }
     }
     return (
-      <div className="rm-count">
-        <Container>
+      <Container>
+        <div className="rm-count mb-4">
           <Row>
             <Col>
               <h3 className="h3">Coming soon:</h3>
@@ -24,8 +24,8 @@ class Count extends Component {
               />
             </Col>
           </Row>
-        </Container>
-      </div>
+        </div>
+      </Container>
     )
   }
 }

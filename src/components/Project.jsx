@@ -47,12 +47,12 @@ class Project extends Component {
     const loading = "Loading..."
 
     return (
-      <div className="rm-project">
+      <div className="rm-project mb-5">
         { (this.state.loading) ?
           <Fade>{ loading }</Fade> :
           <div>
             <div className="rm-project__filter"></div>
-            <div className="rm-project__grid">
+            <div className="rm-project__grid mb-5">
               { this.state.repos.map(item =>
                 <Fade bottom key={ item.id } className="rm-project__grid__item">
                   <div className={ "rm-project__grid__item__title " + (item.homepage ? "web" : "") }>
