@@ -80,7 +80,7 @@ class Contact extends Component {
           <div className="rm-contact mb-5">
             <Row>
               <Col>
-                <Form name="form" action="contact.php" onSubmit={this.handleSubmit}>
+                <Form onSubmit={this.handleSubmit}>
                   <FormGroup>
                     <Label for="rmName" hidden>Name</Label>
                     <Input
