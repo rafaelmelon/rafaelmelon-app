@@ -10,7 +10,7 @@ class App extends Component {
     return (
       <Switch>
         <Route exact path="/" component={ HomeContainer }/>
-        <Route component={NotFound}/>
+        <Route component={ NotFound }/>
       </Switch>
     )
   }

@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Container, Row, Col, Button } from 'reactstrap'
+import { Button } from 'reactstrap'
 import { Fade } from 'react-reveal'
 
 import { repos } from '../data/url'

@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Container, Row, Col, Button, Modal, ModalBody, ModalHeader, Form, FormGroup, Label, Input, FormFeedback } from 'reactstrap'
 import { Fade } from 'react-reveal'
+import axios from 'axios';
 
 class Contact extends Component {
   constructor(props) {
@@ -33,56 +34,43 @@ class Contact extends Component {
   }
 
   handleSubmit(event) {
-    //event.preventDefault()
-    this.setState({
-      submitted: true
-    })
+    event.preventDefault()
+
+    this.setState({submitted: true})
     const { user } = this.state
     if (user.rmName && user.rmEmail) {
 
-      // fetch('/', {
-      //   method: 'POST',
-      //   headers: {
-      //     'Accept': 'application/json',
-      //     'Content-Type': 'application/json',
-      //   },
-      //   body: JSON.stringify({user: this.state.user})
-      // }).then((res) => {
-      //   console.log("this is res", res)
-      // }).catch((err) => {
-      //   console.log(err)
-      // })
+      axios.post('/contact.php', {
+          name: user.rmName,
+          email: user.rmEmail
+        })
+        .then(function (response) {
+          console.log(response);
+        })
+        .catch(function (error) {
+          console.log(error);
+        });
 
       this.setState({
         modal: true,
         ERRORrmName: false,
         ERRORrmEmail: false
       })
+
     }else{
-      this.setState({
-        modal: false
-      })
+      this.setState({modal: false})
       if (user.rmName && !user.rmEmail) {
-        this.setState({
-          ERRORrmEmail: true
-        })
+        this.setState({ERRORrmEmail: true})
       }else if(!user.rmName && user.rmEmail){
-        this.setState({
-          ERRORrmName: true
-        })
+        this.setState({ERRORrmName: true})
       }else{
-        this.setState({
-          ERRORrmName: true,
-          ERRORrmEmail: true
-        })
+        this.setState({ERRORrmName: true,ERRORrmEmail: true})
       }
     }
   }
 
   toggle() {
-    this.setState({
-      modal: !this.state.modal
-    })
+    this.setState({modal: !this.state.modal})
   }
 
   render() {
