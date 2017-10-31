@@ -1,7 +1,7 @@
-import React, { Component } from 'react'
+import React, {Component} from 'react'
 import ReactDOM from 'react-dom'
-import { Container, Row, Col, Button } from 'reactstrap'
-import { Fade } from 'react-reveal'
+import {Container, Row, Col, Button} from 'reactstrap'
+import {Fade} from 'react-reveal'
 
 import Header from './common/Header'
 import Footer from './common/Footer'
