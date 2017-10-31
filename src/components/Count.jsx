@@ -1,6 +1,6 @@
-import React, { Component } from 'react'
+import React, {Component} from 'react'
 import Countdown from 'react-countdown-now'
-import { Container, Row, Col } from 'reactstrap'
+import {Container, Row, Col} from 'reactstrap'
 
 class Count extends Component {
   render() {
