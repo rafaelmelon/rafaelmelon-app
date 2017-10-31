@@ -1,8 +1,8 @@
-import React, { Component } from 'react'
-import { Button } from 'reactstrap'
-import { Fade } from 'react-reveal'
+import React, {Component} from 'react'
+import {Button} from 'reactstrap'
+import {Fade} from 'react-reveal'
 
-import { repos } from '../data/url'
+import {repos} from '../data/url'
 
 class Project extends Component {
 
