@@ -1,6 +1,6 @@
-import React, { Component } from 'react'
-import { Container, Row, Col, Button, Modal, ModalBody, ModalHeader, Form, FormGroup, Label, Input, FormFeedback } from 'reactstrap'
-import { Fade } from 'react-reveal'
+import React, {Component} from 'react'
+import {Container, Row, Col, Button, Modal, ModalBody, ModalHeader, Form, FormGroup, Label, Input, FormFeedback} from 'reactstrap'
+import {Fade} from 'react-reveal'
 import axios from 'axios';
 
 class Contact extends Component {
