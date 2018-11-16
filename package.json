@@ -1,57 +1,31 @@
 {
-  "name": "rafaelmelon-personalwebapp",
-  "version": "0.0.2",
-  "description": "Rafael Melón - Personal Webapp",
+  "name": "rafaelmelon",
+  "version": "1.0.0",
+  "description": "Rafael Melón - Front-end Web Developer Portfolio",
   "main": "index.js",
-  "author": "Rafael Melón <info@rafaelmelon.es> (http://rafaelmelon.es/)",
-  "license": "MIT",
-  "keywords": [
-    "react",
-    "webpack",
-    "es6",
-    "css"
-  ],
   "scripts": {
-    "watch": "webpack --progress --watch",
-    "build": "webpack --config webpack.production.config.js --progress --profile --colors",
-    "start": "webpack-dev-server --progress --profile --colors --open"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "scripts": {
+      "build": "webpack --mode production"
+    }
   },
-  "dependencies": {
-    "axios": "^0.17.0",
-    "bootstrap": "4.0.0-alpha.6",
-    "eslint-loader": "^1.9.0",
-    "node-sass": "^4.5.3",
-    "prop-types": "^15.6.0",
-    "react": "^16.0.0",
-    "react-axios": "^1.0.3",
-    "react-countdown-now": "^1.2.0",
-    "react-dom": "^16.0.0",
-    "react-fontawesome": "^1.6.1",
-    "react-reveal": "^0.5.1",
-    "react-router-dom": "^4.2.2",
-    "reactstrap": "^5.0.0-alpha.3"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rafaelmelon/rafaelmelon.git"
   },
+  "keywords": ["react","webpack","babel","typescript","styled-components","redux"],
+  "author": "Rafael Melón <info@rafaelmelon.es> (http://rafaelmelon.es/)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rafaelmelon/rafaelmelon/issues"
+  },
+  "homepage": "https://github.com/rafaelmelon/rafaelmelon#readme",
   "devDependencies": {
-    "babel-core": "^6.26.0",
-    "babel-eslint": "^8.0.1",
-    "babel-loader": "^7.1.2",
-    "babel-plugin-transform-es2015-arrow-functions": "^6.22.0",
-    "babel-plugin-transform-object-rest-spread": "^6.26.0",
-    "babel-preset-es2015": "^6.24.1",
-    "babel-preset-react": "^6.24.1",
-    "clean-webpack-plugin": "^0.1.17",
-    "css-loader": "^0.28.7",
-    "eslint": "^4.9.0",
-    "eslint-plugin-react": "^7.4.0",
-    "extract-text-webpack-plugin": "^3.0.1",
-    "history": "^4.7.2",
-    "html-webpack-plugin": "^2.30.1",
-    "postcss-loader": "^2.0.6",
-    "sass-loader": "^6.0.6",
-    "style-loader": "^0.19.0",
-    "uglifyjs-webpack-plugin": "^0.4.6",
-    "webpack": "^3.6.0",
-    "webpack-cleanup-plugin": "^0.5.1",
-    "webpack-dev-server": "^2.9.1"
+    "@babel/core": "^7.1.6",
+    "@babel/preset-env": "^7.1.6",
+    "@babel/preset-react": "^7.0.0",
+    "babel-loader": "^8.0.4",
+    "webpack": "^4.25.1",
+    "webpack-cli": "^3.1.2"
   }
 }
