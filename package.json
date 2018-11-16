@@ -5,15 +5,20 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "scripts": {
-      "build": "webpack --mode production"
-    }
+    "build": "webpack --mode production"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/rafaelmelon/rafaelmelon.git"
   },
-  "keywords": ["react","webpack","babel","typescript","styled-components","redux"],
+  "keywords": [
+    "react",
+    "webpack",
+    "babel",
+    "typescript",
+    "styled-components",
+    "redux"
+  ],
   "author": "Rafael Melón <info@rafaelmelon.es> (http://rafaelmelon.es/)",
   "license": "ISC",
   "bugs": {
@@ -24,8 +29,17 @@
     "@babel/core": "^7.1.6",
     "@babel/preset-env": "^7.1.6",
     "@babel/preset-react": "^7.0.0",
+    "awesome-typescript-loader": "^5.2.1",
     "babel-loader": "^8.0.4",
+    "source-map-loader": "^0.2.4",
+    "typescript": "^3.1.6",
     "webpack": "^4.25.1",
     "webpack-cli": "^3.1.2"
+  },
+  "dependencies": {
+    "@types/react": "^16.7.6",
+    "@types/react-dom": "^16.0.9",
+    "react": "^16.6.3",
+    "react-dom": "^16.6.3"
   }
 }
