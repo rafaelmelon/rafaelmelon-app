@@ -1,8 +1,10 @@
 import * as React from 'react';
+import Home from './Home';
 
-const reactLogo = require('./../assets/img/react_logo.svg');
-
-export interface IProps {}
+interface IProps {
+  compiler: string;
+  framework: string;
+}
 
 export default class App extends React.Component<IProps, undefined> {
   public render() {
@@ -10,7 +12,7 @@ export default class App extends React.Component<IProps, undefined> {
       <div>
         <h1>Hello World!</h1>
         <p>Foo to the barz</p>
-        <img src={reactLogo} height="480" />
+        <Home compiler={'Hello'} framework={'By'} />
       </div>
     );
   }
