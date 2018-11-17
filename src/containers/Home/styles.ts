@@ -10,7 +10,7 @@ export const Container = styled.div`
 `;
 
 export const Header = styled.h1`
-  color: white;
+  color: ${props => props.theme.colors.black};
   font-size: 24px;
   line-height: 3px;
   align-items: center;

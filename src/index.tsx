@@ -1,29 +1,33 @@
 import * as React from 'react';
 import { render } from 'react-dom';
 import { AppContainer } from 'react-hot-loader';
-import App from './containers/App';
+import { ThemeProvider } from 'styled-components';
+import theme from '@theme/index';
+import Home from '@containers/Home';
 
-const rootEl = document.getElementById('root');
+const rootElement = document.getElementById('root');
 
 render(
   <AppContainer>
-    <App />
+    <ThemeProvider theme={theme}>
+      <Home />
+    </ThemeProvider>
   </AppContainer>,
-  rootEl,
+  rootElement,
 );
 
 // Hot Module Replacement API
 declare let module: { hot: any };
 
 if (module.hot) {
-  module.hot.accept('./containers/App', () => {
-    const NewApp = require('./containers/App').default;
+  module.hot.accept('@containers/Home', () => {
+    const NewApp = require('@containers/Home').default;
 
     render(
       <AppContainer>
         <NewApp />
       </AppContainer>,
-      rootEl,
+      rootElement,
     );
   });
 }

@@ -8,6 +8,7 @@
   ],
   "plugins": ["prettier"],
   "rules": {
+    "ordered-imports": false,
     "variable-name": false,
     "jsx-wrap-multiline": false,
     "jsx-boolean-value": false,

@@ -1,11 +1,21 @@
 // shared config (dev and prod)
-const {resolve} = require('path');
-const {CheckerPlugin} = require('awesome-typescript-loader');
+const { resolve } = require('path');
+const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin');
+const { CheckerPlugin } = require('awesome-typescript-loader');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   resolve: {
     extensions: ['.ts', '.tsx', '.js', '.jsx'],
+    plugins: [
+      new TsconfigPathsPlugin({
+        configFile: "./tsconfig.json",
+        logLevel: "info",
+        extensions: [".ts", ".tsx"],
+        mainFields: ["browser", "main"],
+        // baseUrl: "/foo"
+      })
+    ]
   },
   context: resolve(__dirname, '../../src'),
   module: {

@@ -2,11 +2,18 @@
   "compilerOptions": {
       "outDir": "./dist/",
       "sourceMap": true,
+      "moduleResolution": "node",
       "noImplicitAny": false,
       "module": "commonjs",
       "target": "es5",
       "jsx": "react",
-      "lib": ["es5", "es6", "dom"]
+      "lib": ["es5", "es6", "dom"],
+      "baseUrl": "src",
+      "paths": {
+        "@assets/*": ["assets/*"],
+        "@containers/*": ["containers/*"],
+        "@theme/*": ["theme/*"],
+      }
   },
   "include": [
       "./src/**/*"
