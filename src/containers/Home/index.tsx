@@ -1,20 +1,17 @@
 import * as React from 'react';
+import SectionsList from '@containers/SectionList';
 
 const reactLogo = require('./../../assets/img/react_logo.svg');
 import { Container, Header } from './styles';
 
-interface IProps {
-  compiler: string;
-  framework: string;
-}
+const Home = () => (
+  <div>
+    <Container>
+      <Header> Dashboard </Header>
+      <SectionsList />
+      <img src={reactLogo} height="480" />
+    </Container>
+  </div>
+);
 
-export default class Home extends React.Component<IProps, undefined> {
-  public render() {
-    return (
-      <Container>
-        <Header> Dashboard </Header>
-        <img src={reactLogo} height="480" />
-      </Container>
-    );
-  }
-}
+export default Home;

@@ -2,17 +2,16 @@ import * as React from 'react';
 import { hot } from 'react-hot-loader';
 import { ThemeProvider } from 'styled-components';
 import { Provider } from 'react-redux';
-import { createStore } from 'redux';
 import * as theme from '@theme/index';
-import App from '@containers/App';
+import Home from '@containers/Home';
+import { configureStore } from '@redux/store';
 
-import reducers from '@redux/reducers';
-const store = createStore(reducers);
+const { store } = configureStore();
 
 const Root = () => (
   <Provider store={store}>
-    <ThemeProvider theme={theme}>
-      <App />
+    <ThemeProvider theme={theme.default}>
+      <Home />
     </ThemeProvider>
   </Provider>
 );
