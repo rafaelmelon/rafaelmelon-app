@@ -1,31 +1,31 @@
-export const REPOSITORIES_ALL_REQUEST = 'REPOSITORIES/ALL_REQUEST';
-export const REPOSITORIES_ALL_SUCCESS = 'REPOSITORIES/ALL_SUCCESS';
-export const REPOSITORIES_ALL_FAILURE = 'REPOSITORIES/ALL_FAILURE';
+export const USER_REQUEST = 'USER/REQUEST';
+export const USER_SUCCESS = 'USER/SUCCESS';
+export const USER_FAILURE = 'USER/FAILURE';
 
 const initialState = {
-  all: [],
+  user: {},
   isFetching: false,
 };
 
 export default (state = initialState, action = {}) => {
   switch (action.type) {
-    case REPOSITORIES_ALL_REQUEST: {
+    case USER_REQUEST: {
       return {
         ...state,
         isFetching: true,
       };
     }
-    case REPOSITORIES_ALL_SUCCESS: {
+    case USER_SUCCESS: {
       return {
         ...state,
-        all: action.payload,
+        user: action.payload,
         isFetching: false,
       };
     }
-    case REPOSITORIES_ALL_FAILURE: {
+    case USER_FAILURE: {
       return {
         ...state,
-        all: [],
+        user: {},
         isFetching: false,
       };
     }

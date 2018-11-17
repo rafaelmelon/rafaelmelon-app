@@ -20,14 +20,14 @@ class SectionList extends React.Component<IProps, undefined> {
   }
 
   private renderItems = () =>
-    this.props.repositories.map(item => <Item key={item.id} data={item} />);
+    this.props.repositories.map(item => <Item key={item.id} data={item} />)
 }
 
 export default connect(
   state => ({
-    repositories: state.repositories.all
+    repositories: state.repositories.all,
   }),
   {
-    fetchAllRepositories
+    fetchAllRepositories,
   }
 )(SectionList);

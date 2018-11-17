@@ -6,17 +6,17 @@ import {
 import { apiGitHub, request } from '@util/api';
 
 const fetchAllRepositoriesRequest = () => ({
-  type: REPOSITORIES_ALL_REQUEST
+  type: REPOSITORIES_ALL_REQUEST,
 });
 
 const fetchAllRepositoriesSuccess = payload => ({
   payload,
-  type: REPOSITORIES_ALL_SUCCESS
+  type: REPOSITORIES_ALL_SUCCESS,
 });
 
 const fetchAllRepositoriesFailure = error => ({
   error,
-  type: REPOSITORIES_ALL_FAILURE
+  type: REPOSITORIES_ALL_FAILURE,
 });
 
 export const fetchAllRepositories = () => dispatch => {

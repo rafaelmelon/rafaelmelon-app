@@ -16,6 +16,6 @@ export const configureStore = () => {
   const store = createStore(rootReducer, {}, middleware);
 
   return {
-    store
+    store,
   };
 };
