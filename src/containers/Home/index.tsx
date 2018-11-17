@@ -9,7 +9,7 @@ interface IProps {
 }
 
 export default class Home extends React.Component<IProps, undefined> {
-  private render() {
+  public render() {
     return (
       <Container>
         <Header> Dashboard </Header>

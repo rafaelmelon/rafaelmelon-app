@@ -1,26 +1,28 @@
 {
   "compilerOptions": {
-      "outDir": "./dist/",
-      "sourceMap": true,
-      "moduleResolution": "node",
-      "noImplicitAny": false,
-      "module": "commonjs",
-      "target": "es5",
-      "jsx": "react",
-      "lib": ["es5", "es6", "dom"],
-      "baseUrl": "src",
-      "paths": {
-        "@assets/*": ["assets/*"],
-        "@containers/*": ["containers/*"],
-        "@theme/*": ["theme/*"],
-      }
+    "outDir": "./dist/",
+    "sourceMap": true,
+    "moduleResolution": "node",
+    "noImplicitAny": false,
+    "module": "commonjs",
+    "target": "es5",
+    "jsx": "react",
+    "lib": ["es5", "es6", "dom"],
+    "baseUrl": "src",
+    "paths": {
+      "@assets/*": ["assets/*"],
+      "@containers/*": ["containers/*"],
+      "@components/*": ["components/*"],
+      "@theme/*": ["theme/*"],
+      "@redux/*": ["redux/*"],
+    }
   },
   "include": [
-      "./src/**/*"
+    "./src/**/*"
   ],
   "awesomeTypescriptLoaderOptions": {
-      "reportFiles": [
-          "./src/**/*"
-      ]
+    "reportFiles": [
+      "./src/**/*"
+    ]
   }
 }

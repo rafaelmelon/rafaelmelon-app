@@ -6,7 +6,7 @@
   "scripts": {
     "build": "yarn run clean-dist && webpack -p --config=configs/webpack/prod.js",
     "clean-dist": "rm -f -r -d dist",
-    "lint": "tslint './src/**/*.ts*' --format stylish --force --fix",
+    "lint": "tslint --project tsconfig.json 'src/**/*.{ts,tsx}' --fix --format stylish",
     "start": "yarn run start-dev",
     "start-dev": "webpack-dev-server --config=configs/webpack/dev.js",
     "start-prod": "yarn run build && node server/express.js",
@@ -66,6 +66,9 @@
     "@types/react-dom": "^16.0.9",
     "@types/styled-components": "^4.1.0",
     "react": "^16.6.3",
-    "react-dom": "^16.6.3"
+    "react-dom": "^16.6.3",
+    "react-redux": "^5.1.1",
+    "redux": "^4.0.1",
+    "tslint-config-airbnb": "^5.11.1"
   }
 }
