@@ -1,17 +1,43 @@
 import * as React from 'react';
-import SectionsList from '@containers/SectionList';
+import { connect } from 'react-redux';
+import { fetchUser } from '@redux/modules/user/action';
+import { fetchAllRepositories } from '@redux/modules/repositories/action';
+import { Header, SectionList } from '@components/index';
 
 const reactLogo = require('./../../assets/img/react_logo.svg');
-import { Container, Header } from './styles';
+import { Container } from './styles';
 
-const Home = () => (
-  <div>
-    <Container>
-      <Header> Dashboard </Header>
-      <SectionsList />
-      <img src={reactLogo} height="480" />
-    </Container>
-  </div>
-);
+interface IProps {
+  user: object;
+  repositories: any[];
+  fetchAllRepositories: () => any;
+  fetchUser: () => any;
+}
 
-export default Home;
+class Home extends React.Component<IProps, undefined> {
+  componentDidMount() {
+    this.props.fetchUser();
+    this.props.fetchAllRepositories();
+  }
+
+  public render() {
+    return (
+      <Container>
+        <Header user={this.props.user} />
+        <SectionList repositories={this.props.repositories} />
+        <img src={reactLogo} height="480" />
+      </Container>
+    );
+  }
+}
+
+export default connect(
+  state => ({
+    user: state.user.user,
+    repositories: state.repositories.all,
+  }),
+  {
+    fetchAllRepositories,
+    fetchUser,
+  }
+)(Home);

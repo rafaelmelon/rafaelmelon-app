@@ -1,7 +1,7 @@
 import {
   REPOSITORIES_ALL_REQUEST,
   REPOSITORIES_ALL_SUCCESS,
-  REPOSITORIES_ALL_FAILURE
+  REPOSITORIES_ALL_FAILURE,
 } from './reducer';
 import { apiGitHub, request } from '@util/api';
 

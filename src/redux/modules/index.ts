@@ -4,7 +4,7 @@ import user from './user/reducer';
 
 const rootReducer = combineReducers({
   repositories,
-  user
+  user,
 });
 
 export default rootReducer;
