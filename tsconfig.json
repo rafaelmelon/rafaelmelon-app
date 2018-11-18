@@ -16,7 +16,12 @@
       "@theme/*": ["theme/*"],
       "@redux/*": ["redux/*"],
       "@util/*": ["util/*"],
-    }
+    },
+    "allowSyntheticDefaultImports": true,
+    "forceConsistentCasingInFileNames": true,
+    "strict": true,
+    "suppressImplicitAnyIndexErrors": true,
+    "noUnusedLocals": true
   },
   "include": [
     "./src/**/*"

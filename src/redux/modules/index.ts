@@ -1,10 +1,16 @@
-import { combineReducers } from 'redux';
-import repositories from './repositories/reducer';
-import user from './user/reducer';
+import { combineReducers, Dispatch, Action, AnyAction } from 'redux';
+import { RepositoriesState, repositoriesReducer } from './repositories';
+import { UserState, userReducer } from './user';
 
-const rootReducer = combineReducers({
-  repositories,
-  user,
+export interface ConnectedReduxProps<A extends Action = AnyAction> {
+  dispatch: Dispatch<A>
+}
+export interface ApplicationState {
+  repositories: RepositoriesState;
+  user: UserState;
+}
+
+export const rootReducer = combineReducers<ApplicationState>({
+  repositories: repositoriesReducer,
+  user: userReducer,
 });
-
-export default rootReducer;

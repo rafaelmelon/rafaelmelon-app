@@ -1,35 +1,27 @@
-export const USER_REQUEST = 'USER/REQUEST';
-export const USER_SUCCESS = 'USER/SUCCESS';
-export const USER_FAILURE = 'USER/FAILURE';
+import { Reducer } from 'redux';
+import { UserState, UserActionTypes } from './types';
 
-const initialState = {
+const initialState: UserState = {
   user: {},
+  error: undefined,
   isFetching: false,
 };
 
-export default (state = initialState, action = {}) => {
+const reducer: Reducer<UserState> = (state = initialState, action) => {
   switch (action.type) {
-    case USER_REQUEST: {
-      return {
-        ...state,
-        isFetching: true,
-      };
+    case UserActionTypes.USER_REQUEST: {
+      return { ...state, isFetching: true };
     }
-    case USER_SUCCESS: {
-      return {
-        ...state,
-        user: action.payload,
-        isFetching: false,
-      };
+    case UserActionTypes.USER_SUCCESS: {
+      return { ...state, isFetching: false, user: action.payload };
     }
-    case USER_FAILURE: {
-      return {
-        ...state,
-        user: {},
-        isFetching: false,
-      };
+    case UserActionTypes.USER_FAILURE: {
+      return { ...state, isFetching: false, error: action.payload };
     }
-    default:
+    default: {
       return state;
+    }
   }
 };
+
+export { reducer as userReducer };

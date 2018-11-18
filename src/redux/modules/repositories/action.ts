@@ -1,23 +1,13 @@
-import {
-  REPOSITORIES_ALL_REQUEST,
-  REPOSITORIES_ALL_SUCCESS,
-  REPOSITORIES_ALL_FAILURE,
-} from './reducer';
+import { action } from 'typesafe-actions';
+import { RepositoriesActionTypes, Repository } from './types';
 import { apiGitHub, request } from '@util/api';
 
-const fetchAllRepositoriesRequest = () => ({
-  type: REPOSITORIES_ALL_REQUEST,
-});
-
-const fetchAllRepositoriesSuccess = payload => ({
-  payload,
-  type: REPOSITORIES_ALL_SUCCESS,
-});
-
-const fetchAllRepositoriesFailure = error => ({
-  error,
-  type: REPOSITORIES_ALL_FAILURE,
-});
+export const fetchAllRepositoriesRequest = () =>
+  action(RepositoriesActionTypes.REPOSITORIES_ALL_REQUEST);
+export const fetchAllRepositoriesSuccess = (payload: Repository[]) =>
+  action(RepositoriesActionTypes.REPOSITORIES_ALL_SUCCESS, payload);
+export const fetchAllRepositoriesFailure = (error: string) =>
+  action(RepositoriesActionTypes.REPOSITORIES_ALL_FAILURE, error);
 
 export const fetchAllRepositories = () => dispatch => {
   dispatch(fetchAllRepositoriesRequest());

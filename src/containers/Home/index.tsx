@@ -1,20 +1,20 @@
 import * as React from 'react';
 import { connect } from 'react-redux';
-import { fetchUser } from '@redux/modules/user/action';
-import { fetchAllRepositories } from '@redux/modules/repositories/action';
+import { fetchUser, User } from '@redux/modules/user';
+import { fetchAllRepositories, Repository } from '@redux/modules/repositories';
 import { Header, SectionList } from '@components/index';
+import { reactLogo } from '@assets/index';
 
-const reactLogo = require('./../../assets/img/react_logo.svg');
 import { Container } from './styles';
 
 interface IProps {
-  user: object;
-  repositories: any[];
+  user: User;
+  repositories: Repository[];
   fetchAllRepositories: () => any;
   fetchUser: () => any;
 }
 
-class Home extends React.Component<IProps, undefined> {
+class Home extends React.Component<IProps, any> {
   componentDidMount() {
     this.props.fetchUser();
     this.props.fetchAllRepositories();
@@ -39,5 +39,5 @@ export default connect(
   {
     fetchAllRepositories,
     fetchUser,
-  }
+  },
 )(Home);

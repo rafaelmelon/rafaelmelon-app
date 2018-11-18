@@ -1,14 +1,15 @@
 import * as React from 'react';
+import { Repository } from '@redux/modules/repositories';
 
 import Item from './Item';
 
 import { Container } from './styles';
 
 interface IProps {
-  repositories: any[];
+  repositories: Repository[];
 }
 
-class SectionList extends React.Component<IProps, undefined> {
+class SectionList extends React.Component<IProps, any> {
   public render() {
     return <Container>{this.renderItems()}</Container>;
   }

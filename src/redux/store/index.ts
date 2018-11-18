@@ -1,13 +1,13 @@
 import { createStore, applyMiddleware } from 'redux';
+import { composeWithDevTools } from 'redux-devtools-extension';
+import { createLogger } from 'redux-logger';
 import reduxThunk from 'redux-thunk';
-import rootReducer from '../modules';
+import { rootReducer } from '../modules';
 
 export const configureStore = () => {
   let middleware;
 
   if (process.env.NODE_ENV !== 'production') {
-    const { composeWithDevTools } = require('redux-devtools-extension');
-    const { createLogger } = require('redux-logger');
     const logger = createLogger({ collapsed: true });
     middleware = composeWithDevTools(applyMiddleware(reduxThunk, logger));
   } else {

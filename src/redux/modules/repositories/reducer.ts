@@ -1,35 +1,27 @@
-export const REPOSITORIES_ALL_REQUEST = 'REPOSITORIES/ALL_REQUEST';
-export const REPOSITORIES_ALL_SUCCESS = 'REPOSITORIES/ALL_SUCCESS';
-export const REPOSITORIES_ALL_FAILURE = 'REPOSITORIES/ALL_FAILURE';
+import { Reducer } from 'redux';
+import { RepositoriesState, RepositoriesActionTypes } from './types';
 
-const initialState = {
+const initialState: RepositoriesState = {
   all: [],
+  error: undefined,
   isFetching: false,
 };
 
-export default (state = initialState, action = {}) => {
+const reducer: Reducer<RepositoriesState> = (state = initialState, action) => {
   switch (action.type) {
-    case REPOSITORIES_ALL_REQUEST: {
-      return {
-        ...state,
-        isFetching: true,
-      };
+    case RepositoriesActionTypes.REPOSITORIES_ALL_REQUEST: {
+      return { ...state, isFetching: true };
     }
-    case REPOSITORIES_ALL_SUCCESS: {
-      return {
-        ...state,
-        all: action.payload,
-        isFetching: false,
-      };
+    case RepositoriesActionTypes.REPOSITORIES_ALL_SUCCESS: {
+      return { ...state, isFetching: false, all: action.payload };
     }
-    case REPOSITORIES_ALL_FAILURE: {
-      return {
-        ...state,
-        all: [],
-        isFetching: false,
-      };
+    case RepositoriesActionTypes.REPOSITORIES_ALL_FAILURE: {
+      return { ...state, isFetching: false, error: action.payload };
     }
-    default:
+    default: {
       return state;
+    }
   }
 };
+
+export { reducer as repositoriesReducer };
