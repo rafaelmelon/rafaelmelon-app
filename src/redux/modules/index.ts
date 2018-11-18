@@ -3,7 +3,7 @@ import { RepositoriesState, repositoriesReducer } from './repositories';
 import { UserState, userReducer } from './user';
 
 export interface ConnectedReduxProps<A extends Action = AnyAction> {
-  dispatch: Dispatch<A>
+  dispatch: Dispatch<A>;
 }
 export interface ApplicationState {
   repositories: RepositoriesState;

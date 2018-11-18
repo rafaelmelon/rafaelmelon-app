@@ -1,5 +1,5 @@
-import styledComponents from 'styled-components';
+import { styled } from '@theme/index';
 
-export const Container = styledComponents.div`
+export const Container = styled.div`
   flex: 1;
 `;

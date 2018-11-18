@@ -1,6 +1,6 @@
-import styledComponents from 'styled-components';
+import { styled } from '@theme/index';
 
-export const Container = styledComponents.div`
+export const Container = styled.div`
   display: flex;
   list-style: none;
   justify-content: flex-end;
@@ -9,7 +9,7 @@ export const Container = styledComponents.div`
   margin-bottom: 0;
 `;
 
-export const Header = styledComponents.h1`
+export const Header = styled.h1`
   color: ${({ theme }) => theme.colors.black};
   font-size: 24px;
   line-height: 3px;
