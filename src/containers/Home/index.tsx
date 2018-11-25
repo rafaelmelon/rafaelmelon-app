@@ -6,6 +6,7 @@ import { fetchUser, User } from '@redux/modules/user';
 import { fetchAllRepositories, Repository } from '@redux/modules/repositories';
 import { Header, SectionList } from '@components/index';
 import { reactLogo } from '@assets/index';
+import { GlobalStyles } from '@theme/index';
 
 import { Container } from './styles';
 
@@ -25,6 +26,7 @@ class Home extends React.Component<IProps, any> {
   public render() {
     return (
       <Container>
+        <GlobalStyles />
         <Header user={this.props.user} />
         <FormattedMessage
           id="app.title"

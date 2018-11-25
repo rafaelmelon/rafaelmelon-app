@@ -8,10 +8,3 @@ export const Container = styled.div`
   align-items: center;
   margin-bottom: 0;
 `;
-
-export const Header = styled.h1`
-  color: ${({ theme }) => theme.colors.black};
-  font-size: 24px;
-  line-height: 3px;
-  align-items: center;
-`;

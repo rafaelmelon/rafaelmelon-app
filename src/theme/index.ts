@@ -1,4 +1,8 @@
-import baseStyled, { ThemedStyledInterface, css } from 'styled-components';
+import baseStyled, {
+  ThemedStyledInterface,
+  css,
+  createGlobalStyle,
+} from 'styled-components';
 
 const sizes = {
   desktop: 992,
@@ -30,7 +34,26 @@ export const theme = {
     jaffa: '#F08545',
     confetti: '#EAEB5C',
   },
+  fonts: {
+    montserrat: '"Montserrat", sans-serif',
+    openSans: '"Open Sans", sans-serif',
+  },
+  fontSize: {
+    xl: '2.4rem',
+    lg: '1.8rem',
+    md: '1.3rem',
+    nm: '1rem',
+    sm: '0.75rem',
+  },
 };
+
+export const GlobalStyles = createGlobalStyle`
+  body {
+    @import url('https://fonts.googleapis.com/css?family=Black+Han+Sans|Open+Sans');
+    @import url('https://fonts.googleapis.com/css?family=Montserrat');
+    font-family: 'Open Sans', sans-serif;
+  }
+`;
 
 export type Theme = typeof theme;
 export const styled = baseStyled as ThemedStyledInterface<Theme>;
