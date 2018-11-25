@@ -53,6 +53,7 @@ export const GlobalStyles = createGlobalStyle`
     @import url('https://fonts.googleapis.com/css?family=Montserrat');
     font-family: 'Open Sans', sans-serif;
     margin: 0;
+    padding: 20px;
   }
   h1, h2 {
     margin: 0;

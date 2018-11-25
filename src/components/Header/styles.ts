@@ -12,7 +12,6 @@ export const Avatar = styled.div`
   height: 100px;
   overflow: hidden;
   border-radius: 50%;
-  margin-top: 20px;
   margin-bottom: 20px;
 `;
 

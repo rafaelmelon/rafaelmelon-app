@@ -7,8 +7,10 @@ interface Link {
   children: ReactNode;
 }
 
-const Link = ({ href, children }: Link) => (
-  <CustomLink href={href}>{children}</CustomLink>
+const Link = ({ href, children, ...rest }: Link) => (
+  <CustomLink href={href} {...rest}>
+    {children}
+  </CustomLink>
 );
 
 export default Link;

@@ -13,7 +13,9 @@ class Item extends React.Component<IProps, any> {
   public render() {
     return (
       <Container>
-        <Link href={this.props.data.html_url}>{this.props.data.name}</Link>
+        <Link href={this.props.data.html_url} target={'_blank'}>
+          {this.props.data.name}
+        </Link>
       </Container>
     );
   }
