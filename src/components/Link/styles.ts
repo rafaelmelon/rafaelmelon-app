@@ -1,3 +1,3 @@
 import { styled } from '@theme/index';
 
-export const Container = styled.div``;
+export const CustomLink = styled.a``;

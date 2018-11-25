@@ -52,6 +52,10 @@ export const GlobalStyles = createGlobalStyle`
     @import url('https://fonts.googleapis.com/css?family=Black+Han+Sans|Open+Sans');
     @import url('https://fonts.googleapis.com/css?family=Montserrat');
     font-family: 'Open Sans', sans-serif;
+    margin: 0;
+  }
+  h1, h2 {
+    margin: 0;
   }
 `;
 

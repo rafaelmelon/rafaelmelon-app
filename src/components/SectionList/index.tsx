@@ -5,11 +5,11 @@ import Item from './Item';
 
 import { Container } from './styles';
 
-interface IProps {
+interface SectionList {
   repositories: Repository[];
 }
 
-class SectionList extends React.Component<IProps, any> {
+class SectionList extends React.Component<SectionList, any> {
   public render() {
     return <Container>{this.renderItems()}</Container>;
   }
