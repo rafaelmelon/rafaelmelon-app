@@ -8,14 +8,14 @@ import { GlobalStyles } from '@theme/index';
 
 import { Container } from './styles';
 
-interface IProps {
+interface Home {
   user: User;
   repositories: Repository[];
   fetchAllRepositories: () => any;
   fetchUser: () => any;
 }
 
-class Home extends React.Component<IProps, any> {
+class Home extends React.Component<Home, any> {
   componentDidMount() {
     this.props.fetchUser();
     this.props.fetchAllRepositories();
