@@ -1,6 +1,6 @@
 import * as React from 'react';
-import { Repository } from '@redux/modules/repositories';
 
+import { Repository } from '@redux/modules/repositories';
 import Item from './Item';
 
 import { Container } from './styles';

@@ -1,4 +1,5 @@
 import * as React from 'react';
+
 import { User } from '@redux/modules/user';
 
 import { Container } from './styles';

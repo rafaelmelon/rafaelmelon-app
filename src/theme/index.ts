@@ -6,17 +6,24 @@ const sizes = {
   phone: 576,
 };
 
-const media = Object.keys(sizes).reduce((acc, label) => {
-  acc[label] = (...args) => css`
-    @media (max-width: ${sizes[label] / 16}em) {
-      ${css(...args)}
-    }
-  `;
-  return acc;
-}, {});
-
 export const theme = {
-  media,
+  media: {
+    desktop: (...args) => css`
+      @media (max-width: ${sizes.desktop / 16}em) {
+        ${css(...args)}
+      }
+    `,
+    tablet: (...args) => css`
+      @media (max-width: ${sizes.tablet / 16}em) {
+        ${css(...args)}
+      }
+    `,
+    phone: (...args) => css`
+      @media (max-width: ${sizes.phone / 16}em) {
+        ${css(...args)}
+      }
+    `,
+  },
   colors: {
     black: '#000000',
     white: '#FFFFFF',

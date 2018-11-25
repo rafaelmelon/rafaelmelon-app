@@ -9,6 +9,7 @@
   ],
   "plugins": ["prettier"],
   "rules": {
+    "align": [true, "parameters", "statements"],
     "arrow-parens": false,
     "arrow-return-shorthand": [false],
     "comment-format": [true, "check-space"],
@@ -43,16 +44,16 @@
     "prefer-template": [true, "allow-single-concat"],
     "quotemark": [true, "single", "jsx-double"],
     "ter-arrow-parens": [true, "as-needed"],
-    "trailing-comma": [true, {
-      "singleline": "never",
-      "multiline": {
-        "objects": "always",
-        "arrays": "always",
-        "functions": "never",
-        "typeLiterals": "ignore"
-      },
-      "esSpecCompliant": true
-    }],
+    // "trailing-comma": [true, {
+    //   "singleline": "never",
+    //   "multiline": {
+    //     "objects": "always",
+    //     "arrays": "always",
+    //     "functions": "never",
+    //     "typeLiterals": "ignore"
+    //   },
+    //   "esSpecCompliant": true
+    // }],
     "triple-equals": [true, "allow-null-check"],
     "type-literal-delimiter": true,
     "typedef": [true, "parameter", "property-declaration"],
