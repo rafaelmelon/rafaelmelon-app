@@ -5,7 +5,7 @@ import { fetchUser, User } from '@redux/modules/user';
 import { fetchAllRepositories, Repository } from '@redux/modules/repositories';
 import { Header, SectionList, Image } from '@components/index';
 import { logo } from '@assets/index';
-import { GlobalStyles } from '@theme/index';
+import { GlobalStyles, theme } from '@theme/index';
 
 import { Container } from './styles';
 
@@ -26,7 +26,7 @@ class Home extends React.Component<Home, any> {
     return (
       <Container>
         <GlobalStyles />
-        <Image src={logo} />
+        <Image src={logo} iconWidth={theme.iconSize.x1} />
         <Header user={this.props.user} />
         <SectionList repositories={this.props.repositories} />
       </Container>

@@ -1,11 +1,12 @@
 import * as React from 'react';
 
-import { CustomImage } from './styles';
+import { Img } from './styles';
 
 interface Image {
   src: string;
+  iconWidth?: string;
 }
 
-const Image = ({ src }: Image) => <CustomImage src={src} />;
+const Image = ({ src, ...rest }: Image) => <Img src={src} {...rest} />;
 
 export default Image;

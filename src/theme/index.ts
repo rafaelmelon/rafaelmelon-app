@@ -47,11 +47,11 @@ export const theme = {
     sm: '0.75rem',
   },
   iconSize: {
-    x5: 50,
-    x4: 50,
-    x3: 50,
-    x2: 50,
-    x1: 50,
+    x5: '50px',
+    x4: '50px',
+    x3: '50px',
+    x2: '50px',
+    x1: '50px',
   },
 };
 
