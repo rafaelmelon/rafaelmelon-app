@@ -1,4 +1,4 @@
 {
-  "app.title": "Willkommen bei react-intl",
+  "header.title": "Soy {value}",
   "app.intro": "Zum Loslegen editiere <code>src/App.js</code>."
 }

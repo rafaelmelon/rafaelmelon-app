@@ -39,18 +39,26 @@ export const theme = {
     openSans: '"Open Sans", sans-serif',
   },
   fontSize: {
+    xxl: '3.6rem',
     xl: '2.4rem',
     lg: '1.8rem',
     md: '1.3rem',
     nm: '1rem',
     sm: '0.75rem',
   },
+  iconSize: {
+    x5: 50,
+    x4: 50,
+    x3: 50,
+    x2: 50,
+    x1: 50,
+  },
 };
 
 export const GlobalStyles = createGlobalStyle`
   body {
     @import url('https://fonts.googleapis.com/css?family=Black+Han+Sans|Open+Sans');
-    @import url('https://fonts.googleapis.com/css?family=Montserrat');
+    @import url('https://fonts.googleapis.com/css?family=Montserrat:800');
     font-family: 'Open Sans', sans-serif;
     margin: 0;
     padding: 20px;

@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { FormattedMessage } from 'react-intl';
 
 import { Image } from '@components/index';
 import { User } from '@redux/modules/user';
@@ -17,7 +18,9 @@ class Header extends React.Component<Props> {
         <Avatar>
           <Image src={avatar_url} />
         </Avatar>
-        <Name>{name}</Name>
+        <Name>
+          <FormattedMessage id="header.title" values={{ value: name }} />
+        </Name>
         <Description>{bio}</Description>
       </Container>
     );
