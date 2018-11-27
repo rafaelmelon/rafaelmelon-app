@@ -2,12 +2,13 @@ import React, { ReactNode } from 'react';
 
 import { CustomLink } from './styles';
 
-interface Link {
+type Props = {
   href: string;
   children: ReactNode;
-}
+  target?: string;
+};
 
-const Link = ({ href, children, ...rest }: Link) => (
+const Link = ({ href, children, ...rest }: Props) => (
   <CustomLink href={href} {...rest}>
     {children}
   </CustomLink>

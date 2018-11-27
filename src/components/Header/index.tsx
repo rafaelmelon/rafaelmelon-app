@@ -5,11 +5,11 @@ import { User } from '@redux/modules/user';
 
 import { Container, Avatar, Name, Description } from './styles';
 
-interface Header {
+interface Props {
   user: User;
 }
 
-class Header extends React.Component<Header, any> {
+class Header extends React.Component<Props> {
   public render() {
     const { avatar_url, bio, name } = this.props.user;
     return (
