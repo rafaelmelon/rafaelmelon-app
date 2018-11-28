@@ -53,6 +53,10 @@ export const theme = {
     x2: '50px',
     x1: '50px',
   },
+  windowSize: {
+    height: window.innerHeight + 'px',
+    width: window.innerWidth + 'px',
+  },
 };
 
 export const GlobalStyles = createGlobalStyle`
@@ -61,7 +65,7 @@ export const GlobalStyles = createGlobalStyle`
     @import url('https://fonts.googleapis.com/css?family=Montserrat:800');
     font-family: 'Open Sans', sans-serif;
     margin: 0;
-    padding: 20px;
+    padding: 0;
   }
   h1, h2 {
     margin: 0;

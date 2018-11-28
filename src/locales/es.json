@@ -1,4 +1,4 @@
 {
   "header.title": "Soy {value}",
-  "app.intro": "Zum Loslegen editiere <code>src/App.js</code>."
+  "footer.title": "Zum Loslegen editiere <code>src/App.js</code>."
 }
