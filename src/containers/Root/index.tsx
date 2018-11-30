@@ -4,7 +4,7 @@ import { ThemeProvider } from 'styled-components';
 import { Provider } from 'react-redux';
 import { IntlProvider, addLocaleData } from 'react-intl';
 
-import { theme } from '@theme/index';
+import { theme, GlobalStyles } from '@theme/index';
 import { Home } from '@containers/index';
 import { configureStore } from '@redux/store';
 import messages_es from '@locales/es.json';
@@ -36,7 +36,10 @@ const Root = () => (
   <IntlProvider locale={language} messages={messages}>
     <Provider store={store}>
       <ThemeProvider theme={theme}>
-        <Home />
+        <React.Fragment>
+          <GlobalStyles />
+          <Home />
+        </React.Fragment>
       </ThemeProvider>
     </Provider>
   </IntlProvider>

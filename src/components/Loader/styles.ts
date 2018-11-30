@@ -8,4 +8,11 @@ export const Container = styled.div`
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  &.loader-appear {
+    opacity: 0.01;
+  }
+  &.loader-appear-active {
+    opacity: 1;
+    transition: opacity 500ms ease-out;
+  }
 `;

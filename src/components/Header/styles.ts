@@ -9,6 +9,13 @@ export const Container = styled.div`
   align-items: flex-start;
   flex-direction: column;
   padding: 20px;
+  &.header-appear {
+    opacity: 0.01;
+  }
+  &.header-appear-active {
+    opacity: 1;
+    transition: opacity 500ms ease-out;
+  }
 `;
 
 export const Avatar = styled.div`

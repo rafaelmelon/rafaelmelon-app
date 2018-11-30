@@ -63,7 +63,8 @@ export const GlobalStyles = createGlobalStyle`
   body {
     @import url('https://fonts.googleapis.com/css?family=Black+Han+Sans|Open+Sans');
     @import url('https://fonts.googleapis.com/css?family=Montserrat:800');
-    font-family: 'Open Sans', sans-serif;
+    background-color: ${theme.colors.confetti};
+    font-family: ${theme.fonts.openSans};
     margin: 0;
     padding: 0;
   }
