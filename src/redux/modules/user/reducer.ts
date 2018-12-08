@@ -16,7 +16,7 @@ const reducer: Reducer<UserState> = (state = initialState, action) => {
       return { ...state, isFetching: false, user: action.payload };
     }
     case UserActionTypes.USER_FAILURE: {
-      return { ...state, isFetching: false, error: action.payload };
+      return { user: {}, isFetching: false, error: action.payload };
     }
     default: {
       return state;

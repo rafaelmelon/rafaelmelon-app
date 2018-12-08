@@ -1,4 +1,4 @@
 {
-  "header.title": "I'm {value}",
+  "header.title": "Hello, I'm {value}",
   "footer.title": "To get started, edit <code>src/App.js</code> and save to reload."
 }

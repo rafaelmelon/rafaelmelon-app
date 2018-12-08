@@ -8,5 +8,5 @@ export const Container = styled.div`
     theme.media.tablet`background-color: ${theme.colors.confetti};`}
   ${({ theme }) => theme.media.phone`background-color: ${theme.colors.jaffa};`}
   padding: 5px 10px;
-  margin-bottom: 20px;
+  flex: 1;
 `;

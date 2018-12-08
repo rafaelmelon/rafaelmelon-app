@@ -1,13 +1,13 @@
 import { styled } from '@theme/index';
 
 export const Container = styled.div`
-  width: ${({ theme }) => theme.windowSize.width};
   height: ${({ theme }) => theme.windowSize.height};
   background-color: ${({ theme }) => theme.colors.confetti};
   display: flex;
-  justify-content: flex-start;
-  align-items: flex-start;
+  justify-content: center;
+  align-items: center;
   flex-direction: column;
+  flex: 1;
   padding: 20px;
   &.header-appear {
     opacity: 0.01;
@@ -18,13 +18,13 @@ export const Container = styled.div`
   }
 `;
 
-export const Avatar = styled.div`
-  width: 100px;
-  height: 100px;
-  overflow: hidden;
-  border-radius: 50%;
-  margin-bottom: 20px;
+export const Logo = styled.div`
+  position: absolute;
+  top: 20px;
+  left: 20px;
 `;
+
+export const Welcome = styled.div``;
 
 export const Name = styled.h1`
   font-family: ${({ theme }) => theme.fonts.montserrat};
@@ -38,4 +38,11 @@ export const Description = styled.h2`
   color: ${({ theme }) => theme.colors.black};
   font-size: ${({ theme }) => theme.fontSize.nm};
   margin-bottom: 40px;
+`;
+
+export const SocialMedia = styled.div`
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  right: 20px;
 `;

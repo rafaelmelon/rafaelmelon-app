@@ -16,7 +16,7 @@ const reducer: Reducer<RepositoriesState> = (state = initialState, action) => {
       return { ...state, isFetching: false, all: action.payload };
     }
     case RepositoriesActionTypes.REPOSITORIES_ALL_FAILURE: {
-      return { ...state, isFetching: false, error: action.payload };
+      return { all: [], isFetching: false, error: action.payload };
     }
     default: {
       return state;
