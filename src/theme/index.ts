@@ -47,11 +47,10 @@ export const theme = {
     sm: '0.75rem',
   },
   iconSize: {
-    x5: '250px',
-    x4: '200px',
-    x3: '150px',
-    x2: '100px',
-    x1: '50px',
+    x4: '150px',
+    x3: '100px',
+    x2: '50px',
+    x1: '30px',
   },
   windowSize: {
     height: window.innerHeight + 'px',

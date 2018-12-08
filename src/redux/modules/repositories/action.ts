@@ -1,6 +1,6 @@
 import { action } from 'typesafe-actions';
 import { RepositoriesActionTypes, Repository } from './types';
-import { apiGitHub, request } from '@util/api';
+import { apiGitHub, request } from '@utils/api';
 
 export const fetchAllRepositoriesRequest = () =>
   action(RepositoriesActionTypes.REPOSITORIES_ALL_REQUEST);

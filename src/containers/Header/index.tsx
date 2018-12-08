@@ -5,7 +5,8 @@ import { CSSTransitionGroup } from 'react-transition-group';
 
 import { Image, Link } from '@components/index';
 import { fetchUser, User } from '@redux/modules/user';
-import { logo, codepen, github, linkedin, twitter } from '@assets/index';
+import { logo } from '@assets/index';
+import { media } from '@utils/mocks';
 import { theme } from '@theme/index';
 
 import {
@@ -16,29 +17,6 @@ import {
   Description,
   SocialMedia,
 } from './styles';
-
-const socialMedia = [
-  {
-    name: 'Codepen',
-    url: '#',
-    urlImage: codepen,
-  },
-  {
-    name: 'GitHub',
-    url: '#',
-    urlImage: github,
-  },
-  {
-    name: 'LinkedIn',
-    url: '#',
-    urlImage: linkedin,
-  },
-  {
-    name: 'Twitter',
-    url: '#',
-    urlImage: twitter,
-  },
-];
 
 interface HeaderProps {
   user: User;
@@ -61,7 +39,7 @@ class Header extends React.Component<HeaderProps> {
         transitionLeaveTimeout={300}>
         <Container>
           <Logo>
-            <Image src={logo} iconWidth={theme.iconSize.x1} />
+            <Image src={logo} iconWidth={theme.iconSize.x2} />
           </Logo>
           <Welcome>
             <Name>
@@ -70,7 +48,7 @@ class Header extends React.Component<HeaderProps> {
             <Description>{bio}</Description>
           </Welcome>
           <SocialMedia>
-            {socialMedia.map(item => (
+            {media.map(item => (
               <Link key={item.name} href={item.url}>
                 <Image src={item.urlImage} iconWidth={theme.iconSize.x1} />
               </Link>

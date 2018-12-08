@@ -1,6 +1,6 @@
 import { action } from 'typesafe-actions';
 import { UserActionTypes, User } from './types';
-import { apiGitHub, request } from '@util/api';
+import { apiGitHub, request } from '@utils/api';
 
 export const fetchAuthSuccess = (payload: User) =>
   action(UserActionTypes.AUTH_SUCCESS, payload);

@@ -17,7 +17,7 @@
       "@components/*": ["components/*"],
       "@theme/*": ["theme/*"],
       "@redux/*": ["redux/*"],
-      "@util/*": ["util/*"],
+      "@utils/*": ["utils/*"],
       "@locales/*": ["locales/*"],
     },
     "allowSyntheticDefaultImports": true,

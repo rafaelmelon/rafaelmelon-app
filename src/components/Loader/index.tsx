@@ -17,7 +17,7 @@ class Loader extends React.Component {
         transitionEnterTimeout={300}
         transitionLeaveTimeout={300}>
         <Container>
-          <Image src={loaderCircle} iconWidth={theme.iconSize.x5} />
+          <Image src={loaderCircle} iconWidth={theme.iconSize.x4} />
         </Container>
       </CSSTransitionGroup>
     );
