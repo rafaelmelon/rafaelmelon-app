@@ -45,4 +45,13 @@ export const SocialMedia = styled.div`
   flex-direction: column;
   position: absolute;
   right: 20px;
+  > a {
+    margin: 5px 0;
+    padding: 5px;
+    border-radius: 50%;
+    border: 1px solid ${({ theme }) => theme.colors.white};
+    &:hover {
+      border: 1px solid ${({ theme }) => theme.colors.black};
+    }
+  }
 `;
