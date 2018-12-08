@@ -1,13 +1,21 @@
 import * as React from 'react';
+import { connect } from 'react-redux';
 import { FormattedMessage } from 'react-intl';
 import { CSSTransitionGroup } from 'react-transition-group';
 
 import { Image, Link } from '@components/index';
-import { User } from '@redux/modules/user';
+import { fetchUser, User } from '@redux/modules/user';
 import { logo, codepen, github, linkedin, twitter } from '@assets/index';
 import { theme } from '@theme/index';
 
-import { Container, Logo, Welcome, Name, Description, SocialMedia } from './styles';
+import {
+  Container,
+  Logo,
+  Welcome,
+  Name,
+  Description,
+  SocialMedia,
+} from './styles';
 
 const socialMedia = [
   {
@@ -32,11 +40,16 @@ const socialMedia = [
   },
 ];
 
-interface Props {
+interface HeaderProps {
   user: User;
+  fetchUser: () => any;
 }
 
-class Header extends React.Component<Props> {
+class Header extends React.Component<HeaderProps> {
+  componentDidMount() {
+    this.props.fetchUser();
+  }
+
   public render() {
     const { bio, name } = this.props.user;
     return (
@@ -69,4 +82,11 @@ class Header extends React.Component<Props> {
   }
 }
 
-export default Header;
+export default connect(
+  state => ({
+    user: state.user.user,
+  }),
+  {
+    fetchUser,
+  },
+)(Header);

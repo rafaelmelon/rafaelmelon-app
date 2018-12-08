@@ -1,5 +1,5 @@
 export const apiGitHub = 'https://api.github.com';
-const API_KEY = process.env.API_KEY;
+export const API_KEY = process.env.API_KEY;
 
 export const request = (path, options = {}) => {
   const settings = {

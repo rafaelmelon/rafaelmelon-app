@@ -5,7 +5,7 @@ import { Provider } from 'react-redux';
 import { IntlProvider, addLocaleData } from 'react-intl';
 
 import { theme, GlobalStyles } from '@theme/index';
-import { Home } from '@containers/index';
+import { App } from '@containers/index';
 import { configureStore } from '@redux/store';
 import messages_es from '@locales/es.json';
 import messages_en from '@locales/en.json';
@@ -38,7 +38,7 @@ const Root = () => (
       <ThemeProvider theme={theme}>
         <React.Fragment>
           <GlobalStyles />
-          <Home />
+          <App />
         </React.Fragment>
       </ThemeProvider>
     </Provider>
