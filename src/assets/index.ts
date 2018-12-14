@@ -5,6 +5,7 @@ export const codepen = require('./svg/codepen.svg');
 export const github = require('./svg/github.svg');
 export const linkedin = require('./svg/linkedin.svg');
 export const twitter = require('./svg/twitter.svg');
+export const arrowButton = require('./svg/arrow-button.svg');
 
 export const avatar = require('./img/avatar.jpeg');
 

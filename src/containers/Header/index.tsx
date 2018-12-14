@@ -5,7 +5,7 @@ import { CSSTransitionGroup } from 'react-transition-group';
 
 import { Image, Link } from '@components/index';
 import { fetchUser, User } from '@redux/modules/user';
-import { logo } from '@assets/index';
+import { logo, arrowButton } from '@assets/index';
 import { media } from '@utils/mocks';
 import { theme } from '@theme/index';
 
@@ -15,7 +15,9 @@ import {
   Welcome,
   Name,
   Description,
+  Button,
   SocialMedia,
+  NavigateBottom,
 } from './styles';
 
 interface HeaderProps {
@@ -25,11 +27,11 @@ interface HeaderProps {
 
 class Header extends React.Component<HeaderProps> {
   componentDidMount() {
-    this.props.fetchUser();
+    // this.props.fetchUser();
   }
 
   public render() {
-    const { bio, name } = this.props.user;
+    // const { bio, name } = this.props.user;
     return (
       <CSSTransitionGroup
         transitionName={'header'}
@@ -43,9 +45,17 @@ class Header extends React.Component<HeaderProps> {
           </Logo>
           <Welcome>
             <Name>
-              <FormattedMessage id="header.title" values={{ value: name }} />
+              <FormattedMessage
+                id="header.title"
+                values={{ value: 'Rafael Melón' }}
+              />
             </Name>
-            <Description>{bio}</Description>
+            <Description>
+              <FormattedMessage id="header.subtitle" />
+            </Description>
+            <Button>
+              <FormattedMessage id="header.button" />
+            </Button>
           </Welcome>
           <SocialMedia>
             {media.map(item => (
@@ -54,6 +64,9 @@ class Header extends React.Component<HeaderProps> {
               </Link>
             ))}
           </SocialMedia>
+          <NavigateBottom>
+            <Image src={arrowButton} iconWidth={theme.iconSize.x1} />
+          </NavigateBottom>
         </Container>
       </CSSTransitionGroup>
     );

@@ -13,11 +13,11 @@ interface ElementsProps {
 
 class Elements extends React.Component<ElementsProps, any> {
   componentDidMount() {
-    this.props.fetchAllRepositories();
+   // this.props.fetchAllRepositories();
   }
 
   public render() {
-    return <Container>{this.renderItems()}</Container>;
+    return <Container>{'this.renderItems()'}</Container>;
   }
 
   private renderItems = () =>

@@ -1,4 +1,6 @@
 {
   "header.title": "Hello, I'm {value}",
-  "footer.title": "Rafael Melón · 2018"
+  "header.subtitle": "Front-end Developer inspired by code & design principles • Focused mainly on Javascript • Connecting people",
+  "footer.title": "Rafael Melón · 2018",
+  "header.button": "Contact me!"
 }

@@ -56,6 +56,9 @@ export const theme = {
     height: window.innerHeight + 'px',
     width: window.innerWidth + 'px',
   },
+  transitions: {
+    primary: 'all 0.3s ease-out',
+  },
 };
 
 export const GlobalStyles = createGlobalStyle`

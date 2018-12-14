@@ -8,7 +8,6 @@ export const Container = styled.div`
   align-items: center;
   flex-direction: column;
   flex: 1;
-  padding: 20px;
   &.header-appear {
     opacity: 0.01;
   }
@@ -35,9 +34,28 @@ export const Name = styled.h1`
 `;
 
 export const Description = styled.h2`
+  max-width: 700px;
   color: ${({ theme }) => theme.colors.black};
-  font-size: ${({ theme }) => theme.fontSize.nm};
-  margin-bottom: 40px;
+  font-size: ${({ theme }) => theme.fontSize.md};
+  margin-bottom: 30px;
+`;
+
+export const Button = styled.button`
+  font-family: ${({ theme }) => theme.fonts.montserrat};
+  font-size: ${({ theme }) => theme.fontSize.md};
+  padding: 10px 30px;
+  display: inline-block;
+  text-transform: uppercase;
+  outline: none;
+  color: ${({ theme }) => theme.colors.black};
+  border: 4px dashed rgba(0, 0, 0, 0.2);
+  background: none;
+  cursor: pointer;
+  border-radius: 10px;
+  transition: ${({ theme }) => theme.transitions.primary};
+  &:hover {
+    border: 4px solid ${({ theme }) => theme.colors.black};
+  }
 `;
 
 export const SocialMedia = styled.div`
@@ -46,12 +64,40 @@ export const SocialMedia = styled.div`
   position: absolute;
   right: 20px;
   > a {
-    margin: 5px 0;
+    height: 40px;
+    width: 40px;
+    margin: 2px 0;
     padding: 5px;
-    border-radius: 50%;
-    border: 1px solid ${({ theme }) => theme.colors.white};
+    border-radius: 10px;
+    border: 4px dashed rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    transition: ${({ theme }) => theme.transitions.primary};
     &:hover {
-      border: 1px solid ${({ theme }) => theme.colors.black};
+      border: 4px solid ${({ theme }) => theme.colors.black};
+    }
+  }
+`;
+
+export const NavigateBottom = styled.div`
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  cursor: pointer;
+  bottom: 20px;
+  > img {
+    height: 40px;
+    width: 40px;
+    padding: 5px;
+    border-radius: 10px;
+    border: 4px solid ${({ theme }) => theme.colors.confetti};
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    transition: ${({ theme }) => theme.transitions.primary};
+    &:hover {
+      border: 4px dashed rgba(0, 0, 0, 0.2);
     }
   }
 `;
