@@ -1,10 +1,10 @@
-export const apiGitHub = 'https://api.github.com';
-export const API_KEY = process.env.API_KEY;
+export const API = 'https://api.github.com';
+export const TOKEN = '5e7e0f4fc48778661389dfcbf0d59b4121401246';
 
 export const request = (path, options = {}) => {
   const settings = {
     headers: {
-      authorization: API_KEY || '',
+      authorization: TOKEN,
     },
     ...options,
   };

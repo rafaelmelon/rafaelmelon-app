@@ -46,5 +46,4 @@ export interface UserState {
   readonly user: object;
   readonly isFetching: boolean;
   readonly error: any;
-  readonly token: any;
 }
