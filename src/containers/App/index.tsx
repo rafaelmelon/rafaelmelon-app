@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { connect } from 'react-redux';
+import { Scroller, Section } from 'react-fully-scrolled';
 
 import { fetchAuth } from '@redux/modules/user';
 import { Footer, Loader } from '@components/index';
@@ -30,11 +31,21 @@ class Home extends React.Component<Home, any> {
     // }
 
     return (
-      <Container>
-        <Header />
-        <Elements />
-        <Footer />
-      </Container>
+      <Scroller
+        curPage={1}
+        onBeforeScroll={(from, to) => {}}
+        onAfterScroll={page => {}}
+        isEnabled={true}>
+        <Section>
+          <Header />
+        </Section>
+        <Section>
+          <Elements />
+        </Section>
+        <Section>
+          <Footer />
+        </Section>
+      </Scroller>
     );
   }
 }

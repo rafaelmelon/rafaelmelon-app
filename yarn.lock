@@ -6314,7 +6314,7 @@ prompts@^0.1.9:
     kleur "^2.0.1"
     sisteransi "^0.1.1"
 
-prop-types@^15.5.4, prop-types@^15.5.6, prop-types@^15.6.1, prop-types@^15.6.2:
+prop-types@>15.4.1, prop-types@^15.5.4, prop-types@^15.5.6, prop-types@^15.6.1, prop-types@^15.6.2:
   version "15.6.2"
   resolved "https://registry.yarnpkg.com/prop-types/-/prop-types-15.6.2.tgz#05d5ca77b4453e985d60fc7ff8c859094a497102"
   dependencies:
@@ -6460,7 +6460,7 @@ rc@^1.1.2, rc@^1.2.7:
     minimist "^1.2.0"
     strip-json-comments "~2.0.1"
 
-react-dom@^16.6.3:
+react-dom@>15.4.1, react-dom@^16.6.3:
   version "16.6.3"
   resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-16.6.3.tgz#8fa7ba6883c85211b8da2d0efeffc9d3825cccc0"
   dependencies:
@@ -6468,6 +6468,15 @@ react-dom@^16.6.3:
     object-assign "^4.1.1"
     prop-types "^15.6.2"
     scheduler "^0.11.2"
+
+react-fully-scrolled@^1.0.4:
+  version "1.0.4"
+  resolved "https://registry.yarnpkg.com/react-fully-scrolled/-/react-fully-scrolled-1.0.4.tgz#536b2c9adc799a3ce87c088cfcdb93eee00bc6f5"
+  integrity sha512-Kwh10RfPyFhQMnG+IviZLYGSfVXLKTv/o4tX+agr2LuEsim7oPf+7D+UijU2cFs5GH81FGAipKuVFJ4ZSo2yJg==
+  dependencies:
+    prop-types ">15.4.1"
+    react ">15.4.1"
+    react-dom ">15.4.1"
 
 react-hot-loader@^4.3.12:
   version "4.3.12"
@@ -6520,7 +6529,7 @@ react-transition-group@1.x:
     prop-types "^15.5.6"
     warning "^3.0.0"
 
-react@^16.6.3:
+react@>15.4.1, react@^16.6.3:
   version "16.6.3"
   resolved "https://registry.yarnpkg.com/react/-/react-16.6.3.tgz#25d77c91911d6bbdd23db41e70fb094cc1e0871c"
   dependencies:

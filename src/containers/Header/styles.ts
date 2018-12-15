@@ -8,6 +8,7 @@ export const Container = styled.div`
   align-items: center;
   flex-direction: column;
   flex: 1;
+  padding: 0 20px;
   &.header-appear {
     opacity: 0.01;
   }
@@ -21,6 +22,20 @@ export const Logo = styled.div`
   position: absolute;
   top: 20px;
   left: 20px;
+  > a {
+    height: 40px;
+    width: 40px;
+    padding: 5px;
+    border-radius: 10px;
+    border: 4px dashed ${({ theme }) => theme.colors.confetti};
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    transition: ${({ theme }) => theme.transitions.primary};
+    &:hover {
+      border: 4px solid ${({ theme }) => theme.colors.black};
+    }
+  }
 `;
 
 export const Welcome = styled.div``;
@@ -48,7 +63,7 @@ export const Button = styled.button`
   text-transform: uppercase;
   outline: none;
   color: ${({ theme }) => theme.colors.black};
-  border: 4px dashed rgba(0, 0, 0, 0.2);
+  border: 4px dashed rgba(0, 0, 0, 0.1);
   background: none;
   cursor: pointer;
   border-radius: 10px;
@@ -60,16 +75,17 @@ export const Button = styled.button`
 
 export const SocialMedia = styled.div`
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   position: absolute;
+  top: 20px;
   right: 20px;
   > a {
     height: 40px;
     width: 40px;
-    margin: 2px 0;
+    margin-left: 20px;
     padding: 5px;
     border-radius: 10px;
-    border: 4px dashed rgba(0, 0, 0, 0.2);
+    border: 4px dashed ${({ theme }) => theme.colors.confetti};
     display: flex;
     justify-content: center;
     align-content: center;
@@ -91,13 +107,13 @@ export const NavigateBottom = styled.div`
     width: 40px;
     padding: 5px;
     border-radius: 10px;
-    border: 4px solid ${({ theme }) => theme.colors.confetti};
+    border: 4px dashed ${({ theme }) => theme.colors.confetti};
     display: flex;
     justify-content: center;
     align-content: center;
     transition: ${({ theme }) => theme.transitions.primary};
     &:hover {
-      border: 4px dashed rgba(0, 0, 0, 0.2);
+      border: 4px solid ${({ theme }) => theme.colors.black};
     }
   }
 `;

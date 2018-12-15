@@ -1,8 +1,7 @@
 import { styled } from '@theme/index';
 
 export const Container = styled.div`
-  background-color: ${({ theme }) => theme.colors.white};
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: space-around;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  padding: 20px;
 `;

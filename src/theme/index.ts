@@ -39,7 +39,7 @@ export const theme = {
     openSans: '"Open Sans", sans-serif',
   },
   fontSize: {
-    xxl: '3.6rem',
+    xxl: '4.6rem',
     xl: '2.4rem',
     lg: '1.8rem',
     md: '1.3rem',

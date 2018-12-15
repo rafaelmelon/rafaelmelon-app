@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 
 import { fetchAllRepositories, Repository } from '@redux/modules/repositories';
 import Element from './Element';
+import { repositoriesMock } from '@utils/mocks';
 
 import { Container } from './styles';
 
@@ -13,17 +14,15 @@ interface ElementsProps {
 
 class Elements extends React.Component<ElementsProps, any> {
   componentDidMount() {
-   // this.props.fetchAllRepositories();
+    //this.props.fetchAllRepositories();
   }
 
   public render() {
-    return <Container>{'this.renderItems()'}</Container>;
+    return <Container>{this.renderItems()}</Container>;
   }
 
   private renderItems = () =>
-    this.props.repositories.map(item => (
-      <Element key={item.id} element={item} />
-    ));
+    repositoriesMock.map(item => <Element key={item.id} element={item} />);
 }
 
 export default connect(

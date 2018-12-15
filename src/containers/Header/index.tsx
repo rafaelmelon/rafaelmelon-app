@@ -30,6 +30,10 @@ class Header extends React.Component<HeaderProps> {
     // this.props.fetchUser();
   }
 
+  onNextPage = () => {
+    window.fpTurnTo(2);
+  };
+
   public render() {
     // const { bio, name } = this.props.user;
     return (
@@ -41,8 +45,17 @@ class Header extends React.Component<HeaderProps> {
         transitionLeaveTimeout={300}>
         <Container>
           <Logo>
-            <Image src={logo} iconWidth={theme.iconSize.x2} />
+            <Link href={'#'}>
+              <Image src={logo} iconWidth={theme.iconSize.x2} />
+            </Link>
           </Logo>
+          <SocialMedia>
+            {media.map(item => (
+              <Link key={item.name} href={item.url}>
+                <Image src={item.urlImage} iconWidth={theme.iconSize.x1} />
+              </Link>
+            ))}
+          </SocialMedia>
           <Welcome>
             <Name>
               <FormattedMessage
@@ -57,14 +70,7 @@ class Header extends React.Component<HeaderProps> {
               <FormattedMessage id="header.button" />
             </Button>
           </Welcome>
-          <SocialMedia>
-            {media.map(item => (
-              <Link key={item.name} href={item.url}>
-                <Image src={item.urlImage} iconWidth={theme.iconSize.x1} />
-              </Link>
-            ))}
-          </SocialMedia>
-          <NavigateBottom>
+          <NavigateBottom onClick={this.onNextPage}>
             <Image src={arrowButton} iconWidth={theme.iconSize.x1} />
           </NavigateBottom>
         </Container>
