@@ -66,6 +66,7 @@
   "dependencies": {
     "@types/react": "^16.7.6",
     "@types/react-dom": "^16.0.9",
+    "@types/react-intl": "^2.3.14",
     "@types/styled-components": "^4.1.0",
     "react": "^16.6.3",
     "react-dom": "^16.6.3",

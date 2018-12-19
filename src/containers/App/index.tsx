@@ -25,11 +25,11 @@ class Home extends React.Component<Home, any> {
   }
 
   public render() {
-    // const { loading } = this.state;
+    const { loading } = this.state;
 
-    // if (loading) {
-    //   return <Loader />;
-    // }
+    if (loading) {
+      return <Loader />;
+    }
 
     return (
       <Scroller

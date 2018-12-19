@@ -3,5 +3,9 @@
   "header.subtitle": "Front-end Developer inspired by code & design principles • Focused mainly on Javascript • Connecting people",
   "footer.title": "Rafael Melón · 2018",
   "header.button": "Contact me!",
-  "elements.title": "Repos"
+  "elements.title": "Repos",
+
+  "contact.placeholder.name": "Name",
+  "contact.placeholder.email": "Email",
+  "contact.placeholder.textarea": "Notes"
 }

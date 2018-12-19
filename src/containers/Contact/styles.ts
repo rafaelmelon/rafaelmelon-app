@@ -20,6 +20,14 @@ export const Container = styled.div`
 
 export const ContainerForm = styled.div``;
 
+export const GroupForm = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: 20px;
+`;
+
 export const Close = styled.div`
   position: absolute;
   top: 20px;

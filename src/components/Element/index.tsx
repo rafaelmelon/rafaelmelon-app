@@ -4,11 +4,11 @@ import { Repository } from '@redux/modules/repositories';
 
 import { ContainerLink } from './styles';
 
-interface IProps {
+interface Element {
   element: Repository;
 }
 
-class Element extends React.Component<IProps, any> {
+class Element extends React.Component<Element, any> {
   public render() {
     return (
       <ContainerLink href={this.props.element.html_url} target={'_blank'}>

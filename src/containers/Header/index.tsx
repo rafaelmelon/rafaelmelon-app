@@ -4,7 +4,7 @@ import { FormattedMessage } from 'react-intl';
 import { CSSTransitionGroup } from 'react-transition-group';
 
 import { Contact } from '@containers/index';
-import { Image, Link } from '@components/index';
+import { Image, Link, Button } from '@components/index';
 import { fetchUser, User } from '@redux/modules/user';
 import { AppState } from '@redux/modules';
 import { logo, iconArrow } from '@assets/index';
@@ -17,7 +17,6 @@ import {
   Welcome,
   Name,
   Description,
-  Button,
   SocialMedia,
   NavigateBottom,
 } from './styles';
@@ -80,9 +79,7 @@ class Header extends React.Component<HeaderProps> {
               <Description>
                 <FormattedMessage id="header.subtitle" />
               </Description>
-              <Button onClick={this.onNavigateContact}>
-                <FormattedMessage id="header.button" />
-              </Button>
+              <Button onClick={this.onNavigateContact} text={'header.button'} />
             </Welcome>
             <NavigateBottom onClick={this.onNextPage}>
               <Image src={iconArrow} iconWidth={theme.iconSize.x1} />
