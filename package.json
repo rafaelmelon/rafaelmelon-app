@@ -74,6 +74,7 @@
     "react-redux": "^5.1.1",
     "react-transition-group": "1.x",
     "redux": "^4.0.1",
+    "redux-form": "^8.0.4",
     "redux-thunk": "^2.3.0",
     "tslint-config-airbnb": "^5.11.1",
     "typesafe-actions": "^2.0.4"

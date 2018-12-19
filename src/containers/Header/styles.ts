@@ -1,7 +1,7 @@
 import { styled } from '@theme/index';
 
 export const Container = styled.div`
-  height: ${({ theme }) => theme.windowSize.height};
+  height: 100%;
   background-color: ${({ theme }) => theme.colors.confetti};
   display: flex;
   justify-content: center;
@@ -22,19 +22,17 @@ export const Logo = styled.div`
   position: absolute;
   top: 20px;
   left: 20px;
-  > a {
-    height: 40px;
-    width: 40px;
-    padding: 5px;
-    border-radius: 10px;
-    border: 4px dashed ${({ theme }) => theme.colors.confetti};
-    display: flex;
-    justify-content: center;
-    align-content: center;
-    transition: ${({ theme }) => theme.transitions.primary};
-    &:hover {
-      border: 4px solid ${({ theme }) => theme.colors.black};
-    }
+  height: 40px;
+  width: 40px;
+  padding: 5px;
+  border-radius: 10px;
+  border: 4px dashed ${({ theme }) => theme.colors.confetti};
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  transition: ${({ theme }) => theme.transitions.primary};
+  &:hover {
+    border: 4px solid ${({ theme }) => theme.colors.black};
   }
 `;
 

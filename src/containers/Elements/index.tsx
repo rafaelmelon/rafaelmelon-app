@@ -1,11 +1,13 @@
 import * as React from 'react';
 import { connect } from 'react-redux';
+import { FormattedMessage } from 'react-intl';
 
+import { AppState } from '@redux/modules';
 import { fetchAllRepositories, Repository } from '@redux/modules/repositories';
-import Element from './Element';
+import { Element } from '@components/index';
 import { repositoriesMock } from '@utils/mocks';
 
-import { Container } from './styles';
+import { Container, Title } from './styles';
 
 interface ElementsProps {
   repositories: Repository[];
@@ -18,15 +20,21 @@ class Elements extends React.Component<ElementsProps, any> {
   }
 
   public render() {
-    return <Container>{this.renderItems()}</Container>;
+    return (
+      <Container>
+        <Title>
+          <FormattedMessage id="elements.title" />
+        </Title>
+        {repositoriesMock.map(item => (
+          <Element key={item.id} element={item} />
+        ))}
+      </Container>
+    );
   }
-
-  private renderItems = () =>
-    repositoriesMock.map(item => <Element key={item.id} element={item} />);
 }
 
 export default connect(
-  state => ({
+  (state: AppState) => ({
     repositories: state.repositories.all,
   }),
   {

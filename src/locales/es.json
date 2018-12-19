@@ -2,5 +2,6 @@
   "header.title": "Hola, soy {value}",
   "header.subtitle": "Front-end Developer inspired by code & design principles • Focused mainly on Javascript • Connecting people",
   "footer.title": "Rafael Melón · 2018",
-  "header.button": "¡Contacta!"
+  "header.button": "¡Contacta!",
+  "elements.title": "Repos"
 }

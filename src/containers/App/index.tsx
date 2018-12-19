@@ -2,6 +2,7 @@ import * as React from 'react';
 import { connect } from 'react-redux';
 import { Scroller, Section } from 'react-fully-scrolled';
 
+import { AppState } from '@redux/modules';
 import { fetchAuth } from '@redux/modules/user';
 import { Footer, Loader } from '@components/index';
 import { Header, Elements } from '@containers/index';

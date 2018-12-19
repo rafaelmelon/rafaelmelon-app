@@ -13,8 +13,7 @@ export const ContainerLink = styled(Link)`
   border: 4px dashed rgba(0, 0, 0, 0.1);
   transition: ${({ theme }) => theme.transitions.primary};
   text-transform: uppercase;
-  padding: 10px 30px;
-  margin: 5px;
+  padding: 10px;
   &:hover {
     border: 4px solid ${({ theme }) => theme.colors.black};
   }
