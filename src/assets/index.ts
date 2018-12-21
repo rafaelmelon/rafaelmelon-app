@@ -10,5 +10,6 @@ export const iconClose = require('./svg/icon-close.svg');
 
 export const avatar = require('./img/avatar.jpeg');
 
-// export const OpenSansRegular = require('./fonts/Open_Sans/OpenSans-Regular.ttf');
-// export const MontserratRegular = require('./fonts/Montserrat/Montserrat-Regular.ttf');
+export const OpenSansRegular = require('./fonts/Open_Sans/OpenSans-Regular.ttf');
+export const MontserratExtraBold = require('./fonts/Montserrat/Montserrat-ExtraBold.ttf');
+export const PressStart2PRegular = require('./fonts/Press_Start_2P/PressStart2P-Regular.ttf');

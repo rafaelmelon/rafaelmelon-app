@@ -4,6 +4,8 @@ import baseStyled, {
   createGlobalStyle,
 } from 'styled-components';
 
+import reset from './reset';
+
 const sizes = {
   desktop: 992,
   tablet: 768,
@@ -37,6 +39,7 @@ export const theme = {
   fonts: {
     montserrat: '"Montserrat", sans-serif',
     openSans: '"Open Sans", sans-serif',
+    pressStart: '"Press Start 2P", cursive',
   },
   fontSize: {
     xxl: '4.6rem',
@@ -62,16 +65,13 @@ export const theme = {
 };
 
 export const GlobalStyles = createGlobalStyle`
+  ${reset}
   body {
     @import url('https://fonts.googleapis.com/css?family=Black+Han+Sans|Open+Sans');
     @import url('https://fonts.googleapis.com/css?family=Montserrat:800');
     background-color: ${theme.colors.confetti};
     font-family: ${theme.fonts.openSans};
-    margin: 0;
-    padding: 0;
-  }
-  h1, h2 {
-    margin: 0;
+    color: ${theme.colors.black};
   }
 `;
 
