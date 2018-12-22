@@ -1,9 +1,9 @@
 import * as React from 'react';
-import { injectIntl, InjectedIntl } from 'react-intl';
+import { injectIntl, InjectedIntl, FormattedMessage } from 'react-intl';
 import { Field, reduxForm } from 'redux-form';
 import { CSSTransitionGroup } from 'react-transition-group';
 
-import { Image, Link, Input, Button } from '@components/index';
+import { Image, Link, Input, Textarea, Button } from '@components/index';
 import { theme } from '@theme/index';
 import { logo, iconClose } from '@assets/index';
 
@@ -65,11 +65,13 @@ class Contact extends React.Component<ContactProps> {
                   placeholder={intl.formatMessage({
                     id: 'contact.placeholder.textarea',
                   })}
-                  component={Input}
+                  component={Textarea}
                   type="textarea"
                 />
               </GroupForm>
-              <Button type="submit" text={'header.button'} />
+              <Button type="submit">
+                <FormattedMessage id={'header.button'} />
+              </Button>
             </form>
           </ContainerForm>
         </Container>

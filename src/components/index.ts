@@ -4,6 +4,7 @@ import Footer from './Footer';
 import Loader from './Loader';
 import Element from './Element';
 import Input from './Input';
+import Textarea from './Textarea';
 import Button from './Button';
 
 export { Image };
@@ -12,4 +13,5 @@ export { Footer };
 export { Loader };
 export { Element };
 export { Input };
+export { Textarea };
 export { Button };

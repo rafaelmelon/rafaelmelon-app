@@ -39,7 +39,6 @@ export const theme = {
   fonts: {
     montserrat: '"Montserrat", sans-serif',
     openSans: '"Open Sans", sans-serif',
-    pressStart: '"Press Start 2P", cursive',
   },
   fontSize: {
     xxl: '4.6rem',
@@ -59,8 +58,12 @@ export const theme = {
     height: window.innerHeight + 'px',
     width: window.innerWidth + 'px',
   },
-  transitions: {
-    primary: 'all 0.3s ease-out',
+  helpers: {
+    transitionAll: 'all 0.3s ease-out',
+    borderDashed: color => `4px dashed ${color}25`,
+    borderSolid: color => `4px solid ${color}`,
+    boxShadow: color => `2px 2px 0 0px ${color}`,
+    radius10: '10px',
   },
 };
 

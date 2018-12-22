@@ -1,18 +1,18 @@
 import * as React from 'react';
-import { FormattedMessage } from 'react-intl';
 
 import { CustomButton } from './styles';
 
 interface Button {
-  text: string;
-  onClick: (event: object) => void;
+  children: React.ReactNode;
+  onClick?: (event: React.MouseEvent<HTMLElement>) => void;
+  type?: string;
 }
 
-class Button extends React.Component<Button, any> {
+class Button extends React.Component<Button> {
   public render() {
     return (
       <CustomButton {...this.props} onClick={this.props.onClick}>
-        <FormattedMessage id={this.props.text} />
+        {this.props.children}
       </CustomButton>
     );
   }

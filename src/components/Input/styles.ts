@@ -3,27 +3,28 @@ import { styled } from '@theme/index';
 export const Container = styled.div``;
 
 export const CustomInput = styled.input`
-  margin: 0;
-  display: inline-block;
-  vertical-align: middle;
-  white-space: normal;
-  background: none;
-  line-height: 1;
   font-family: ${({ theme }) => theme.fonts.montserrat};
-  font-size: ${({ theme }) => theme.fontSize.md};
   padding: 10px 30px;
-  border: 4px dashed rgba(0, 0, 0, 0.1);
-  border-radius: 10px;
-  transition: ${({ theme }) => theme.transitions.primary};
+  text-transform: uppercase;
+  color: ${({ theme }) => theme.colors.black};
+  border: ${({ theme }) => theme.helpers.borderDashed(theme.colors.black)};
+  background: none;
+  border-radius: ${({ theme }) => theme.helpers.radius10};
+  transition: ${({ theme }) => theme.helpers.transitionAll};
   cursor: pointer;
+  outline: none;
   &::placeholder {
-    color: ${({ theme }) => theme.colors.white};
+    color: ${({ theme }) => theme.colors.black};
+  }
+  &:hover {
+    border: ${({ theme }) => theme.helpers.borderSolid(theme.colors.black)};
+    box-shadow: ${({ theme }) => theme.helpers.boxShadow(theme.colors.black)};
   }
   &:focus {
-    outline: 0;
-    border: 4px solid ${({ theme }) => theme.colors.black};
+    border: ${({ theme }) => theme.helpers.borderSolid(theme.colors.white)};
+    box-shadow: ${({ theme }) => theme.helpers.boxShadow(theme.colors.white)};
     &::placeholder {
-      color: ${({ theme }) => theme.colors.black};
+      color: ${({ theme }) => theme.colors.white};
     }
   }
 `;

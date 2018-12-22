@@ -11,7 +11,7 @@ export const ContainerLink = styled(Link)`
     theme.media.tablet`background-color: ${theme.colors.confetti};`}
   ${({ theme }) => theme.media.phone`background-color: ${theme.colors.jaffa};`}
   border: 4px dashed rgba(0, 0, 0, 0.1);
-  transition: ${({ theme }) => theme.transitions.primary};
+  transition: ${({ theme }) => theme.helpers.transitionAll};
   text-transform: uppercase;
   padding: 10px;
   &:hover {

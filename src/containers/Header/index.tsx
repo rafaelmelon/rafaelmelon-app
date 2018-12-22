@@ -50,7 +50,7 @@ class Header extends React.Component<HeaderProps> {
   public render() {
     // const { bio, name } = this.props.user;
 
-    if (!this.state.contact) {
+    if (this.state.contact) {
       return (
         <CSSTransitionGroup
           transitionName={'header'}
@@ -79,7 +79,9 @@ class Header extends React.Component<HeaderProps> {
               <Description>
                 <FormattedMessage id="header.subtitle" />
               </Description>
-              <Button onClick={this.onNavigateContact} text={'header.button'} />
+              <Button onClick={this.onNavigateContact}>
+                <FormattedMessage id={'header.button'} />
+              </Button>
             </Welcome>
             <NavigateBottom onClick={this.onNextPage}>
               <Image src={iconArrow} iconWidth={theme.iconSize.x1} />

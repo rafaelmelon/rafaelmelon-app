@@ -40,7 +40,7 @@ export const Close = styled.div`
   display: flex;
   justify-content: center;
   align-content: center;
-  transition: ${({ theme }) => theme.transitions.primary};
+  transition: ${({ theme }) => theme.helpers.transitionAll};
   &:hover {
     border: 4px solid ${({ theme }) => theme.colors.black};
   }
@@ -58,7 +58,7 @@ export const Logo = styled.div`
   display: flex;
   justify-content: center;
   align-content: center;
-  transition: ${({ theme }) => theme.transitions.primary};
+  transition: ${({ theme }) => theme.helpers.transitionAll};
   &:hover {
     border: 4px solid ${({ theme }) => theme.colors.black};
   }

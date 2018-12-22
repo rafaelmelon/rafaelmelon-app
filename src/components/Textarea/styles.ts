@@ -1,6 +1,8 @@
 import { styled } from '@theme/index';
 
-export const CustomButton = styled.button`
+export const Container = styled.div``;
+
+export const CustomTextarea = styled.textarea`
   font-family: ${({ theme }) => theme.fonts.montserrat};
   padding: 10px 30px;
   text-transform: uppercase;
@@ -11,8 +13,20 @@ export const CustomButton = styled.button`
   transition: ${({ theme }) => theme.helpers.transitionAll};
   cursor: pointer;
   outline: none;
+  &::placeholder {
+    color: ${({ theme }) => theme.colors.black};
+  }
   &:hover {
     border: ${({ theme }) => theme.helpers.borderSolid(theme.colors.black)};
     box-shadow: ${({ theme }) => theme.helpers.boxShadow(theme.colors.black)};
   }
+  &:focus {
+    border: ${({ theme }) => theme.helpers.borderSolid(theme.colors.white)};
+    box-shadow: ${({ theme }) => theme.helpers.boxShadow(theme.colors.white)};
+    &::placeholder {
+      color: ${({ theme }) => theme.colors.white};
+    }
+  }
 `;
+
+export const Error = styled.span``;
