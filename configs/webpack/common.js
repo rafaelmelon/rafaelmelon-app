@@ -1,7 +1,11 @@
 // shared config (dev and prod)
-const { resolve } = require('path');
+const {
+  resolve
+} = require('path');
 const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin');
-const { CheckerPlugin } = require('awesome-typescript-loader');
+const {
+  CheckerPlugin
+} = require('awesome-typescript-loader');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
@@ -19,8 +23,7 @@ module.exports = {
   },
   context: resolve(__dirname, '../../src'),
   module: {
-    rules: [
-      {
+    rules: [{
         test: /\.js$/,
         use: ['babel-loader', 'source-map-loader'],
         exclude: /node_modules/,
@@ -31,13 +34,23 @@ module.exports = {
       },
       {
         test: /\.css$/,
-        use: ['style-loader', { loader: 'css-loader', options: { importLoaders: 1 } }],
+        use: ['style-loader', {
+          loader: 'css-loader',
+          options: {
+            importLoaders: 1
+          }
+        }],
       },
       {
         test: /\.scss$/,
         loaders: [
           'style-loader',
-          { loader: 'css-loader', options: { importLoaders: 1 } },
+          {
+            loader: 'css-loader',
+            options: {
+              importLoaders: 1
+            }
+          },
           'sass-loader',
         ],
       },
@@ -51,18 +64,20 @@ module.exports = {
       {
         test: /\.(woff(2)?|ttf|eot)(\?v=\d+\.\d+\.\d+)?$/,
         use: [{
-            loader: 'file-loader',
-            options: {
-                name: '[name].[ext]',
-                outputPath: 'fonts/'
-            }
+          loader: 'file-loader',
+          options: {
+            name: '[name].[ext]',
+            outputPath: 'fonts/'
+          }
         }]
-    }
+      }
     ],
   },
   plugins: [
     new CheckerPlugin(),
-    new HtmlWebpackPlugin({template: 'index.html',}),
+    new HtmlWebpackPlugin({
+      template: 'index.html',
+    }),
   ],
   // externals: {
   //   'react': 'React',

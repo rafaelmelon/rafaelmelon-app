@@ -19,6 +19,7 @@
       "@redux/*": ["redux/*"],
       "@utils/*": ["utils/*"],
       "@locales/*": ["locales/*"],
+      "@routes/*": ["routes/*"],
     },
     "allowSyntheticDefaultImports": true,
     "forceConsistentCasingInFileNames": true,

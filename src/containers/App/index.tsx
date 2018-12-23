@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
 import { Scroller, Section } from 'react-fully-scrolled';
 
 import { AppState } from '@redux/modules';
@@ -51,9 +52,11 @@ class Home extends React.Component<Home, any> {
   }
 }
 
-export default connect(
-  () => ({}),
-  {
-    fetchAuth,
-  },
-)(Home);
+export default withRouter(
+  connect(
+    () => ({}),
+    {
+      fetchAuth,
+    },
+  )(Home),
+);

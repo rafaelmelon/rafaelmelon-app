@@ -1,14 +1,16 @@
-export const API = 'https://api.github.com';
-export const TOKEN = '5e7e0f4fc48778661389dfcbf0d59b4121401246';
+export const API = process.env.API;
+export const API_GITHUB = process.env.API_GITHUB;
+export const TOKEN_GITHUB = process.env.TOKEN_GITHUB;
 
-export const request = (path, options = {}) => {
+export const request = (url, options = {}) => {
   const settings = {
     headers: {
-      authorization: TOKEN,
+      authorization: TOKEN_GITHUB,
     },
     ...options,
   };
-  return fetch(path, settings).then(response => {
+
+  return fetch(url, settings).then(response => {
     const status403 = response.status === 403;
 
     if (status403) {
