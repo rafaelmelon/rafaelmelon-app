@@ -2,17 +2,22 @@ import * as React from 'react';
 
 import { CustomButton } from './styles';
 
-interface Button {
+interface ButtonProps {
   children: React.ReactNode;
   onClick?: (event: React.MouseEvent<HTMLElement>) => void;
   type?: string;
+  icon?: boolean;
 }
 
-class Button extends React.Component<Button> {
+class Button extends React.Component<ButtonProps> {
+  static defaultProps = {
+    icon: false,
+  };
   public render() {
+    const { children, onClick, ...rest } = this.props;
     return (
-      <CustomButton {...this.props} onClick={this.props.onClick}>
-        {this.props.children}
+      <CustomButton {...rest} onClick={onClick}>
+        {children}
       </CustomButton>
     );
   }

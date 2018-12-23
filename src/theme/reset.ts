@@ -228,8 +228,7 @@ export const reset = css`
   }
 
   button:focus {
-    outline: 1px dotted;
-    outline: 5px auto -webkit-focus-ring-color;
+    outline: 0;
   }
 
   input,

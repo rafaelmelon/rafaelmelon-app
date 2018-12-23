@@ -62,6 +62,7 @@ export const theme = {
     transitionAll: 'all 0.3s ease-out',
     borderDashed: color => `4px dashed ${color}25`,
     borderSolid: color => `4px solid ${color}`,
+    borderAlpha: '4px solid transparent',
     boxShadow: color => `2px 2px 0 0px ${color}`,
     radius10: '10px',
   },

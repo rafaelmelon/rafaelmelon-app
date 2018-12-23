@@ -1,4 +1,5 @@
 import { styled } from '@theme/index';
+import { Button } from '@components/index';
 
 export const Container = styled.div`
   height: 100%;
@@ -18,22 +19,10 @@ export const Container = styled.div`
   }
 `;
 
-export const Logo = styled.div`
+export const ButtonLogo = styled(Button)`
   position: absolute;
   top: 20px;
   left: 20px;
-  height: 40px;
-  width: 40px;
-  padding: 5px;
-  border-radius: 10px;
-  border: 4px dashed ${({ theme }) => theme.colors.confetti};
-  display: flex;
-  justify-content: center;
-  align-content: center;
-  transition: ${({ theme }) => theme.helpers.transitionAll};
-  &:hover {
-    border: 4px solid ${({ theme }) => theme.colors.black};
-  }
 `;
 
 export const Welcome = styled.div``;
@@ -59,41 +48,15 @@ export const SocialMedia = styled.div`
   position: absolute;
   top: 20px;
   right: 20px;
-  > a {
-    height: 40px;
-    width: 40px;
-    margin-left: 20px;
-    padding: 5px;
-    border-radius: 10px;
-    border: 4px dashed ${({ theme }) => theme.colors.confetti};
-    display: flex;
-    justify-content: center;
-    align-content: center;
-    transition: ${({ theme }) => theme.helpers.transitionAll};
-    &:hover {
-      border: 4px solid ${({ theme }) => theme.colors.black};
-    }
-  }
 `;
 
-export const NavigateBottom = styled.div`
+export const ButtonMedia = styled(Button)`
+  margin-left: 20px;
+`;
+
+export const ButtonBottom = styled(Button)`
   display: flex;
   flex-direction: column;
   position: absolute;
-  cursor: pointer;
   bottom: 20px;
-  > img {
-    height: 40px;
-    width: 40px;
-    padding: 5px;
-    border-radius: 10px;
-    border: 4px dashed ${({ theme }) => theme.colors.confetti};
-    display: flex;
-    justify-content: center;
-    align-content: center;
-    transition: ${({ theme }) => theme.helpers.transitionAll};
-    &:hover {
-      border: 4px solid ${({ theme }) => theme.colors.black};
-    }
-  }
 `;

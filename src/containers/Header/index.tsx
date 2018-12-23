@@ -2,26 +2,29 @@ import * as React from 'react';
 import { connect } from 'react-redux';
 import { FormattedMessage } from 'react-intl';
 import { CSSTransitionGroup } from 'react-transition-group';
+import { withTheme } from 'styled-components';
 
 import { Contact } from '@containers/index';
-import { Image, Link, Button } from '@components/index';
+import { Image, Button } from '@components/index';
 import { fetchUser, User } from '@redux/modules/user';
 import { AppState } from '@redux/modules';
 import { logo, iconArrow } from '@assets/index';
 import { media } from '@utils/mocks';
-import { theme } from '@theme/index';
+import { Theme } from '@theme/index';
 
 import {
   Container,
-  Logo,
+  ButtonLogo,
   Welcome,
   Name,
   Description,
   SocialMedia,
-  NavigateBottom,
+  ButtonMedia,
+  ButtonBottom,
 } from './styles';
 
 interface HeaderProps {
+  theme: Theme;
   user: User;
   fetchUser: () => any;
 }
@@ -48,9 +51,10 @@ class Header extends React.Component<HeaderProps> {
   };
 
   public render() {
+    const { theme } = this.props;
     // const { bio, name } = this.props.user;
 
-    if (this.state.contact) {
+    if (!this.state.contact) {
       return (
         <CSSTransitionGroup
           transitionName={'header'}
@@ -59,14 +63,17 @@ class Header extends React.Component<HeaderProps> {
           transitionEnterTimeout={300}
           transitionLeaveTimeout={300}>
           <Container>
-            <Logo>
-              <Image src={logo} iconWidth={theme.iconSize.x2} />
-            </Logo>
+            <ButtonLogo onClick={this.onNavigateContact} icon={true}>
+              <Image src={logo} iconWidth={theme.iconSize.x1} />
+            </ButtonLogo>
             <SocialMedia>
               {media.map(item => (
-                <Link key={item.name} href={item.url}>
+                <ButtonMedia
+                  key={item.name}
+                  onClick={this.onNavigateContact}
+                  icon={true}>
                   <Image src={item.urlImage} iconWidth={theme.iconSize.x1} />
-                </Link>
+                </ButtonMedia>
               ))}
             </SocialMedia>
             <Welcome>
@@ -83,9 +90,9 @@ class Header extends React.Component<HeaderProps> {
                 <FormattedMessage id={'header.button'} />
               </Button>
             </Welcome>
-            <NavigateBottom onClick={this.onNextPage}>
+            <ButtonBottom onClick={this.onNextPage} icon={true}>
               <Image src={iconArrow} iconWidth={theme.iconSize.x1} />
-            </NavigateBottom>
+            </ButtonBottom>
           </Container>
         </CSSTransitionGroup>
       );
@@ -101,4 +108,4 @@ export default connect(
   {
     fetchUser,
   },
-)(Header);
+)(withTheme(Header));

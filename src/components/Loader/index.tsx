@@ -1,13 +1,18 @@
 import * as React from 'react';
 import { CSSTransitionGroup } from 'react-transition-group';
+import { withTheme } from 'styled-components';
 
 import { Image } from '@components/index';
 import { loaderCircle } from '@assets/index';
-import { theme } from '@theme/index';
+import { Theme } from '@theme/index';
 
 import { Container } from './styles';
 
-class Loader extends React.Component {
+interface LoaderProps {
+  theme: Theme;
+}
+
+class Loader extends React.Component<LoaderProps> {
   public render() {
     return (
       <CSSTransitionGroup
@@ -17,11 +22,11 @@ class Loader extends React.Component {
         transitionEnterTimeout={300}
         transitionLeaveTimeout={300}>
         <Container>
-          <Image src={loaderCircle} iconWidth={theme.iconSize.x4} />
+          <Image src={loaderCircle} iconWidth={this.props.theme.iconSize.x4} />
         </Container>
       </CSSTransitionGroup>
     );
   }
 }
 
-export default Loader;
+export default withTheme(Loader);

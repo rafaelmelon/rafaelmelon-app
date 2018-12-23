@@ -2,14 +2,16 @@ import * as React from 'react';
 import { injectIntl, InjectedIntl, FormattedMessage } from 'react-intl';
 import { Field, reduxForm } from 'redux-form';
 import { CSSTransitionGroup } from 'react-transition-group';
+import { withTheme } from 'styled-components';
 
 import { Image, Link, Input, Textarea, Button } from '@components/index';
-import { theme } from '@theme/index';
+import { Theme } from '@theme/index';
 import { logo, iconClose } from '@assets/index';
 
 import { Container, ContainerForm, GroupForm, Logo, Close } from './styles';
 
 interface ContactProps {
+  theme: Theme;
   intl: InjectedIntl;
   onClose: () => any;
 }
@@ -20,7 +22,7 @@ class Contact extends React.Component<ContactProps> {
   };
 
   public render() {
-    const { intl } = this.props;
+    const { intl, theme } = this.props;
     return (
       <CSSTransitionGroup
         transitionName={'contact'}
@@ -82,4 +84,4 @@ class Contact extends React.Component<ContactProps> {
 
 export default reduxForm({
   form: 'contact',
-})(injectIntl(Contact));
+})(injectIntl(withTheme(Contact)));
