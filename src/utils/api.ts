@@ -5,7 +5,9 @@ export const TOKEN_GITHUB = process.env.TOKEN_GITHUB;
 export const request = (url, options = {}) => {
   const settings = {
     headers: {
-      authorization: TOKEN_GITHUB,
+      Accept: 'application/json',
+      'Content-Type': 'application/json',
+      Authorization: 'Bearer ' + TOKEN_GITHUB,
     },
     ...options,
   };

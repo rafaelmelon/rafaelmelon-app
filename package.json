@@ -9,8 +9,7 @@
     "lint": "tslint --project tsconfig.json 'src/**/*.{ts,tsx}' --fix --format stylish",
     "start": "yarn run start-dev",
     "start-dev": "webpack-dev-server --config=configs/webpack/dev.js",
-    "start-prod": "yarn run build && node server/express.js",
-    "test": "jest --watch --coverage --config=configs/jest.json"
+    "start-prod": "yarn run build"
   },
   "repository": {
     "type": "git",
@@ -35,7 +34,6 @@
     "@babel/core": "^7.1.6",
     "@babel/preset-env": "^7.1.6",
     "@babel/preset-react": "^7.0.0",
-    "@types/jest": "^23.3.9",
     "@types/node": "^10.12.9",
     "awesome-typescript-loader": "^5.2.1",
     "babel-loader": "^8.0.4",
@@ -44,7 +42,6 @@
     "file-loader": "^2.0.0",
     "html-webpack-plugin": "^3.2.0",
     "image-webpack-loader": "^4.5.0",
-    "jest": "^23.6.0",
     "prettier": "^1.15.2",
     "react-hot-loader": "^4.3.12",
     "redux-devtools-extension": "^2.13.5",
