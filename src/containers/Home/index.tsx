@@ -8,8 +8,6 @@ import { fetchAuth, fetchUser, User } from '@redux/modules/user';
 import { fetchAllRepositories, Repository } from '@redux/modules/repositories';
 import { Header, Elements, Footer, Loader } from '@components/index';
 
-import { Container } from './styles';
-
 interface HomeProps {
   fetchAuth: () => any;
   repositories: Repository[];
@@ -30,6 +28,10 @@ class Home extends React.Component<HomeProps, any> {
     this.props.fetchAuth();
   }
 
+  onNavigateContact = () => {
+    this.props.history.push('/contact');
+  };
+
   public render() {
     const { loading } = this.state;
 
@@ -37,16 +39,13 @@ class Home extends React.Component<HomeProps, any> {
     //   return <Loader />;
     // }
 
-    console.log(this.props);
-
     return (
-      <Scroller
-        curPage={1}
-        onBeforeScroll={(from, to) => {}}
-        onAfterScroll={page => {}}
-        isEnabled={true}>
+      <Scroller curPage={1} isEnabled={true}>
         <Section>
-          <Header user={this.props.user} history={this.props.history} />
+          <Header
+            user={this.props.user}
+            onNavigateContact={this.onNavigateContact}
+          />
         </Section>
         <Section>
           <Elements repositories={this.props.repositories} />

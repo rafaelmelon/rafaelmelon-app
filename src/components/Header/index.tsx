@@ -23,20 +23,16 @@ import {
 interface HeaderProps {
   theme: Theme;
   user: User;
-  history: any;
+  onNavigateContact: () => any;
 }
 
 class Header extends React.Component<HeaderProps> {
-  onNavigateContact = () => {
-    this.props.history.push('/contact');
-  };
-
   onNextPage = () => {
     window.fpTurnTo(2);
   };
 
   public render() {
-    const { theme } = this.props;
+    const { theme, onNavigateContact } = this.props;
     // const { bio, name } = this.props.user;
 
     return (
@@ -47,14 +43,14 @@ class Header extends React.Component<HeaderProps> {
         transitionEnterTimeout={300}
         transitionLeaveTimeout={300}>
         <Container>
-          <ButtonLogo onClick={this.onNavigateContact} icon={true}>
+          <ButtonLogo onClick={onNavigateContact} icon={true}>
             <Image src={logo} iconWidth={theme.iconSize.x1} />
           </ButtonLogo>
           <SocialMedia>
             {media.map(item => (
               <ButtonMedia
                 key={item.name}
-                onClick={this.onNavigateContact}
+                onClick={onNavigateContact}
                 icon={true}>
                 <Image src={item.urlImage} iconWidth={theme.iconSize.x1} />
               </ButtonMedia>
@@ -70,7 +66,7 @@ class Header extends React.Component<HeaderProps> {
             <Description>
               <FormattedMessage id="header.subtitle" />
             </Description>
-            <Button onClick={this.onNavigateContact}>
+            <Button onClick={onNavigateContact}>
               <FormattedMessage id={'header.button'} />
             </Button>
           </Welcome>
