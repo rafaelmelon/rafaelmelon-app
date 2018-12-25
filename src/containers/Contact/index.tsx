@@ -3,17 +3,24 @@ import { injectIntl, InjectedIntl, FormattedMessage } from 'react-intl';
 import { Field, reduxForm } from 'redux-form';
 import { CSSTransitionGroup } from 'react-transition-group';
 import { withTheme } from 'styled-components';
+import { withRouter } from 'react-router-dom';
 
-import { Image, Link, Input, Textarea, Button } from '@components/index';
+import { Image, Input, Textarea, Button } from '@components/index';
 import { Theme } from '@theme/index';
 import { logo, iconClose } from '@assets/index';
 
-import { Container, ContainerForm, GroupForm, Logo, Close } from './styles';
+import {
+  Container,
+  ContainerForm,
+  GroupForm,
+  ButtonLogo,
+  ButtonClose,
+} from './styles';
 
 interface ContactProps {
   theme: Theme;
   intl: InjectedIntl;
-  onClose: () => any;
+  history: any;
 }
 
 class Contact extends React.Component<ContactProps> {
@@ -21,8 +28,13 @@ class Contact extends React.Component<ContactProps> {
     console.log(values);
   };
 
+  onNavigateHome = () => {
+    this.props.history.push('/');
+  };
+
   public render() {
     const { intl, theme } = this.props;
+
     return (
       <CSSTransitionGroup
         transitionName={'contact'}
@@ -31,14 +43,12 @@ class Contact extends React.Component<ContactProps> {
         transitionEnterTimeout={300}
         transitionLeaveTimeout={300}>
         <Container>
-          <Logo>
-            <Link href={'#'}>
-              <Image src={logo} iconWidth={theme.iconSize.x2} />
-            </Link>
-          </Logo>
-          <Close onClick={this.props.onClose}>
-            <Image src={iconClose} iconWidth={theme.iconSize.x2} />
-          </Close>
+          <ButtonLogo onClick={this.onNavigateHome} icon={true}>
+            <Image src={logo} iconWidth={theme.iconSize.x2} />
+          </ButtonLogo>
+          <ButtonClose onClick={this.onNavigateHome} icon={true}>
+            <Image src={iconClose} iconWidth={theme.iconSize.x1} />
+          </ButtonClose>
           <ContainerForm>
             <form onSubmit={this.handleSubmit}>
               <GroupForm>
@@ -82,6 +92,8 @@ class Contact extends React.Component<ContactProps> {
   }
 }
 
-export default reduxForm({
-  form: 'contact',
-})(injectIntl(withTheme(Contact)));
+export default withRouter(
+  reduxForm({
+    form: 'contact',
+  })(injectIntl(withTheme(Contact))),
+);

@@ -1,13 +1,9 @@
-import App from './App';
+import Home from './Home';
 import Root from './Root';
-import Header from './Header';
-import Elements from './Elements';
 import Contact from './Contact';
 import NotFound from './NotFound';
 
-export { App };
+export { Home };
 export { Root };
-export { Header };
-export { Elements };
 export { Contact };
 export { NotFound };

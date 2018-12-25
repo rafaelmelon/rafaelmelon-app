@@ -1,4 +1,5 @@
 import { styled } from '@theme/index';
+import { Button } from '@components/index';
 
 export const Container = styled.div`
   height: 100%;
@@ -28,38 +29,14 @@ export const GroupForm = styled.div`
   margin-bottom: 20px;
 `;
 
-export const Close = styled.div`
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  height: 40px;
-  width: 40px;
-  padding: 5px;
-  border-radius: 10px;
-  border: 4px dashed ${({ theme }) => theme.colors.confetti};
-  display: flex;
-  justify-content: center;
-  align-content: center;
-  transition: ${({ theme }) => theme.helpers.transitionAll};
-  &:hover {
-    border: 4px solid ${({ theme }) => theme.colors.black};
-  }
-`;
-
-export const Logo = styled.div`
+export const ButtonLogo = styled(Button)`
   position: absolute;
   top: 20px;
   left: 20px;
-  height: 40px;
-  width: 40px;
-  padding: 5px;
-  border-radius: 10px;
-  border: 4px dashed ${({ theme }) => theme.colors.confetti};
-  display: flex;
-  justify-content: center;
-  align-content: center;
-  transition: ${({ theme }) => theme.helpers.transitionAll};
-  &:hover {
-    border: 4px solid ${({ theme }) => theme.colors.black};
-  }
+`;
+
+export const ButtonClose = styled(Button)`
+  position: absolute;
+  top: 20px;
+  right: 20px;
 `;

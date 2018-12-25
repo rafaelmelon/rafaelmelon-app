@@ -1,12 +1,13 @@
 import * as React from 'react';
 import { Route, Switch } from 'react-router-dom';
-import { App, NotFound } from '@containers/index';
+import { Home, Contact, NotFound } from '@containers/index';
 
 class Routes extends React.Component {
   public render() {
     return (
       <Switch>
-        <Route exact={true} path="/" component={App} />
+        <Route exact={true} path="/" component={Home} />
+        <Route path="/contact" component={Contact} />
         <Route component={NotFound} />
       </Switch>
     );

@@ -4,17 +4,22 @@ import { withRouter } from 'react-router-dom';
 import { Scroller, Section } from 'react-fully-scrolled';
 
 import { AppState } from '@redux/modules';
-import { fetchAuth } from '@redux/modules/user';
-import { Footer, Loader } from '@components/index';
-import { Header, Elements } from '@containers/index';
+import { fetchAuth, fetchUser, User } from '@redux/modules/user';
+import { fetchAllRepositories, Repository } from '@redux/modules/repositories';
+import { Header, Elements, Footer, Loader } from '@components/index';
 
 import { Container } from './styles';
 
-interface Home {
+interface HomeProps {
   fetchAuth: () => any;
+  repositories: Repository[];
+  fetchAllRepositories: () => any;
+  user: User;
+  fetchUser: () => any;
+  history: any;
 }
 
-class Home extends React.Component<Home, any> {
+class Home extends React.Component<HomeProps, any> {
   state = {
     loading: true,
   };
@@ -32,6 +37,8 @@ class Home extends React.Component<Home, any> {
     //   return <Loader />;
     // }
 
+    console.log(this.props);
+
     return (
       <Scroller
         curPage={1}
@@ -39,10 +46,10 @@ class Home extends React.Component<Home, any> {
         onAfterScroll={page => {}}
         isEnabled={true}>
         <Section>
-          <Header />
+          <Header user={this.props.user} history={this.props.history} />
         </Section>
         <Section>
-          <Elements />
+          <Elements repositories={this.props.repositories} />
         </Section>
         <Section>
           <Footer />
@@ -54,9 +61,14 @@ class Home extends React.Component<Home, any> {
 
 export default withRouter(
   connect(
-    () => ({}),
+    (state: AppState) => ({
+      user: state.user.user,
+      repositories: state.repositories.all,
+    }),
     {
       fetchAuth,
+      fetchUser,
+      fetchAllRepositories,
     },
   )(Home),
 );
