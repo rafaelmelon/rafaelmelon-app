@@ -26,9 +26,9 @@ class Home extends React.Component<HomeProps, any> {
   componentDidMount() {
     setTimeout(() => this.setState({ loading: false }), 1500);
 
-    if (!this.props.isAuth) {
-      this.props.fetchAuth();
-    }
+    // if (!this.props.isAuth) {
+    //   this.props.fetchAuth();
+    // }
   }
 
   onNavigateContact = () => {

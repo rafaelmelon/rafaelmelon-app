@@ -24,6 +24,26 @@ interface ContactProps {
 }
 
 class Contact extends React.Component<ContactProps> {
+  state = {
+    windowHeight: null,
+    windowWidth: null,
+  };
+
+  handleResize = () =>
+    this.setState({
+      windowHeight: window.innerHeight,
+      windowWidth: window.innerWidth,
+    });
+
+  componentDidMount() {
+    this.handleResize();
+    window.addEventListener('resize', this.handleResize);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('resize', this.handleResize);
+  }
+
   handleSubmit = values => {
     console.log(values);
   };
@@ -42,9 +62,9 @@ class Contact extends React.Component<ContactProps> {
         transitionAppearTimeout={500}
         transitionEnterTimeout={300}
         transitionLeaveTimeout={300}>
-        <Container>
+        <Container windowHeight={this.state.windowHeight}>
           <ButtonLogo onClick={this.onNavigateHome} icon={true}>
-            <Image src={logo} iconWidth={theme.iconSize.x2} />
+            <Image src={logo} iconWidth={theme.iconSize.x1} />
           </ButtonLogo>
           <ButtonClose onClick={this.onNavigateHome} icon={true}>
             <Image src={iconClose} iconWidth={theme.iconSize.x1} />

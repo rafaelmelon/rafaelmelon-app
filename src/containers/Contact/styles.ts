@@ -1,8 +1,12 @@
 import { styled } from '@theme/index';
 import { Button } from '@components/index';
 
-export const Container = styled.div`
-  height: 100%;
+interface ContactStyle {
+  windowHeight: number | null;
+}
+
+export const Container = styled.div<ContactStyle>`
+  height: ${({ windowHeight }) => windowHeight}px;
   background-color: ${({ theme }) => theme.colors.confetti};
   display: flex;
   justify-content: center;
