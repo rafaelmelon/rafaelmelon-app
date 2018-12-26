@@ -18,6 +18,7 @@ export const CustomButton = styled('button')<ButtonPropsStyle>`
   transition: ${({ theme }) => theme.helpers.transitionAll};
   cursor: pointer;
   &:hover {
+    background-color: ${({ theme }) => theme.colors.white};
     border: ${({ theme }) => theme.helpers.borderSolid(theme.colors.black)};
     box-shadow: ${({ theme }) => theme.helpers.boxShadow(theme.colors.black)};
   }

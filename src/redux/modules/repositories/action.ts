@@ -1,6 +1,8 @@
 import { action } from 'typesafe-actions';
+
 import { RepositoriesActionTypes, Repository } from './types';
-import { API_GITHUB, request } from '@utils/api';
+import { request } from '@utils/helpers';
+import { API } from '@utils/constants';
 
 export const fetchAllRepositoriesRequest = () =>
   action(RepositoriesActionTypes.REPOSITORIES_ALL_REQUEST);
@@ -11,7 +13,7 @@ export const fetchAllRepositoriesFailure = (error: string) =>
 
 export const fetchAllRepositories = () => dispatch => {
   dispatch(fetchAllRepositoriesRequest());
-  request(`${API_GITHUB}/users/rafaelmelon/repos`)
+  request(`${API}/users/rafaelmelon/repos`)
     .then(json => dispatch(fetchAllRepositoriesSuccess(json)))
     .catch(error => dispatch(fetchAllRepositoriesFailure(error)));
 };

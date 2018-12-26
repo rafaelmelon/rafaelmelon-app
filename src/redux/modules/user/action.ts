@@ -1,15 +1,21 @@
 import { action } from 'typesafe-actions';
-import { UserActionTypes, User } from './types';
-import { API_GITHUB, request } from '@utils/api';
 
-export const fetchAuthSuccess = (payload: User) =>
+import { UserActionTypes, User } from './types';
+import { request, requestJSON } from '@utils/helpers';
+import { API } from '@utils/constants';
+
+export const fetchAuthSuccess = (payload: any) =>
   action(UserActionTypes.AUTH_SUCCESS, payload);
 export const fetchAuthFailure = (error: string) =>
   action(UserActionTypes.AUTH_FAILURE, error);
 
 export const fetchAuth = () => dispatch => {
-  request(API_GITHUB)
-    .then(json => dispatch(fetchAuthSuccess(json)))
+  requestJSON(`${API}/login`)
+    .then(json => {
+      console.log(json);
+
+      return dispatch(fetchAuthSuccess(json));
+    })
     .catch(error => dispatch(fetchAuthFailure(error)));
 };
 
@@ -21,7 +27,7 @@ export const fetchUserFailure = (error: string) =>
 
 export const fetchUser = () => dispatch => {
   dispatch(fetchUserRequest());
-  request(`${API_GITHUB}/users/rafaelmelon`)
+  request(`${API}/users`)
     .then(json => dispatch(fetchUserSuccess(json)))
     .catch(error => dispatch(fetchUserFailure(error)));
 };

@@ -9,11 +9,12 @@ import { fetchAllRepositories, Repository } from '@redux/modules/repositories';
 import { Header, Elements, Footer, Loader } from '@components/index';
 
 interface HomeProps {
-  fetchAuth: () => any;
+  isAuth: boolean;
   repositories: Repository[];
-  fetchAllRepositories: () => any;
   user: User;
+  fetchAuth: () => any;
   fetchUser: () => any;
+  fetchAllRepositories: () => any;
   history: any;
 }
 
@@ -25,7 +26,9 @@ class Home extends React.Component<HomeProps, any> {
   componentDidMount() {
     setTimeout(() => this.setState({ loading: false }), 1500);
 
-    this.props.fetchAuth();
+    if (!this.props.isAuth) {
+      this.props.fetchAuth();
+    }
   }
 
   onNavigateContact = () => {
@@ -61,6 +64,7 @@ class Home extends React.Component<HomeProps, any> {
 export default withRouter(
   connect(
     (state: AppState) => ({
+      isAuth: state.user.isAuth,
       user: state.user.user,
       repositories: state.repositories.all,
     }),

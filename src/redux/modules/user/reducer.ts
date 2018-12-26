@@ -5,15 +5,16 @@ const initialState: UserState = {
   user: {},
   error: undefined,
   isFetching: false,
+  isAuth: false,
 };
 
 const reducer: Reducer<UserState> = (state = initialState, action) => {
   switch (action.type) {
     case UserActionTypes.AUTH_SUCCESS: {
-      return { ...state };
+      return { ...state, isAuth: true };
     }
     case UserActionTypes.AUTH_FAILURE: {
-      return { ...state, error: action.payload };
+      return { ...state, isAuth: false, error: action.payload };
     }
     case UserActionTypes.USER_REQUEST: {
       return { ...state, isFetching: true };

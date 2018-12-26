@@ -1,5 +1,6 @@
 import { combineReducers, Dispatch, Action, AnyAction } from 'redux';
 import { reducer as formReducer } from 'redux-form';
+
 import { RepositoriesState, repositoriesReducer } from './repositories';
 import { UserState, userReducer } from './user';
 
