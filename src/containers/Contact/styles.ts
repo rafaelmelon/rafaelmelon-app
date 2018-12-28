@@ -25,12 +25,12 @@ export const Container = styled.div<ContactStyle>`
 
 export const ContainerForm = styled.div``;
 
-export const GroupForm = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  margin-bottom: 20px;
+export const SuccessContainer = styled.div``;
+
+export const Success = styled.h2`
+  font-family: ${({ theme }) => theme.fonts.montserrat};
+  color: ${({ theme }) => theme.colors.black};
+  font-size: ${({ theme }) => theme.fontSize.xl};
 `;
 
 export const ButtonLogo = styled(Button)`

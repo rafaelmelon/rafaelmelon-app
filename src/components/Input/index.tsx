@@ -2,17 +2,19 @@ import * as React from 'react';
 
 import { Container, CustomInput, Error } from './styles';
 
-interface Input {
+interface InputProps {
+  input: object;
   touched: any;
   error: string;
 }
 
-class Input extends React.Component<Input, any> {
+class Input extends React.Component<InputProps> {
   public render() {
-    const { touched, error, ...rest } = this.props;
+    const { touched, error, input, ...rest } = this.props;
+
     return (
       <Container>
-        <CustomInput type="text" {...rest} />
+        <CustomInput {...input} type="text" {...rest} />
         {touched && error && <Error>{error}</Error>}
       </Container>
     );

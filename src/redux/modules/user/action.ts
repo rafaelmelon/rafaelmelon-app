@@ -11,11 +11,7 @@ export const fetchAuthFailure = (error: string) =>
 
 export const fetchAuth = () => dispatch => {
   requestJSON(`${API}/login`)
-    .then(json => {
-      console.log(json);
-
-      return dispatch(fetchAuthSuccess(json));
-    })
+    .then(json => dispatch(fetchAuthSuccess(json)))
     .catch(error => dispatch(fetchAuthFailure(error)));
 };
 

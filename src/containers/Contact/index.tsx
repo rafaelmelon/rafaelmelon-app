@@ -1,32 +1,40 @@
 import * as React from 'react';
-import { injectIntl, InjectedIntl, FormattedMessage } from 'react-intl';
-import { Field, reduxForm } from 'redux-form';
+import { FormattedMessage } from 'react-intl';
+import { connect } from 'react-redux';
 import { CSSTransitionGroup } from 'react-transition-group';
 import { withTheme } from 'styled-components';
 import { withRouter } from 'react-router-dom';
 
-import { Image, Input, Textarea, Button } from '@components/index';
+import { AppState } from '@redux/modules';
+import { sendContactForm, resetContactForm } from '@redux/modules/forms';
+import { Image, Button, Loader } from '@components/index';
+import { ContactForm } from '@forms/index';
 import { Theme } from '@theme/index';
 import { logo, iconClose } from '@assets/index';
 
 import {
   Container,
   ContainerForm,
-  GroupForm,
   ButtonLogo,
   ButtonClose,
+  SuccessContainer,
+  Success,
 } from './styles';
 
 interface ContactProps {
   theme: Theme;
-  intl: InjectedIntl;
   history: any;
+  success: string;
+  sending: boolean;
+  sendContactForm: (values: any) => any;
+  resetContactForm: () => any;
 }
 
 class Contact extends React.Component<ContactProps> {
   state = {
     windowHeight: null,
     windowWidth: null,
+    nameValue: '',
   };
 
   handleResize = () =>
@@ -45,7 +53,15 @@ class Contact extends React.Component<ContactProps> {
   }
 
   handleSubmit = values => {
-    console.log(values);
+    this.props.sendContactForm(values);
+  };
+
+  handleChange = event => {
+    this.setState({ nameValue: event.target.value });
+  };
+
+  onResetForm = () => {
+    this.props.resetContactForm();
   };
 
   onNavigateHome = () => {
@@ -53,7 +69,7 @@ class Contact extends React.Component<ContactProps> {
   };
 
   public render() {
-    const { intl, theme } = this.props;
+    const { theme, sending, success } = this.props;
 
     return (
       <CSSTransitionGroup
@@ -70,41 +86,26 @@ class Contact extends React.Component<ContactProps> {
             <Image src={iconClose} iconWidth={theme.iconSize.x1} />
           </ButtonClose>
           <ContainerForm>
-            <form onSubmit={this.handleSubmit}>
-              <GroupForm>
-                <Field
-                  name="name"
-                  placeholder={intl.formatMessage({
-                    id: 'contact.placeholder.name',
-                  })}
-                  component={Input}
-                  type="text"
-                />
-              </GroupForm>
-              <GroupForm>
-                <Field
-                  name="email"
-                  placeholder={intl.formatMessage({
-                    id: 'contact.placeholder.email',
-                  })}
-                  component={Input}
-                  type="email"
-                />
-              </GroupForm>
-              <GroupForm>
-                <Field
-                  name="notes"
-                  placeholder={intl.formatMessage({
-                    id: 'contact.placeholder.textarea',
-                  })}
-                  component={Textarea}
-                  type="textarea"
-                />
-              </GroupForm>
-              <Button type="submit">
-                <FormattedMessage id={'header.button'} />
-              </Button>
-            </form>
+            {sending ? (
+              <Loader />
+            ) : success ? (
+              <SuccessContainer>
+                <Success>
+                  <FormattedMessage
+                    id="contact.success"
+                    values={{ name: this.state.nameValue }}
+                  />
+                </Success>
+                <Button onClick={this.onResetForm}>
+                  <FormattedMessage id={'contact.button.reset'} />
+                </Button>
+              </SuccessContainer>
+            ) : (
+              <ContactForm
+                onSubmit={this.handleSubmit}
+                handleChange={this.handleChange}
+              />
+            )}
           </ContainerForm>
         </Container>
       </CSSTransitionGroup>
@@ -113,7 +114,14 @@ class Contact extends React.Component<ContactProps> {
 }
 
 export default withRouter(
-  reduxForm({
-    form: 'contact',
-  })(injectIntl(withTheme(Contact))),
+  connect(
+    (state: AppState) => ({
+      success: state.forms.success,
+      sending: state.forms.sending,
+    }),
+    {
+      sendContactForm,
+      resetContactForm,
+    },
+  )(withTheme(Contact)),
 );

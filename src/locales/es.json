@@ -8,6 +8,8 @@
   "contact.placeholder.name": "Nombre",
   "contact.placeholder.email": "Email",
   "contact.placeholder.textarea": "Notas",
+  "contact.button.reset": "Reset",
+  "contact.success": "Gracias {name} por contactar",
 
   "elements.repo": "GitHub",
   "elements.landing": "Landing"
