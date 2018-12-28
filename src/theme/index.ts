@@ -51,7 +51,7 @@ export const theme = {
   iconSize: {
     x4: '150px',
     x3: '100px',
-    x2: '50px',
+    x2: '40px',
     x1: '30px',
   },
   windowSize: {
@@ -76,6 +76,7 @@ export const GlobalStyles = createGlobalStyle`
     background-color: ${theme.colors.confetti};
     font-family: ${theme.fonts.openSans};
     color: ${theme.colors.black};
+    letter-spacing: 0.02rem;
   }
 `;
 

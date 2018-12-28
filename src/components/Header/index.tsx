@@ -24,11 +24,12 @@ interface HeaderProps {
   theme: Theme;
   user: User;
   onNavigateContact: () => any;
+  onPageSection: (page: number) => any;
 }
 
 class Header extends React.Component<HeaderProps> {
   onNextPage = () => {
-    window.fpTurnTo(2);
+    this.props.onPageSection(2);
   };
 
   public render() {

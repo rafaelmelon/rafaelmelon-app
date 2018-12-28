@@ -9,6 +9,7 @@ export const CustomLink = styled.a<LinkStyle>`
   color: ${({ theme }) => theme.colors.black};
   font-size: ${({ fontSize, theme }) =>
     fontSize ? fontSize : theme.fontSize.nm};
+  transition: ${({ theme }) => theme.helpers.transitionAll};
   &:hover {
     color: ${({ theme }) => theme.colors.white};
     text-decoration: none;

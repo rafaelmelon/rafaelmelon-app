@@ -14,8 +14,7 @@ interface ElementProps {
 
 class Element extends React.Component<ElementProps> {
   getLastUpdate = date => {
-    const dateFormat = this.props.intl.formatDate(date);
-    return dateFormat;
+    return this.props.intl.formatDate(date);
   };
 
   public render() {

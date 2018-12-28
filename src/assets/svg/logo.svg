@@ -1,1 +1,12 @@
-<svg class="rm-header__svgLogo" version="1.1" role="img" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="500px" height="500px" viewBox="0 0 500 500" enable-background="new 0 0 500 500"><path fill="none" stroke="#000000" stroke-width="34.5459" stroke-miterlimit="10" d="M360.425,238.286L201.645,397.066L 55.079,250.5L201.645,103.934L299.355,201.645L238.286,262.714" class="rm-header__svgLogo__path1"></path><path fill="none" stroke="#000000" stroke-width="34.5459" stroke-miterlimit="10" d="M239.263,164.026L299.355,103.934L 445.921,250.5L299.355,397.066L152.79,250.5L213.858,189.431" class="rm-header__svgLogo__path2"></path></svg>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="331px" height="331px" viewBox="0 0 331 331" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 49.3 (51167) - http://www.bohemiancoding.com/sketch -->
+    <title>Artboard</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Artboard" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="logo" transform="translate(1.000000, 38.000000)" fill="#000000" fill-rule="nonzero">
+            <path d="M146.666813,201.142948 L73.3338099,128.000051 L128.332833,73.1430827 L146.666327,91.4286247 L110.000284,127.999964 L165.000156,182.857256 L238.333839,109.714181 L256.667182,127.999873 L183.333437,201.14301 L201.666508,219.428554 L293.333313,128.000008 L201.666477,36.5714302 L183.333109,54.857146 L219.999773,91.428881 L164.999865,146.285834 L146.666522,128.000142 L183.33318,91.4287874 L128.333477,36.571477 L36.6666869,128.000008 L128.333523,219.428585 L146.666813,201.142948 Z M165.000094,219.428702 L128.333523,255.999969 L0,128.000008 L128.33357,0 L164.999859,36.5713607 L201.666477,4.67855003e-05 L330,128.000008 L201.666445,256 L165.000094,219.428702 Z" id="Combined-Shape"></path>
+        </g>
+    </g>
+</svg>

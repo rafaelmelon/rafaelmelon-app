@@ -1,18 +1,31 @@
 import * as React from 'react';
-import { FormattedMessage } from 'react-intl';
+import { withTheme } from 'styled-components';
 
-import { Container, Name } from './styles';
+import { Image, Button } from '@components/index';
+import { logo } from '@assets/index';
+import { Theme } from '@theme/index';
 
-class Footer extends React.Component {
+import { Container } from './styles';
+
+interface FooterProps {
+  theme: Theme;
+  onPageSection: (page: number) => any;
+}
+
+class Footer extends React.Component<FooterProps> {
+  onNextPage = () => {
+    this.props.onPageSection(1);
+  };
+
   public render() {
     return (
       <Container>
-        <Name>
-          <FormattedMessage id="footer.title" />
-        </Name>
+        <Button onClick={this.onNextPage} icon={true}>
+          <Image src={logo} iconWidth={this.props.theme.iconSize.x3} />
+        </Button>
       </Container>
     );
   }
 }
 
-export default Footer;
+export default withTheme(Footer);

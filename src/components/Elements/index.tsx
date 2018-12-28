@@ -16,7 +16,6 @@ class Elements extends React.Component<ElementsProps, any> {
   }
 
   public render() {
-    console.log(repositoriesMock);
     return (
       <Container>
         <ContainerElements>

@@ -35,6 +35,10 @@ class Home extends React.Component<HomeProps, any> {
     this.props.history.push('/contact');
   };
 
+  onPageSection = (page: number) => {
+    window.fpTurnTo(page);
+  };
+
   public render() {
     // const { loading } = this.state;
 
@@ -48,13 +52,14 @@ class Home extends React.Component<HomeProps, any> {
           <Header
             user={this.props.user}
             onNavigateContact={this.onNavigateContact}
+            onPageSection={this.onPageSection}
           />
         </Section>
         <Section>
           <Elements repositories={this.props.repositories} />
         </Section>
         <Section>
-          <Footer />
+          <Footer onPageSection={this.onPageSection} />
         </Section>
       </Scroller>
     );
