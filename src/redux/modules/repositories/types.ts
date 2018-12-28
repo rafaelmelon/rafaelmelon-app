@@ -5,11 +5,11 @@ export interface Repository {
   node_id: string;
   name: string;
   full_name: string;
-  private: false;
+  private: boolean;
   owner: object;
   html_url: string;
-  description: string;
-  fork: false;
+  description: null;
+  fork: boolean;
   url: string;
   forks_url: string;
   keys_url: string;
@@ -65,10 +65,10 @@ export interface Repository {
   has_wiki: boolean;
   has_pages: boolean;
   forks_count: number;
-  mirror_url: string;
+  mirror_url: any;
   archived: boolean;
   open_issues_count: number;
-  license: string;
+  license: any;
   forks: number;
   open_issues: number;
   watchers: number;

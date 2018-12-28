@@ -1,4 +1,4 @@
-import { API, API_GITHUB, TOKEN_GITHUB } from './constants';
+import { TOKEN_GITHUB } from './constants';
 
 export const setToken = token => {
   return window.localStorage.setItem('token', token);

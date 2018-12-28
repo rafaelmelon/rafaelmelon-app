@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Link, withRouter } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 class NotFound extends React.Component {
   public render() {
@@ -12,4 +12,4 @@ class NotFound extends React.Component {
   }
 }
 
-export default withRouter(NotFound);
+export default NotFound;

@@ -6,7 +6,7 @@ import { Scroller, Section } from 'react-fully-scrolled';
 import { AppState } from '@redux/modules';
 import { fetchAuth, fetchUser, User } from '@redux/modules/user';
 import { fetchAllRepositories, Repository } from '@redux/modules/repositories';
-import { Header, Elements, Footer, Loader } from '@components/index';
+import { Header, Elements, Footer } from '@components/index';
 
 interface HomeProps {
   isAuth: boolean;
@@ -36,7 +36,7 @@ class Home extends React.Component<HomeProps, any> {
   };
 
   public render() {
-    const { loading } = this.state;
+    // const { loading } = this.state;
 
     // if (loading) {
     //   return <Loader />;

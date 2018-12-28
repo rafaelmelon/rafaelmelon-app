@@ -2,10 +2,10 @@ import { Reducer } from 'redux';
 import { UserState, UserActionTypes } from './types';
 
 const initialState: UserState = {
+  isAuth: false,
   user: {},
   error: undefined,
   isFetching: false,
-  isAuth: false,
 };
 
 const reducer: Reducer<UserState> = (state = initialState, action) => {

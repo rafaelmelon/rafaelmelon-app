@@ -1,4 +1,4 @@
-import { codepen, github, linkedin, twitter } from '@assets/index';
+import { github, linkedin, twitter } from '@assets/index';
 
 export const media = [
   // {

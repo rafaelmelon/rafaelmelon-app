@@ -1,7 +1,16 @@
 import { styled } from '@theme/index';
 
-export const CustomLink = styled.a`
+interface LinkStyle {
+  fontSize?: string;
+}
+
+export const CustomLink = styled.a<LinkStyle>`
   font-family: ${({ theme }) => theme.fonts.montserrat};
   color: ${({ theme }) => theme.colors.black};
-  text-decoration: none;
+  font-size: ${({ fontSize, theme }) =>
+    fontSize ? fontSize : theme.fontSize.nm};
+  &:hover {
+    color: ${({ theme }) => theme.colors.white};
+    text-decoration: none;
+  }
 `;

@@ -31,7 +31,6 @@ export const Name = styled.h1`
   font-family: ${({ theme }) => theme.fonts.montserrat};
   color: ${({ theme }) => theme.colors.black};
   font-size: ${({ theme }) => theme.fontSize.xxl};
-  font-weight: 800;
   margin-bottom: 20px;
 `;
 

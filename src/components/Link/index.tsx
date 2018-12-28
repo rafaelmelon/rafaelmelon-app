@@ -6,10 +6,11 @@ type Props = {
   href: string;
   children: ReactNode;
   target?: string;
+  fontSize?: string;
 };
 
-const Link = ({ href, children, ...rest }: Props) => (
-  <CustomLink href={href} {...rest}>
+const Link = ({ href, fontSize, children, ...rest }: Props) => (
+  <CustomLink href={href} fontSize={fontSize} {...rest}>
     {children}
   </CustomLink>
 );
