@@ -1,11 +1,10 @@
 import * as React from 'react';
 import { FormattedMessage } from 'react-intl';
-import { CSSTransitionGroup } from 'react-transition-group';
 import { withTheme } from 'styled-components';
 
 import { Image, Button } from '@components/index';
 import { User } from '@redux/modules/user';
-import { logo, iconArrow } from '@assets/index';
+import { logoAlt, iconArrow } from '@assets/index';
 import { media } from '@utils/index';
 import { Theme } from '@theme/index';
 
@@ -13,7 +12,7 @@ import {
   Container,
   ButtonLogo,
   Welcome,
-  Name,
+  Title,
   Description,
   SocialMedia,
   ButtonMedia,
@@ -23,6 +22,10 @@ import {
 interface HeaderProps {
   theme: Theme;
   user: User;
+  viewport: {
+    width: number | null;
+    height: number | null;
+  };
   onNavigateContact: () => any;
   onPageSection: (page: number) => any;
 }
@@ -37,45 +40,38 @@ class Header extends React.Component<HeaderProps> {
     // const { bio, name } = this.props.user;
 
     return (
-      <CSSTransitionGroup
-        transitionName={'header'}
-        transitionAppear={true}
-        transitionAppearTimeout={500}
-        transitionEnterTimeout={300}
-        transitionLeaveTimeout={300}>
-        <Container>
-          <ButtonLogo onClick={onNavigateContact} icon={true}>
-            <Image src={logo} iconWidth={theme.iconSize.x1} />
-          </ButtonLogo>
-          <SocialMedia>
-            {media.map(item => (
-              <ButtonMedia
-                key={item.name}
-                onClick={onNavigateContact}
-                icon={true}>
-                <Image src={item.urlImage} iconWidth={theme.iconSize.x1} />
-              </ButtonMedia>
-            ))}
-          </SocialMedia>
-          <Welcome>
-            <Name>
-              <FormattedMessage
-                id="header.title"
-                values={{ value: 'Rafael Melón' }}
-              />
-            </Name>
-            <Description>
-              <FormattedMessage id="header.subtitle" />
-            </Description>
-            <Button onClick={onNavigateContact}>
-              <FormattedMessage id={'header.button'} />
-            </Button>
-          </Welcome>
-          <ButtonBottom onClick={this.onNextPage} icon={true}>
-            <Image src={iconArrow} iconWidth={theme.iconSize.x1} />
-          </ButtonBottom>
-        </Container>
-      </CSSTransitionGroup>
+      <Container>
+        <ButtonLogo onClick={onNavigateContact} icon={true}>
+          <Image src={logoAlt} iconWidth={theme.iconSize.x1} />
+        </ButtonLogo>
+        <SocialMedia>
+          {media.map(item => (
+            <ButtonMedia
+              key={item.name}
+              onClick={onNavigateContact}
+              icon={true}>
+              <Image src={item.urlImage} iconWidth={theme.iconSize.x1} />
+            </ButtonMedia>
+          ))}
+        </SocialMedia>
+        <Welcome>
+          <Title>
+            <FormattedMessage
+              id="header.title"
+              values={{ value: 'Rafael Melón' }}
+            />
+          </Title>
+          <Description>
+            <FormattedMessage id="header.subtitle" />
+          </Description>
+          <Button onClick={onNavigateContact}>
+            <FormattedMessage id={'header.button'} />
+          </Button>
+        </Welcome>
+        <ButtonBottom onClick={this.onNextPage} icon={true}>
+          <Image src={iconArrow} iconWidth={theme.iconSize.x1} />
+        </ButtonBottom>
+      </Container>
     );
   }
 }

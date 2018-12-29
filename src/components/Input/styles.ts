@@ -32,4 +32,5 @@ export const CustomInput = styled.input<InputStyle>`
       color: ${({ theme }) => theme.colors.white};
     }
   }
+  ${({ theme }) => theme.media.phone`width: 100%;`}
 `;

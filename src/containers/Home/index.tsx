@@ -2,11 +2,15 @@ import * as React from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import { Scroller, Section } from 'react-fully-scrolled';
+import { CSSTransitionGroup } from 'react-transition-group';
 
 import { AppState } from '@redux/modules';
 import { fetchAuth, fetchUser, User } from '@redux/modules/user';
 import { fetchAllRepositories, Repository } from '@redux/modules/repositories';
 import { Header, Elements, Footer } from '@components/index';
+import { VIEWPORT, ROUTES } from '@utils/index';
+
+import { Container } from './styles';
 
 interface HomeProps {
   isAuth: boolean;
@@ -20,48 +24,92 @@ interface HomeProps {
 
 class Home extends React.Component<HomeProps, any> {
   state = {
+    viewport: {
+      height: null,
+      width: null,
+    },
     loading: true,
   };
 
+  handleResize = () =>
+    this.setState({
+      viewport: {
+        height: window.innerHeight,
+        width: window.innerWidth,
+      },
+    });
+
   componentDidMount() {
     setTimeout(() => this.setState({ loading: false }), 1500);
+    this.handleResize();
+    window.addEventListener('resize', this.handleResize);
+  }
 
-    // if (!this.props.isAuth) {
-    //   this.props.fetchAuth();
-    // }
+  componentWillUnmount() {
+    window.removeEventListener('resize', this.handleResize);
   }
 
   onNavigateContact = () => {
-    this.props.history.push('/contact');
+    this.props.history.push(ROUTES.contact);
   };
 
   onPageSection = (page: number) => {
     window.fpTurnTo(page);
   };
 
+  renderHeader = () => (
+    <Header
+      user={this.props.user}
+      onNavigateContact={this.onNavigateContact}
+      onPageSection={this.onPageSection}
+      viewport={this.state.viewport}
+    />
+  );
+
+  renderElements = () => (
+    <Elements
+      repositories={this.props.repositories}
+      viewport={this.state.viewport}
+    />
+  );
+
+  renderFooter = () => (
+    <Footer onPageSection={this.onPageSection} viewport={this.state.viewport} />
+  );
+
   public render() {
-    // const { loading } = this.state;
+    const { viewport } = this.state;
+    const isPhone = viewport.width && viewport.width <= VIEWPORT.phone;
 
     // if (loading) {
     //   return <Loader />;
     // }
 
+    if (isPhone) {
+      return (
+        <Container>
+          {this.renderHeader()}
+          {this.renderElements()}
+          {this.renderFooter()}
+        </Container>
+      );
+    }
+
     return (
-      <Scroller curPage={1} isEnabled={true}>
-        <Section>
-          <Header
-            user={this.props.user}
-            onNavigateContact={this.onNavigateContact}
-            onPageSection={this.onPageSection}
-          />
-        </Section>
-        <Section>
-          <Elements repositories={this.props.repositories} />
-        </Section>
-        <Section>
-          <Footer onPageSection={this.onPageSection} />
-        </Section>
-      </Scroller>
+      <CSSTransitionGroup
+        transitionName={'home'}
+        transitionAppear={true}
+        transitionAppearTimeout={500}
+        transitionEnterTimeout={300}
+        transitionLeaveTimeout={300}>
+        <Container>
+          <Scroller curPage={1} isEnabled={true}>
+            <Section>{this.renderHeader()}</Section>
+            <Section>{this.renderElements()}</Section>
+            <Section>{this.renderFooter()}</Section>
+          </Scroller>
+        </Container>
+      </CSSTransitionGroup>
     );
   }
 }

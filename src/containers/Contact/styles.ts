@@ -2,11 +2,14 @@ import { styled } from '@theme/index';
 import { Button } from '@components/index';
 
 interface ContactStyle {
-  windowHeight: number | null;
+  viewport: {
+    height: number | null;
+    width: number | null;
+  };
 }
 
 export const Container = styled.div<ContactStyle>`
-  height: ${({ windowHeight }) => windowHeight}px;
+  height: ${({ viewport }) => viewport.height}px;
   background-color: ${({ theme }) => theme.colors.confetti};
   display: flex;
   justify-content: center;
@@ -23,7 +26,9 @@ export const Container = styled.div<ContactStyle>`
   }
 `;
 
-export const ContainerForm = styled.div``;
+export const ContainerForm = styled.div`
+  ${({ theme }) => theme.media.phone`width: 100%;`}
+`;
 
 export const SuccessContainer = styled.div``;
 

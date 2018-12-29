@@ -10,7 +10,8 @@ import { sendContactForm, resetContactForm } from '@redux/modules/forms';
 import { Image, Button, Loader } from '@components/index';
 import { ContactForm } from '@forms/index';
 import { Theme } from '@theme/index';
-import { logo, iconClose } from '@assets/index';
+import { logoAlt, iconClose } from '@assets/index';
+import { ROUTES } from '@utils/index';
 
 import {
   Container,
@@ -32,15 +33,19 @@ interface ContactProps {
 
 class Contact extends React.Component<ContactProps> {
   state = {
-    windowHeight: null,
-    windowWidth: null,
+    viewport: {
+      height: null,
+      width: null,
+    },
     nameValue: '',
   };
 
   handleResize = () =>
     this.setState({
-      windowHeight: window.innerHeight,
-      windowWidth: window.innerWidth,
+      viewport: {
+        height: window.innerHeight,
+        width: window.innerWidth,
+      },
     });
 
   componentDidMount() {
@@ -65,7 +70,7 @@ class Contact extends React.Component<ContactProps> {
   };
 
   onNavigateHome = () => {
-    this.props.history.push('/');
+    this.props.history.push(ROUTES.home);
   };
 
   public render() {
@@ -78,9 +83,9 @@ class Contact extends React.Component<ContactProps> {
         transitionAppearTimeout={500}
         transitionEnterTimeout={300}
         transitionLeaveTimeout={300}>
-        <Container windowHeight={this.state.windowHeight}>
+        <Container viewport={this.state.viewport}>
           <ButtonLogo onClick={this.onNavigateHome} icon={true}>
-            <Image src={logo} iconWidth={theme.iconSize.x1} />
+            <Image src={logoAlt} iconWidth={theme.iconSize.x1} />
           </ButtonLogo>
           <ButtonClose onClick={this.onNavigateHome} icon={true}>
             <Image src={iconClose} iconWidth={theme.iconSize.x1} />

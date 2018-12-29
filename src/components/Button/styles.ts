@@ -25,4 +25,6 @@ export const CustomButton = styled('button')<ButtonStyle>`
   &:disabled {
     background-color: ${({ theme }) => theme.colors.black};
   }
+  ${({ icon, theme }) =>
+    !icon ? theme.media.phone`width: 100%;` : `width: auto;`}
 `;

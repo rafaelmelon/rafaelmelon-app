@@ -1,4 +1,5 @@
 export const logo = require('./svg/logo.svg');
+export const logoAlt = require('./svg/logo-alt.svg');
 export const loaderCircle = require('./svg/loader-circle.svg');
 export const loaderGrid = require('./svg/loader-grid.svg');
 export const codepen = require('./svg/codepen.svg');

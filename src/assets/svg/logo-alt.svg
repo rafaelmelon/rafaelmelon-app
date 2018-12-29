@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="331px" height="331px" viewBox="0 0 331 331" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 49.3 (51167) - http://www.bohemiancoding.com/sketch -->
+    <title>Artboard</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Artboard" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="logo" transform="translate(165.095761, 165.095761) rotate(-45.000000) translate(-165.095761, -165.095761) translate(-68.404239, -15.904239)" fill="#000000" fill-rule="nonzero">
+            <path d="M207.555763,284.428699 L103.778452,181.000073 L181.610403,103.42889 L207.555074,129.28579 L155.667069,180.999949 L233.500221,258.571588 L337.278493,155.14271 L363.222952,180.999821 L259.444592,284.428788 L285.388664,310.28569 L415.111083,181.000011 L285.38862,51.714288 L259.444127,77.571433 L311.333012,129.286152 L233.499809,206.857312 L207.55535,181.000201 L259.444227,129.28602 L181.611314,51.7143542 L51.8889175,181.000011 L181.61138,310.285734 L207.555763,284.428699 Z M233.500133,310.285898 L181.61138,361.999956 L0,181.000011 L181.611447,0 L233.499801,51.7141898 L285.38862,6.61576215e-05 L467,181.000011 L285.388576,362 L233.500133,310.285898 Z" id="Combined-Shape"></path>
+        </g>
+    </g>
+</svg>

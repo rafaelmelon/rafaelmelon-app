@@ -44,9 +44,8 @@ export const reset = css`
     font-size: 1rem;
     font-weight: 400;
     line-height: 1.5;
-    color: #212529;
+    color: #000000;
     text-align: left;
-    background-color: #fff;
   }
 
   [tabindex='-1']:focus {
@@ -146,14 +145,12 @@ export const reset = css`
   }
 
   a {
-    color: #007bff;
     text-decoration: none;
     background-color: transparent;
     -webkit-text-decoration-skip: objects;
   }
 
   a:hover {
-    color: #0056b3;
     text-decoration: underline;
   }
 

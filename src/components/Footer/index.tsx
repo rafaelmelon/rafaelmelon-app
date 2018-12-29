@@ -9,6 +9,10 @@ import { Container } from './styles';
 
 interface FooterProps {
   theme: Theme;
+  viewport: {
+    width: number | null;
+    height: number | null;
+  };
   onPageSection: (page: number) => any;
 }
 

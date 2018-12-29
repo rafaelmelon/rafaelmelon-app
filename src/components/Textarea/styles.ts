@@ -33,4 +33,5 @@ export const CustomTextarea = styled.textarea<TextAreaStyle>`
       color: ${({ theme }) => theme.colors.white};
     }
   }
+  ${({ theme }) => theme.media.phone`width: 100%;`}
 `;

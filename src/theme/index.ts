@@ -4,28 +4,23 @@ import baseStyled, {
   createGlobalStyle,
 } from 'styled-components';
 
+import { VIEWPORT } from '@utils/index';
 import reset from './reset';
-
-const sizes = {
-  desktop: 992,
-  tablet: 768,
-  phone: 576,
-};
 
 export const theme = {
   media: {
     desktop: (...args) => css`
-      @media (max-width: ${sizes.desktop / 16}em) {
+      @media (max-width: ${VIEWPORT.desktop / 16}em) {
         ${css(...args)}
       }
     `,
     tablet: (...args) => css`
-      @media (max-width: ${sizes.tablet / 16}em) {
+      @media (max-width: ${VIEWPORT.tablet / 16}em) {
         ${css(...args)}
       }
     `,
     phone: (...args) => css`
-      @media (max-width: ${sizes.phone / 16}em) {
+      @media (max-width: ${VIEWPORT.phone / 16}em) {
         ${css(...args)}
       }
     `,
