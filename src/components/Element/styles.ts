@@ -10,12 +10,19 @@ export const Container = styled.div`
   border-radius: ${({ theme }) => theme.helpers.radius10};
   margin: 4px 10px;
   padding: 5px 10px;
+  transition: ${({ theme }) => theme.helpers.transitionAll};
+  &:hover {
+    border: ${({ theme }) =>
+      theme.helpers.borderSolidAlpha(theme.colors.black)};
+  }
+  ${({ theme }) => theme.media.phone`margin: 10px;`}
 `;
 
 export const Title = styled.h3`
   font-family: ${({ theme }) => theme.fonts.montserrat};
   color: ${({ theme }) => theme.colors.black};
   font-size: ${({ theme }) => theme.fontSize.md};
+  ${({ theme }) => theme.media.phone`margin-bottom: 40px;`}
 `;
 
 export const Info = styled.div`

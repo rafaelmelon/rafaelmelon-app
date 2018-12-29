@@ -5,7 +5,7 @@ import { withTheme } from 'styled-components';
 import { Image, Button } from '@components/index';
 import { User } from '@redux/modules/user';
 import { logoAlt, iconArrow } from '@assets/index';
-import { media } from '@utils/index';
+import { SOCIAL, VIEWPORT } from '@utils/index';
 import { Theme } from '@theme/index';
 
 import {
@@ -36,7 +36,8 @@ class Header extends React.Component<HeaderProps> {
   };
 
   public render() {
-    const { theme, onNavigateContact } = this.props;
+    const { theme, onNavigateContact, viewport } = this.props;
+    const isPhone = viewport.width && viewport.width <= VIEWPORT.phone;
     // const { bio, name } = this.props.user;
 
     return (
@@ -45,7 +46,7 @@ class Header extends React.Component<HeaderProps> {
           <Image src={logoAlt} iconWidth={theme.iconSize.x1} />
         </ButtonLogo>
         <SocialMedia>
-          {media.map(item => (
+          {SOCIAL.map(item => (
             <ButtonMedia
               key={item.name}
               onClick={onNavigateContact}
@@ -68,9 +69,11 @@ class Header extends React.Component<HeaderProps> {
             <FormattedMessage id={'header.button'} />
           </Button>
         </Welcome>
-        <ButtonBottom onClick={this.onNextPage} icon={true}>
-          <Image src={iconArrow} iconWidth={theme.iconSize.x1} />
-        </ButtonBottom>
+        {!isPhone && (
+          <ButtonBottom onClick={this.onNextPage} icon={true}>
+            <Image src={iconArrow} iconWidth={theme.iconSize.x1} />
+          </ButtonBottom>
+        )}
       </Container>
     );
   }

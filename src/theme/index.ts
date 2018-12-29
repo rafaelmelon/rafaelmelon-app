@@ -56,10 +56,12 @@ export const theme = {
   },
   helpers: {
     transitionAll: 'all 0.3s ease-out',
-    borderDashed: color => `4px dashed ${color}25`,
+    borderDashed: color => `4px dashed ${color}20`,
     borderSolid: color => `4px solid ${color}`,
-    borderAlpha: '4px solid transparent',
+    borderSolidAlpha: color => `4px solid ${color}20`,
+    borderTransparent: '4px solid transparent',
     boxShadow: color => `2px 2px 0 0px ${color}`,
+    boxShadowInset: color => `inset 2px 2px 0 0px ${color}`,
     radius10: '10px',
   },
 };

@@ -4,6 +4,7 @@ import { withTheme } from 'styled-components';
 import { Image, Button } from '@components/index';
 import { logo } from '@assets/index';
 import { Theme } from '@theme/index';
+import { VIEWPORT } from '@utils/index';
 
 import { Container } from './styles';
 
@@ -22,6 +23,17 @@ class Footer extends React.Component<FooterProps> {
   };
 
   public render() {
+    const { viewport } = this.props;
+    const isPhone = viewport.width && viewport.width <= VIEWPORT.phone;
+
+    if (!isPhone) {
+      return (
+        <Container>
+          <Image src={logo} iconWidth={this.props.theme.iconSize.x3} />
+        </Container>
+      );
+    }
+
     return (
       <Container>
         <Button onClick={this.onNextPage} icon={true}>

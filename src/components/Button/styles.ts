@@ -11,7 +11,7 @@ export const CustomButton = styled('button')<ButtonStyle>`
   color: ${({ theme }) => theme.colors.black};
   border: ${({ icon, theme }) =>
     icon
-      ? theme.helpers.borderAlpha
+      ? theme.helpers.borderTransparent
       : theme.helpers.borderDashed(theme.colors.black)};
   background: none;
   border-radius: ${({ theme }) => theme.helpers.radius10};

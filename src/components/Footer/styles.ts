@@ -6,4 +6,5 @@ export const Container = styled.div`
   justify-content: center;
   align-items: center;
   padding: 20px;
+  ${({ theme }) => theme.media.phone`padding: 150px 20px;`}
 `;

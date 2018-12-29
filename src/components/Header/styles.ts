@@ -9,6 +9,7 @@ export const Container = styled.div`
   flex-direction: column;
   flex: 1;
   padding: 0 20px;
+  ${({ theme }) => theme.media.phone`padding: 150px 20px;`}
 `;
 
 export const ButtonLogo = styled(Button)`
