@@ -8,7 +8,7 @@ import { AppState } from '@redux/modules';
 import { fetchAuth, fetchUser, User } from '@redux/modules/user';
 import { fetchAllRepositories, Repository } from '@redux/modules/repositories';
 import { Header, Elements, Footer, Loader } from '@components/index';
-import { VIEWPORT, ROUTES } from '@utils/index';
+import { VIEWPORT, ROUTES, repositoriesMock } from '@utils/index';
 
 import { Container } from './styles';
 
@@ -67,6 +67,7 @@ class Home extends React.Component<HomeProps, HomeState> {
     setTimeout(() => this.setState({ loading: false }), 1500);
     this.handleResize();
     window.addEventListener('resize', this.handleResize);
+    document.title = 'Rafael Melón | Home';
   }
 
   componentWillUnmount() {
@@ -95,7 +96,7 @@ class Home extends React.Component<HomeProps, HomeState> {
   renderElements() {
     return (
       <Elements
-        repositories={this.props.repositories}
+        repositories={repositoriesMock}
         viewport={this.state.viewport}
       />
     );

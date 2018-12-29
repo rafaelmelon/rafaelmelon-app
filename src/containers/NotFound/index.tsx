@@ -30,6 +30,7 @@ class NotFound extends React.Component<NotFoundProps> {
   componentDidMount() {
     this.handleResize();
     window.addEventListener('resize', this.handleResize);
+    document.title = 'Rafael Melón | Not found';
   }
 
   componentWillUnmount() {

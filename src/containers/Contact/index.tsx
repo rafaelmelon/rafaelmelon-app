@@ -69,6 +69,7 @@ class Contact extends React.Component<ContactProps, ContactState> {
   componentDidMount() {
     this.handleResize();
     window.addEventListener('resize', this.handleResize);
+    document.title = 'Rafael Melón | Contact';
   }
 
   componentWillUnmount() {

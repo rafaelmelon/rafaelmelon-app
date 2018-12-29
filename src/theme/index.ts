@@ -7,23 +7,25 @@ import baseStyled, {
 import { VIEWPORT } from '@utils/index';
 import reset from './reset';
 
+const mediaQueries = Object.keys(VIEWPORT).reduce(
+  (acc, label) => {
+    acc[label] = (literals: TemplateStringsArray, ...placeholders: any[]) =>
+      css`
+        @media (max-width: ${VIEWPORT[label]}px) {
+          ${css(literals, ...placeholders)};
+        }
+      `.join('');
+    return acc;
+  },
+  {} as Record<
+    keyof typeof VIEWPORT,
+    (l: TemplateStringsArray, ...p: any[]) => string
+  >,
+);
+
 export const theme = {
   media: {
-    desktop: (...args) => css`
-      @media (max-width: ${VIEWPORT.desktop / 16}em) {
-        ${css(...args)}
-      }
-    `,
-    tablet: (...args) => css`
-      @media (max-width: ${VIEWPORT.tablet / 16}em) {
-        ${css(...args)}
-      }
-    `,
-    phone: (...args) => css`
-      @media (max-width: ${VIEWPORT.phone / 16}em) {
-        ${css(...args)}
-      }
-    `,
+    ...mediaQueries,
   },
   colors: {
     black: '#000000',

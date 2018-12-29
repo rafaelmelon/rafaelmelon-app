@@ -43,7 +43,7 @@ export const enum UserActionTypes {
 }
 
 export interface UserState {
-  readonly isAuth: boolean;
+  readonly isAuth?: boolean;
   readonly user: object;
   readonly isFetching: boolean;
   readonly error: any;
