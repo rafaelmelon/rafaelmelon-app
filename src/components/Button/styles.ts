@@ -6,6 +6,7 @@ interface ButtonStyle {
 
 export const CustomButton = styled('button')<ButtonStyle>`
   font-family: ${({ theme }) => theme.fonts.montserrat};
+  font-weight: ${({ theme }) => theme.fontWeight.extraBold};
   padding: ${({ icon }) => (icon ? '5px' : '10px 30px')};
   text-transform: uppercase;
   color: ${({ theme }) => theme.colors.black};

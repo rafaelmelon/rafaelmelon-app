@@ -30,6 +30,7 @@ export const Welcome = styled.div``;
 
 export const Title = styled.h1`
   font-family: ${({ theme }) => theme.fonts.montserrat};
+  font-weight: ${({ theme }) => theme.fontWeight.extraBold};
   color: ${({ theme }) => theme.colors.black};
   font-size: ${({ theme }) => theme.fontSize.xxl};
   margin-bottom: 20px;

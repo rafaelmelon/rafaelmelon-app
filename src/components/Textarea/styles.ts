@@ -7,6 +7,7 @@ interface TextAreaStyle {
 export const CustomTextarea = styled.textarea<TextAreaStyle>`
   min-height: 100px;
   font-family: ${({ theme }) => theme.fonts.montserrat};
+  font-weight: ${({ theme }) => theme.fontWeight.extraBold};
   color: ${({ theme }) => theme.colors.black};
   border: ${({ theme, error }) =>
     error

@@ -1,6 +1,7 @@
 import { github, linkedin, twitter } from '@assets/index';
 
-export const API = process.env.API;
+const ENV = process.env.NODE_ENV === 'production';
+export const API = ENV ? process.env.API : process.env.API_DEV;
 export const API_GITHUB = process.env.API_GITHUB;
 export const TOKEN_GITHUB = process.env.TOKEN_GITHUB;
 

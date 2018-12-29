@@ -6,6 +6,7 @@ interface InputStyle {
 
 export const CustomInput = styled.input<InputStyle>`
   font-family: ${({ theme }) => theme.fonts.montserrat};
+  font-weight: ${({ theme }) => theme.fontWeight.extraBold};
   padding: 10px 30px;
   color: ${({ theme }) => theme.colors.black};
   border: ${({ theme, error }) =>

@@ -6,6 +6,7 @@ interface LinkStyle {
 
 export const CustomLink = styled.a<LinkStyle>`
   font-family: ${({ theme }) => theme.fonts.montserrat};
+  font-weight: ${({ theme }) => theme.fontWeight.extraBold};
   color: ${({ theme }) => theme.colors.black};
   font-size: ${({ fontSize, theme }) =>
     fontSize ? fontSize : theme.fontSize.nm};
