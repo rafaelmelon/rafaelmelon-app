@@ -1,6 +1,5 @@
 import * as React from 'react';
 import { injectIntl, InjectedIntl, FormattedMessage } from 'react-intl';
-import { withTheme } from 'styled-components';
 
 import { Link } from '@components/index';
 import { Repository } from '@redux/modules/repositories';

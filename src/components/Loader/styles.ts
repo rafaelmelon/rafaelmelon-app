@@ -1,9 +1,15 @@
 import { styled } from '@theme/index';
 
-export const Container = styled.div`
-  width: ${({ theme }) => theme.windowSize.width};
-  height: ${({ theme }) => theme.windowSize.height};
-  background-color: ${({ theme }) => theme.colors.confetti};
+interface LoaderStyle {
+  viewport: {
+    height: number | null;
+    width: number | null;
+  };
+}
+
+export const Container = styled.div<LoaderStyle>`
+  height: ${({ viewport }) => viewport.height}px;
+  width: ${({ viewport }) => viewport.width}px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -15,4 +21,11 @@ export const Container = styled.div`
     opacity: 1;
     transition: opacity 500ms ease-out;
   }
+  background-color: ${({ theme }) => theme.colors.confetti};
+  ${({ theme }) =>
+    theme.media.desktop`background-color: ${theme.colors.jaffa};`}
+      ${({ theme }) =>
+        theme.media.tablet`background-color: ${theme.colors.confetti};`}
+      ${({ theme }) =>
+        theme.media.phone`background-color: ${theme.colors.jaffa};`}
 `;

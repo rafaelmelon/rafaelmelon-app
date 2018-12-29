@@ -12,6 +12,11 @@ import { VIEWPORT, ROUTES } from '@utils/index';
 
 import { Container } from './styles';
 
+declare global {
+  interface Window {
+    fpTurnTo: any;
+  }
+}
 interface HomeProps {
   isAuth: boolean;
   repositories: Repository[];
@@ -22,22 +27,41 @@ interface HomeProps {
   history: any;
 }
 
-class Home extends React.Component<HomeProps, any> {
-  state = {
-    viewport: {
-      height: null,
-      width: null,
-    },
-    loading: true,
+interface HomeState {
+  viewport: {
+    width: number | null;
+    height: number | null;
   };
+  loading: boolean;
+}
 
-  handleResize = () =>
+class Home extends React.Component<HomeProps, HomeState> {
+  constructor(props: any) {
+    super(props);
+    this.state = {
+      viewport: {
+        height: null,
+        width: null,
+      },
+      loading: true,
+    };
+
+    this.handleResize = this.handleResize.bind(this);
+    this.onNavigateContact = this.onNavigateContact.bind(this);
+    this.onPageSection = this.onPageSection.bind(this);
+    this.renderHeader = this.renderHeader.bind(this);
+    this.renderElements = this.renderElements.bind(this);
+    this.renderFooter = this.renderFooter.bind(this);
+  }
+
+  handleResize() {
     this.setState({
       viewport: {
         height: window.innerHeight,
         width: window.innerWidth,
       },
     });
+  }
 
   componentDidMount() {
     setTimeout(() => this.setState({ loading: false }), 1500);
@@ -49,40 +73,49 @@ class Home extends React.Component<HomeProps, any> {
     window.removeEventListener('resize', this.handleResize);
   }
 
-  onNavigateContact = () => {
+  onNavigateContact() {
     this.props.history.push(ROUTES.contact);
-  };
+  }
 
-  onPageSection = (page: number) => {
+  onPageSection(page: number) {
     window.fpTurnTo(page);
-  };
+  }
 
-  renderHeader = () => (
-    <Header
-      user={this.props.user}
-      onNavigateContact={this.onNavigateContact}
-      onPageSection={this.onPageSection}
-      viewport={this.state.viewport}
-    />
-  );
+  renderHeader() {
+    return (
+      <Header
+        user={this.props.user}
+        onNavigateContact={this.onNavigateContact}
+        onPageSection={this.onPageSection}
+        viewport={this.state.viewport}
+      />
+    );
+  }
 
-  renderElements = () => (
-    <Elements
-      repositories={this.props.repositories}
-      viewport={this.state.viewport}
-    />
-  );
+  renderElements() {
+    return (
+      <Elements
+        repositories={this.props.repositories}
+        viewport={this.state.viewport}
+      />
+    );
+  }
 
-  renderFooter = () => (
-    <Footer onPageSection={this.onPageSection} viewport={this.state.viewport} />
-  );
+  renderFooter() {
+    return (
+      <Footer
+        onPageSection={this.onPageSection}
+        viewport={this.state.viewport}
+      />
+    );
+  }
 
   public render() {
     const { loading, viewport } = this.state;
     const isPhone = viewport.width && viewport.width <= VIEWPORT.phone;
 
     if (loading) {
-      return <Loader />;
+      return <Loader viewport={this.state.viewport} />;
     }
 
     if (isPhone) {

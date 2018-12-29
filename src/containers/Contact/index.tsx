@@ -31,22 +31,40 @@ interface ContactProps {
   resetContactForm: () => any;
 }
 
-class Contact extends React.Component<ContactProps> {
-  state = {
-    viewport: {
-      height: null,
-      width: null,
-    },
-    nameValue: '',
+interface ContactState {
+  viewport: {
+    width: number | null;
+    height: number | null;
   };
+  nameValue: string;
+}
 
-  handleResize = () =>
+class Contact extends React.Component<ContactProps, ContactState> {
+  constructor(props: any) {
+    super(props);
+    this.state = {
+      viewport: {
+        height: null,
+        width: null,
+      },
+      nameValue: '',
+    };
+
+    this.handleResize = this.handleResize.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleChange = this.handleChange.bind(this);
+    this.onResetForm = this.onResetForm.bind(this);
+    this.onNavigateHome = this.onNavigateHome.bind(this);
+  }
+
+  handleResize() {
     this.setState({
       viewport: {
         height: window.innerHeight,
         width: window.innerWidth,
       },
     });
+  }
 
   componentDidMount() {
     this.handleResize();
@@ -57,21 +75,22 @@ class Contact extends React.Component<ContactProps> {
     window.removeEventListener('resize', this.handleResize);
   }
 
-  handleSubmit = values => {
+  handleSubmit(values: object) {
     this.props.sendContactForm(values);
-  };
+  }
 
-  handleChange = event => {
-    this.setState({ nameValue: event.target.value });
-  };
+  handleChange(event: React.FormEvent<EventTarget>): void {
+    const target = event.target as HTMLInputElement;
+    this.setState({ nameValue: target.value });
+  }
 
-  onResetForm = () => {
+  onResetForm() {
     this.props.resetContactForm();
-  };
+  }
 
-  onNavigateHome = () => {
+  onNavigateHome() {
     this.props.history.push(ROUTES.home);
-  };
+  }
 
   public render() {
     const { theme, sending, success } = this.props;
@@ -92,7 +111,7 @@ class Contact extends React.Component<ContactProps> {
           </ButtonClose>
           <ContainerForm>
             {sending ? (
-              <Loader />
+              <Loader viewport={this.state.viewport} />
             ) : success ? (
               <SuccessContainer>
                 <Success>

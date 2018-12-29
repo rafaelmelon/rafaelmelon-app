@@ -10,6 +10,10 @@ import { Container } from './styles';
 
 interface LoaderProps {
   theme: Theme;
+  viewport: {
+    width: number | null;
+    height: number | null;
+  };
 }
 
 class Loader extends React.Component<LoaderProps> {
@@ -21,7 +25,7 @@ class Loader extends React.Component<LoaderProps> {
         transitionAppearTimeout={500}
         transitionEnterTimeout={300}
         transitionLeaveTimeout={300}>
-        <Container>
+        <Container viewport={this.props.viewport}>
           <Image src={loaderCircle} iconWidth={this.props.theme.iconSize.x4} />
         </Container>
       </CSSTransitionGroup>

@@ -10,7 +10,6 @@ interface ContactStyle {
 
 export const Container = styled.div<ContactStyle>`
   height: ${({ viewport }) => viewport.height}px;
-  background-color: ${({ theme }) => theme.colors.confetti};
   display: flex;
   justify-content: center;
   align-items: center;
@@ -24,6 +23,13 @@ export const Container = styled.div<ContactStyle>`
     opacity: 1;
     transition: opacity 500ms ease-out;
   }
+  background-color: ${({ theme }) => theme.colors.confetti};
+  ${({ theme }) =>
+    theme.media.desktop`background-color: ${theme.colors.jaffa};`}
+      ${({ theme }) =>
+        theme.media.tablet`background-color: ${theme.colors.confetti};`}
+      ${({ theme }) =>
+        theme.media.phone`background-color: ${theme.colors.jaffa};`}
 `;
 
 export const ContainerForm = styled.div`

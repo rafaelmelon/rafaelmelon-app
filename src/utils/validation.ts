@@ -1,5 +1,11 @@
+type Erros = {
+  name?: string;
+  email?: string;
+  notes?: string;
+};
+
 export const validate = values => {
-  const errors = {};
+  const errors = {} as Erros;
   if (!values.name) {
     errors.name = 'Required';
   }
