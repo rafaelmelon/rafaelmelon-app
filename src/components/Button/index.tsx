@@ -7,6 +7,7 @@ interface ButtonProps {
   onClick?: (event: React.MouseEvent<HTMLElement>) => void;
   type?: string;
   icon?: boolean;
+  disabled?: boolean;
 }
 
 class Button extends React.Component<ButtonProps> {
@@ -14,9 +15,10 @@ class Button extends React.Component<ButtonProps> {
     icon: false,
   };
   public render() {
-    const { children, onClick, ...rest } = this.props;
+    const { children, disabled, onClick, ...rest } = this.props;
+
     return (
-      <CustomButton {...rest} onClick={onClick}>
+      <CustomButton {...rest} disabled={disabled} onClick={onClick}>
         {children}
       </CustomButton>
     );

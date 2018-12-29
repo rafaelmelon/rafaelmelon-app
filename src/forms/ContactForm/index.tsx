@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { injectIntl, InjectedIntl, FormattedMessage } from 'react-intl';
 import { Field, reduxForm } from 'redux-form';
+import { validate } from '@utils/index';
 
 import { Input, Textarea, Button } from '@components/index';
 
@@ -8,13 +9,14 @@ import { GroupForm } from './styles';
 
 interface ContactProps {
   intl: InjectedIntl;
+  submitting: boolean;
   handleSubmit: (values: any) => void;
   handleChange: (event: any) => void;
 }
 
 class ContactForm extends React.Component<ContactProps> {
   public render() {
-    const { intl } = this.props;
+    const { intl, submitting } = this.props;
 
     return (
       <form onSubmit={this.props.handleSubmit}>
@@ -49,8 +51,8 @@ class ContactForm extends React.Component<ContactProps> {
             type="textarea"
           />
         </GroupForm>
-        <Button type="submit">
-          <FormattedMessage id={'header.button'} />
+        <Button type="submit" disabled={submitting}>
+          <FormattedMessage id={'contact.button.send'} />
         </Button>
       </form>
     );
@@ -58,5 +60,6 @@ class ContactForm extends React.Component<ContactProps> {
 }
 
 export default reduxForm({
+  validate,
   form: 'contact',
 })(injectIntl(ContactForm));

@@ -1,13 +1,17 @@
 import { styled } from '@theme/index';
 
-export const Container = styled.div``;
+interface InputStyle {
+  error: string;
+}
 
-export const CustomInput = styled.input`
+export const CustomInput = styled.input<InputStyle>`
   font-family: ${({ theme }) => theme.fonts.montserrat};
   padding: 10px 30px;
-  text-transform: uppercase;
   color: ${({ theme }) => theme.colors.black};
-  border: ${({ theme }) => theme.helpers.borderDashed(theme.colors.black)};
+  border: ${({ theme, error }) =>
+    error
+      ? theme.helpers.borderSolid(theme.colors.red)
+      : theme.helpers.borderDashed(theme.colors.black)};
   background: none;
   border-radius: ${({ theme }) => theme.helpers.radius10};
   transition: ${({ theme }) => theme.helpers.transitionAll};
@@ -15,6 +19,7 @@ export const CustomInput = styled.input`
   outline: none;
   &::placeholder {
     color: ${({ theme }) => theme.colors.black};
+    text-transform: uppercase;
   }
   &:hover {
     border: ${({ theme }) => theme.helpers.borderSolid(theme.colors.black)};
@@ -28,5 +33,3 @@ export const CustomInput = styled.input`
     }
   }
 `;
-
-export const Error = styled.span``;

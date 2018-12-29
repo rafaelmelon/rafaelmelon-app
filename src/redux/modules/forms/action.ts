@@ -1,8 +1,7 @@
 import { action } from 'typesafe-actions';
 
 import { FormsActionTypes } from './types';
-import { request } from '@utils/helpers';
-import { API } from '@utils/constants';
+import { API, request } from '@utils/index';
 
 export const resetContactForm = () => action(FormsActionTypes.FORM_RESET);
 

@@ -2,7 +2,7 @@ import * as React from 'react';
 
 import { Repository } from '@redux/modules/repositories';
 import { Element } from '@components/index';
-import { repositoriesMock } from '@utils/mocks';
+import { repositoriesMock } from '@utils/index';
 
 import { Container, ContainerElements } from './styles';
 

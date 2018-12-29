@@ -6,7 +6,7 @@ import { withTheme } from 'styled-components';
 import { Image, Button } from '@components/index';
 import { User } from '@redux/modules/user';
 import { logo, iconArrow } from '@assets/index';
-import { media } from '@utils/mocks';
+import { media } from '@utils/index';
 import { Theme } from '@theme/index';
 
 import {

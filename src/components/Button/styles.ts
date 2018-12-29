@@ -1,10 +1,10 @@
 import { styled } from '@theme/index';
 
-interface ButtonPropsStyle {
+interface ButtonStyle {
   icon?: boolean;
 }
 
-export const CustomButton = styled('button')<ButtonPropsStyle>`
+export const CustomButton = styled('button')<ButtonStyle>`
   font-family: ${({ theme }) => theme.fonts.montserrat};
   padding: ${({ icon }) => (icon ? '5px' : '10px 30px')};
   text-transform: uppercase;
@@ -21,5 +21,8 @@ export const CustomButton = styled('button')<ButtonPropsStyle>`
     background-color: ${({ theme }) => theme.colors.white};
     border: ${({ theme }) => theme.helpers.borderSolid(theme.colors.black)};
     box-shadow: ${({ theme }) => theme.helpers.boxShadow(theme.colors.black)};
+  }
+  &:disabled {
+    background-color: ${({ theme }) => theme.colors.black};
   }
 `;

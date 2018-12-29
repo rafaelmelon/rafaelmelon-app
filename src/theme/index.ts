@@ -35,6 +35,7 @@ export const theme = {
     white: '#FFFFFF',
     jaffa: '#F08545',
     confetti: '#EAEB5C',
+    red: '#FF0000',
   },
   fonts: {
     montserrat: '"Montserrat", sans-serif',
@@ -70,6 +71,9 @@ export const theme = {
 
 export const GlobalStyles = createGlobalStyle`
   ${reset}
+  html {
+    background-color: ${theme.colors.confetti};
+  }
   body {
     @import url('https://fonts.googleapis.com/css?family=Black+Han+Sans|Open+Sans');
     @import url('https://fonts.googleapis.com/css?family=Montserrat:800');

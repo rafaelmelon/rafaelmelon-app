@@ -9,6 +9,7 @@
   "contact.placeholder.email": "Email",
   "contact.placeholder.textarea": "Notas",
   "contact.button.reset": "Reset",
+  "contact.button.send": "Enviar",
   "contact.success": "Gracias {name} por contactar",
 
   "elements.repo": "GitHub",

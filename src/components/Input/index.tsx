@@ -1,22 +1,32 @@
 import * as React from 'react';
 
-import { Container, CustomInput, Error } from './styles';
+import { CustomInput } from './styles';
 
 interface InputProps {
   input: object;
-  touched: any;
-  error: string;
+  meta: {
+    touched: any;
+    error: string;
+  };
 }
 
 class Input extends React.Component<InputProps> {
   public render() {
-    const { touched, error, input, ...rest } = this.props;
+    const {
+      input,
+      meta: { touched, error },
+      ...rest
+    } = this.props;
 
     return (
-      <Container>
-        <CustomInput {...input} type="text" {...rest} />
-        {touched && error && <Error>{error}</Error>}
-      </Container>
+      <React.Fragment>
+        <CustomInput
+          type="text"
+          error={touched && error}
+          {...input}
+          {...rest}
+        />
+      </React.Fragment>
     );
   }
 }
