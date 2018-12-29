@@ -7,7 +7,7 @@ import { CSSTransitionGroup } from 'react-transition-group';
 import { AppState } from '@redux/modules';
 import { fetchAuth, fetchUser, User } from '@redux/modules/user';
 import { fetchAllRepositories, Repository } from '@redux/modules/repositories';
-import { Header, Elements, Footer } from '@components/index';
+import { Header, Elements, Footer, Loader } from '@components/index';
 import { VIEWPORT, ROUTES } from '@utils/index';
 
 import { Container } from './styles';
@@ -78,12 +78,12 @@ class Home extends React.Component<HomeProps, any> {
   );
 
   public render() {
-    const { viewport } = this.state;
+    const { loading, viewport } = this.state;
     const isPhone = viewport.width && viewport.width <= VIEWPORT.phone;
 
-    // if (loading) {
-    //   return <Loader />;
-    // }
+    if (loading) {
+      return <Loader />;
+    }
 
     if (isPhone) {
       return (

@@ -1,5 +1,5 @@
 {
-  "header.title": "Hello, I'm {value}",
+  "header.title": "Hi, I'm {value}",
   "header.subtitle": "Front-end Developer inspired by code & design principles • Focused mainly on Javascript • Connecting people",
   "footer.title": "Rafael Melón · 2018",
   "header.button": "Contact me!",
@@ -11,6 +11,9 @@
   "contact.button.reset": "Reset",
   "contact.button.send": "Send",
   "contact.success": "Thanks {name} for contacting",
+
+  "notfound.button": "Return",
+  "notfound.title": "Page not found",
 
   "elements.repo": "GitHub",
   "elements.landing": "Landing"

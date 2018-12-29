@@ -12,6 +12,9 @@
   "contact.button.send": "Enviar",
   "contact.success": "Gracias {name} por contactar",
 
+  "notfound.button": "Volver",
+  "notfound.title": "Página no encontrada",
+
   "elements.repo": "GitHub",
   "elements.landing": "Landing"
 }

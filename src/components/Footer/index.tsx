@@ -26,7 +26,7 @@ class Footer extends React.Component<FooterProps> {
     const { viewport } = this.props;
     const isPhone = viewport.width && viewport.width <= VIEWPORT.phone;
 
-    if (!isPhone) {
+    if (isPhone) {
       return (
         <Container>
           <Image src={logo} iconWidth={this.props.theme.iconSize.x3} />
