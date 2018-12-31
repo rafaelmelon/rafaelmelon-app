@@ -12,7 +12,7 @@ module.exports = {
         configFile: './tsconfig.json',
         logLevel: 'info',
         extensions: ['.ts', '.tsx', '.json'],
-        mainFields: ['browser', 'main']
+        mainFields: ['browser', 'main'],
       }),
     ],
   },
