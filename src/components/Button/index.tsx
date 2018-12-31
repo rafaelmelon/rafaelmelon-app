@@ -11,7 +11,7 @@ interface ButtonProps {
 }
 
 class Button extends React.Component<ButtonProps> {
-  static defaultProps = {
+  public static defaultProps = {
     icon: false,
   };
   public render() {

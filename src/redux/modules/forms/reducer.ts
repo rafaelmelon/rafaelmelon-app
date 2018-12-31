@@ -1,5 +1,5 @@
 import { Reducer } from 'redux';
-import { FormsState, FormsActionTypes } from './types';
+import { FormsActionTypes, FormsState } from './types';
 
 const initialState: FormsState = {
   success: '',

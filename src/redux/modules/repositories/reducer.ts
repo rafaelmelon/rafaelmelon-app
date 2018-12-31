@@ -1,5 +1,5 @@
 import { Reducer } from 'redux';
-import { RepositoriesState, RepositoriesActionTypes } from './types';
+import { RepositoriesActionTypes, RepositoriesState } from './types';
 
 const initialState: RepositoriesState = {
   all: [],

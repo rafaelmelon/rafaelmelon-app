@@ -1,14 +1,14 @@
 import * as React from 'react';
+import { Scroller, Section } from 'react-fully-scrolled';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
-import { Scroller, Section } from 'react-fully-scrolled';
 import { CSSTransitionGroup } from 'react-transition-group';
 
+import { Elements, Footer, Header, Loader } from '@components/index';
 import { AppState } from '@redux/modules';
-import { fetchAuth, fetchUser, User } from '@redux/modules/user';
 import { fetchAllRepositories, Repository } from '@redux/modules/repositories';
-import { Header, Elements, Footer, Loader } from '@components/index';
-import { VIEWPORT, ROUTES, repositoriesMock } from '@utils/index';
+import { fetchAuth, fetchUser, User } from '@redux/modules/user';
+import { repositoriesMock, ROUTES, VIEWPORT } from '@utils/index';
 
 import { Container } from './styles';
 
@@ -54,7 +54,7 @@ class Home extends React.Component<HomeProps, HomeState> {
     this.renderFooter = this.renderFooter.bind(this);
   }
 
-  handleResize() {
+  public handleResize() {
     this.setState({
       viewport: {
         height: window.innerHeight,
@@ -63,26 +63,26 @@ class Home extends React.Component<HomeProps, HomeState> {
     });
   }
 
-  componentDidMount() {
+  public componentDidMount() {
     setTimeout(() => this.setState({ loading: false }), 1500);
     this.handleResize();
     window.addEventListener('resize', this.handleResize);
     document.title = 'Rafael Melón | Home';
   }
 
-  componentWillUnmount() {
+  public componentWillUnmount() {
     window.removeEventListener('resize', this.handleResize);
   }
 
-  onNavigateContact() {
+  public onNavigateContact() {
     this.props.history.push(ROUTES.contact);
   }
 
-  onPageSection(page: number) {
+  public onPageSection(page: number) {
     window.fpTurnTo(page);
   }
 
-  renderHeader() {
+  public renderHeader() {
     return (
       <Header
         user={this.props.user}
@@ -93,7 +93,7 @@ class Home extends React.Component<HomeProps, HomeState> {
     );
   }
 
-  renderElements() {
+  public renderElements() {
     return (
       <Elements
         repositories={repositoriesMock}
@@ -102,7 +102,7 @@ class Home extends React.Component<HomeProps, HomeState> {
     );
   }
 
-  renderFooter() {
+  public renderFooter() {
     return (
       <Footer
         onPageSection={this.onPageSection}

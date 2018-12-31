@@ -1,9 +1,9 @@
-import { combineReducers, Dispatch, Action, AnyAction } from 'redux';
+import { Action, AnyAction, combineReducers, Dispatch } from 'redux';
 import { reducer as formReducer } from 'redux-form';
 
-import { FormsState, formsReducer } from './forms';
-import { RepositoriesState, repositoriesReducer } from './repositories';
-import { UserState, userReducer } from './user';
+import { formsReducer, FormsState } from './forms';
+import { repositoriesReducer, RepositoriesState } from './repositories';
+import { userReducer, UserState } from './user';
 
 export interface ConnectedReduxProps<A extends Action = AnyAction> {
   dispatch: Dispatch<A>;

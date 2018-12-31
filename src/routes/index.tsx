@@ -1,6 +1,6 @@
+import { Contact, Home, NotFound } from '@containers/index';
 import * as React from 'react';
 import { Route, Switch } from 'react-router-dom';
-import { Home, Contact, NotFound } from '@containers/index';
 
 class Routes extends React.Component {
   public render() {

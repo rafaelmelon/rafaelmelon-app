@@ -1,9 +1,9 @@
-import * as React from 'react';
-import { injectIntl, InjectedIntl, FormattedMessage } from 'react-intl';
-import { Field, reduxForm } from 'redux-form';
 import { validate } from '@utils/index';
+import * as React from 'react';
+import { FormattedMessage, InjectedIntl, injectIntl } from 'react-intl';
+import { Field, reduxForm } from 'redux-form';
 
-import { Input, Textarea, Button } from '@components/index';
+import { Button, Input, Textarea } from '@components/index';
 
 import { GroupForm } from './styles';
 

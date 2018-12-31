@@ -1,8 +1,8 @@
 import * as React from 'react';
 import { withTheme } from 'styled-components';
 
-import { Image, Button } from '@components/index';
 import { logo } from '@assets/index';
+import { Button, Image } from '@components/index';
 import { Theme } from '@theme/index';
 import { VIEWPORT } from '@utils/index';
 
@@ -18,7 +18,7 @@ interface FooterProps {
 }
 
 class Footer extends React.Component<FooterProps> {
-  onNextPage = () => {
+  public onNextPage = () => {
     this.props.onPageSection(1);
   };
 

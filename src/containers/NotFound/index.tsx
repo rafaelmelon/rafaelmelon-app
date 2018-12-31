@@ -2,24 +2,24 @@ import * as React from 'react';
 import { FormattedMessage } from 'react-intl';
 import { CSSTransitionGroup } from 'react-transition-group';
 
-import { ROUTES } from '@utils/index';
 import { Button } from '@components/index';
+import { ROUTES } from '@utils/index';
 
-import { Container, Welcome, Title } from './styles';
+import { Container, Title, Welcome } from './styles';
 
 interface NotFoundProps {
   history: any;
 }
 
 class NotFound extends React.Component<NotFoundProps> {
-  state = {
+  public state = {
     viewport: {
       height: null,
       width: null,
     },
   };
 
-  handleResize = () =>
+  public handleResize = () =>
     this.setState({
       viewport: {
         height: window.innerHeight,
@@ -27,17 +27,17 @@ class NotFound extends React.Component<NotFoundProps> {
       },
     });
 
-  componentDidMount() {
+  public componentDidMount() {
     this.handleResize();
     window.addEventListener('resize', this.handleResize);
     document.title = 'Rafael Melón | Not found';
   }
 
-  componentWillUnmount() {
+  public componentWillUnmount() {
     window.removeEventListener('resize', this.handleResize);
   }
 
-  onNavigateHome = () => {
+  public onNavigateHome = () => {
     this.props.history.push(ROUTES.home);
   };
 

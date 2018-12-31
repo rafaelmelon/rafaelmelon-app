@@ -2,8 +2,8 @@ import * as React from 'react';
 import { CSSTransitionGroup } from 'react-transition-group';
 import { withTheme } from 'styled-components';
 
-import { Image } from '@components/index';
 import { loaderCircle } from '@assets/index';
+import { Image } from '@components/index';
 import { Theme } from '@theme/index';
 
 import { Container } from './styles';

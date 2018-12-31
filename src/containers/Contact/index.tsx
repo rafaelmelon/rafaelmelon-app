@@ -1,25 +1,25 @@
 import * as React from 'react';
 import { FormattedMessage } from 'react-intl';
 import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
 import { CSSTransitionGroup } from 'react-transition-group';
 import { withTheme } from 'styled-components';
-import { withRouter } from 'react-router-dom';
 
-import { AppState } from '@redux/modules';
-import { sendContactForm, resetContactForm } from '@redux/modules/forms';
-import { Image, Button, Loader } from '@components/index';
+import { iconClose, logoAlt } from '@assets/index';
+import { Button, Image, Loader } from '@components/index';
 import { ContactForm } from '@forms/index';
+import { AppState } from '@redux/modules';
+import { resetContactForm, sendContactForm } from '@redux/modules/forms';
 import { Theme } from '@theme/index';
-import { logoAlt, iconClose } from '@assets/index';
 import { ROUTES } from '@utils/index';
 
 import {
+  ButtonClose,
+  ButtonLogo,
   Container,
   ContainerForm,
-  ButtonLogo,
-  ButtonClose,
-  SuccessContainer,
   Success,
+  SuccessContainer,
 } from './styles';
 
 interface ContactProps {
@@ -57,7 +57,7 @@ class Contact extends React.Component<ContactProps, ContactState> {
     this.onNavigateHome = this.onNavigateHome.bind(this);
   }
 
-  handleResize() {
+  public handleResize() {
     this.setState({
       viewport: {
         height: window.innerHeight,
@@ -66,30 +66,30 @@ class Contact extends React.Component<ContactProps, ContactState> {
     });
   }
 
-  componentDidMount() {
+  public componentDidMount() {
     this.handleResize();
     window.addEventListener('resize', this.handleResize);
     document.title = 'Rafael Melón | Contact';
   }
 
-  componentWillUnmount() {
+  public componentWillUnmount() {
     window.removeEventListener('resize', this.handleResize);
   }
 
-  handleSubmit(values: object) {
+  public handleSubmit(values: object) {
     this.props.sendContactForm(values);
   }
 
-  handleChange(event: React.FormEvent<EventTarget>): void {
+  public handleChange(event: React.FormEvent<EventTarget>): void {
     const target = event.target as HTMLInputElement;
     this.setState({ nameValue: target.value });
   }
 
-  onResetForm() {
+  public onResetForm() {
     this.props.resetContactForm();
   }
 
-  onNavigateHome() {
+  public onNavigateHome() {
     this.props.history.push(ROUTES.home);
   }
 

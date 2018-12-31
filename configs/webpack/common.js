@@ -1,29 +1,25 @@
 // shared config (dev and prod)
-const {
-  resolve
-} = require('path');
+const { resolve } = require('path');
 const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin');
-const {
-  CheckerPlugin
-} = require('awesome-typescript-loader');
+const { CheckerPlugin } = require('awesome-typescript-loader');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   resolve: {
-    extensions: ['.ts', '.tsx', '.js', '.jsx'],
+    extensions: ['.ts', '.tsx', '.js', '.jsx', '.json'],
     plugins: [
       new TsconfigPathsPlugin({
-        configFile: "./tsconfig.json",
-        logLevel: "info",
-        extensions: [".ts", ".tsx"],
-        mainFields: ["browser", "main"],
-        // baseUrl: "/foo"
-      })
-    ]
+        configFile: './tsconfig.json',
+        logLevel: 'info',
+        extensions: ['.ts', '.tsx', '.json'],
+        mainFields: ['browser', 'main']
+      }),
+    ],
   },
   context: resolve(__dirname, '../../src'),
   module: {
-    rules: [{
+    rules: [
+      {
         test: /\.js$/,
         use: ['babel-loader', 'source-map-loader'],
         exclude: /node_modules/,
@@ -34,12 +30,15 @@ module.exports = {
       },
       {
         test: /\.css$/,
-        use: ['style-loader', {
-          loader: 'css-loader',
-          options: {
-            importLoaders: 1
-          }
-        }],
+        use: [
+          'style-loader',
+          {
+            loader: 'css-loader',
+            options: {
+              importLoaders: 1,
+            },
+          },
+        ],
       },
       {
         test: /\.scss$/,
@@ -48,8 +47,8 @@ module.exports = {
           {
             loader: 'css-loader',
             options: {
-              importLoaders: 1
-            }
+              importLoaders: 1,
+            },
           },
           'sass-loader',
         ],
@@ -63,14 +62,16 @@ module.exports = {
       },
       {
         test: /\.(woff(2)?|ttf|eot)(\?v=\d+\.\d+\.\d+)?$/,
-        use: [{
-          loader: 'file-loader',
-          options: {
-            name: '[name].[ext]',
-            outputPath: 'fonts/'
-          }
-        }]
-      }
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: '[name].[ext]',
+              outputPath: 'fonts/',
+            },
+          },
+        ],
+      },
     ],
   },
   plugins: [
@@ -79,10 +80,6 @@ module.exports = {
       template: 'index.html',
     }),
   ],
-  // externals: {
-  //   'react': 'React',
-  //   'react-dom': 'ReactDOM',
-  // },
   performance: {
     hints: false,
   },

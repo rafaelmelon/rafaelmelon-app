@@ -2,21 +2,21 @@ import * as React from 'react';
 import { FormattedMessage } from 'react-intl';
 import { withTheme } from 'styled-components';
 
-import { Image, Button } from '@components/index';
+import { iconArrow, logoAlt } from '@assets/index';
+import { Button, Image } from '@components/index';
 import { User } from '@redux/modules/user';
-import { logoAlt, iconArrow } from '@assets/index';
-import { SOCIAL, VIEWPORT } from '@utils/index';
 import { Theme } from '@theme/index';
+import { SOCIAL, VIEWPORT } from '@utils/index';
 
 import {
-  Container,
+  ButtonBottom,
   ButtonLogo,
-  Welcome,
-  Title,
+  ButtonMedia,
+  Container,
   Description,
   SocialMedia,
-  ButtonMedia,
-  ButtonBottom,
+  Title,
+  Welcome,
 } from './styles';
 
 interface HeaderProps {
@@ -31,7 +31,7 @@ interface HeaderProps {
 }
 
 class Header extends React.Component<HeaderProps> {
-  onNextPage = () => {
+  public onNextPage = () => {
     this.props.onPageSection(2);
   };
 

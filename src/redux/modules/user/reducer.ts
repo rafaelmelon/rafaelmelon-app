@@ -1,5 +1,5 @@
 import { Reducer } from 'redux';
-import { UserState, UserActionTypes } from './types';
+import { UserActionTypes, UserState } from './types';
 
 const initialState: UserState = {
   isAuth: false,

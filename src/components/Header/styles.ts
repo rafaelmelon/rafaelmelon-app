@@ -1,5 +1,5 @@
-import { styled } from '@theme/index';
 import { Button } from '@components/index';
+import { styled } from '@theme/index';
 
 export const Container = styled.div`
   height: 100%;

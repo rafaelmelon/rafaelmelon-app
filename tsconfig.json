@@ -20,7 +20,7 @@
       "@utils/*": ["utils/*"],
       "@locales/*": ["locales/*"],
       "@routes/*": ["routes/*"],
-      "@forms/*": ["forms/*"],
+      "@forms/*": ["forms/*"]
     },
     "allowSyntheticDefaultImports": true,
     "forceConsistentCasingInFileNames": true,
@@ -28,16 +28,9 @@
     "suppressImplicitAnyIndexErrors": true,
     "noUnusedLocals": true
   },
-  "exclude": [
-    "node_modules",
-    "**/*spec.ts"
-  ],
-  "include": [
-    "src/**/*"
-  ],
+  "exclude": ["node_modules", "**/*spec.ts"],
+  "include": ["src/**/*"],
   "awesomeTypescriptLoaderOptions": {
-    "reportFiles": [
-      "./src/**/*"
-    ]
+    "reportFiles": ["./src/**/*"]
   }
 }

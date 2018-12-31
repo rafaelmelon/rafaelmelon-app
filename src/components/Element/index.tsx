@@ -1,10 +1,10 @@
 import * as React from 'react';
-import { injectIntl, InjectedIntl, FormattedMessage } from 'react-intl';
+import { FormattedMessage, InjectedIntl, injectIntl } from 'react-intl';
 
 import { Link } from '@components/index';
 import { Repository } from '@redux/modules/repositories';
 
-import { Container, Title, Info, Date } from './styles';
+import { Container, Date, Info, Title } from './styles';
 
 interface ElementProps {
   element: Repository;
@@ -12,7 +12,7 @@ interface ElementProps {
 }
 
 class Element extends React.Component<ElementProps> {
-  getLastUpdate = date => {
+  public getLastUpdate = date => {
     return this.props.intl.formatDate(date);
   };
 

@@ -1,7 +1,7 @@
 import baseStyled, {
-  ThemedStyledInterface,
-  css,
   createGlobalStyle,
+  css,
+  ThemedStyledInterface,
 } from 'styled-components';
 
 import { VIEWPORT } from '@utils/index';
