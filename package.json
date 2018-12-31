@@ -8,9 +8,10 @@
     "build": "yarn run clean && webpack -p --config configs/webpack/prod.js --progress",
     "clean": "rm -f -r -d dist",
     "lint": "tslint --project tsconfig.json 'src/**/*.{ts,tsx}' --fix --format stylish",
-    "start": "yarn run build && yarn run launch",
+    "start": "yarn run launch",
     "dev": "webpack-dev-server -d --config configs/webpack/dev.js --progress",
-    "prettier": "prettier --write \"{,!(node_modules|dist|build|coverage)/**/}*.{js,jsx,ts,tsx,json}\""
+    "prettier": "prettier --write \"{,!(node_modules|dist|build|coverage)/**/}*.{js,jsx,ts,tsx,json}\"",
+    "postinstall": "yarn && yarn run build"
   },
   "repository": {
     "type": "git",
