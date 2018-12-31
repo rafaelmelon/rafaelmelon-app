@@ -1,6 +1,6 @@
 import { action } from 'typesafe-actions';
 
-import { API, request } from '@utils/index';
+import { RM_API, request } from '@utils/index';
 import { RepositoriesActionTypes, Repository } from './types';
 
 export const fetchAllRepositoriesRequest = () =>
@@ -12,7 +12,7 @@ export const fetchAllRepositoriesFailure = (error: string) =>
 
 export const fetchAllRepositories = () => dispatch => {
   dispatch(fetchAllRepositoriesRequest());
-  request(`${API}/users/rafaelmelon/repos`)
+  request(`${RM_API}/users/rafaelmelon/repos`)
     .then(json => dispatch(fetchAllRepositoriesSuccess(json)))
     .catch(error => dispatch(fetchAllRepositoriesFailure(error)));
 };

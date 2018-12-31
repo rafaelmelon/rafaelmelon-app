@@ -1,6 +1,6 @@
 import { action } from 'typesafe-actions';
 
-import { API, request } from '@utils/index';
+import { RM_API, request } from '@utils/index';
 import { FormsActionTypes } from './types';
 
 export const resetContactForm = () => action(FormsActionTypes.FORM_RESET);
@@ -19,7 +19,7 @@ export const sendContactForm = values => dispatch => {
   };
 
   dispatch(sendFormRequest());
-  request(`${API}/contact`, options)
+  request(`${RM_API}/contact`, options)
     .then(json => dispatch(sendFormSuccess(json)))
     .catch(error => dispatch(sendFormFailure(error)));
 };
