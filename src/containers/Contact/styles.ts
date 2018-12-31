@@ -23,13 +23,7 @@ export const Container = styled.div<ContactStyle>`
     opacity: 1;
     transition: opacity 500ms ease-out;
   }
-  background-color: ${({ theme }) => theme.colors.confetti};
-  ${({ theme }) =>
-    theme.media.desktop`background-color: ${theme.colors.jaffa};`}
-      ${({ theme }) =>
-        theme.media.tablet`background-color: ${theme.colors.confetti};`}
-      ${({ theme }) =>
-        theme.media.phone`background-color: ${theme.colors.jaffa};`}
+  ${({ theme }) => theme.media.phone`height: 100%; padding: 150px 20px;`}
 `;
 
 export const ContainerForm = styled.div`

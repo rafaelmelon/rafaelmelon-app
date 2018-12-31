@@ -88,6 +88,15 @@ export const GlobalStyles = createGlobalStyle`
     font-family: ${theme.fonts.openSans};
     color: ${theme.colors.black};
     letter-spacing: 0.02rem;
+    @media (max-width: 992px) {
+      background-color: ${theme.colors.jaffa};
+    }
+    @media (max-width: 768px) {
+      background-color: ${theme.colors.confetti};
+    }
+    @media (max-width: 576px) {
+      background-color: ${theme.colors.jaffa};
+    }
   }
 `;
 
