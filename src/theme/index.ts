@@ -63,10 +63,6 @@ export const theme = {
     x2: '40px',
     x1: '30px',
   },
-  windowSize: {
-    height: window.innerHeight + 'px',
-    width: window.innerWidth + 'px',
-  },
   helpers: {
     transitionAll: 'all 0.3s ease-out',
     borderDashed: color => `4px dashed ${color}20`,
@@ -84,10 +80,12 @@ export const GlobalStyles = createGlobalStyle`
   body {
     @import url('https://fonts.googleapis.com/css?family=Black+Han+Sans|Open+Sans');
     @import url('https://fonts.googleapis.com/css?family=Montserrat:800');
-    background-color: ${theme.colors.confetti};
     font-family: ${theme.fonts.openSans};
     color: ${theme.colors.black};
     letter-spacing: 0.02rem;
+    @media (min-width: 993px) {
+      background-color: ${theme.colors.confetti};
+    }
     @media (max-width: 992px) {
       background-color: ${theme.colors.jaffa};
     }

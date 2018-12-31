@@ -21,11 +21,4 @@ export const Container = styled.div<LoaderStyle>`
     opacity: 1;
     transition: opacity 500ms ease-out;
   }
-  background-color: ${({ theme }) => theme.colors.confetti};
-  ${({ theme }) =>
-    theme.media.desktop`background-color: ${theme.colors.jaffa};`}
-      ${({ theme }) =>
-        theme.media.tablet`background-color: ${theme.colors.confetti};`}
-      ${({ theme }) =>
-        theme.media.phone`background-color: ${theme.colors.jaffa};`}
 `;
