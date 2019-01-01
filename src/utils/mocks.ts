@@ -690,7 +690,7 @@ export const repositoriesMock = [
     },
     html_url: 'https://github.com/rafaelmelon/check-rules',
     description:
-      ' NPM module to  to check conditional rules in the APP && RM_API project',
+      ' NPM module to  to check conditional rules in the APP && API_URL project',
     fork: false,
     url: 'https://api.github.com/repos/rafaelmelon/check-rules',
     forks_url: 'https://api.github.com/repos/rafaelmelon/check-rules/forks',
@@ -1750,7 +1750,7 @@ export const repositoriesMock = [
     },
     html_url: 'https://github.com/rafaelmelon/match-dog',
     description:
-      ' Simple application to join dogs... HTML5, CSS (SASS & Bootstrap 3), EJS, Node JS, RM_API REST, Express JS, MongoDB',
+      ' Simple application to join dogs... HTML5, CSS (SASS & Bootstrap 3), EJS, Node JS, API_URL REST, Express JS, MongoDB',
     fork: false,
     url: 'https://api.github.com/repos/rafaelmelon/match-dog',
     forks_url: 'https://api.github.com/repos/rafaelmelon/match-dog/forks',
@@ -2539,7 +2539,7 @@ export const repositoriesMock = [
     },
     html_url: 'https://github.com/rafaelmelon/simple-load-api',
     description:
-      'Simple loading of a gallery from an RM_API... HTML5, React JS, Axios, Node JS',
+      'Simple loading of a gallery from an API_URL... HTML5, React JS, Axios, Node JS',
     fork: false,
     url: 'https://api.github.com/repos/rafaelmelon/simple-load-api',
     forks_url: 'https://api.github.com/repos/rafaelmelon/simple-load-api/forks',
@@ -2804,7 +2804,7 @@ export const repositoriesMock = [
     },
     html_url: 'https://github.com/rafaelmelon/star-wars-api',
     description:
-      'Loading a star wars RM_API... HTML5, CSS (SASS), Node JS, Webpack 3, React JS',
+      'Loading a star wars API_URL... HTML5, CSS (SASS), Node JS, Webpack 3, React JS',
     fork: false,
     url: 'https://api.github.com/repos/rafaelmelon/star-wars-api',
     forks_url: 'https://api.github.com/repos/rafaelmelon/star-wars-api/forks',
@@ -3317,7 +3317,7 @@ export const repositoriesMock = [
     },
     html_url: 'https://github.com/rafaelmelon/ux-portfolio',
     description:
-      ' Portfolio for a UX Professional... HTML5, SASS & Skeleton, React JS, Webpack 3, Node JS, RSS & AXIOS, Medium RM_API',
+      ' Portfolio for a UX Professional... HTML5, SASS & Skeleton, React JS, Webpack 3, Node JS, RSS & AXIOS, Medium API_URL',
     fork: false,
     url: 'https://api.github.com/repos/rafaelmelon/ux-portfolio',
     forks_url: 'https://api.github.com/repos/rafaelmelon/ux-portfolio/forks',

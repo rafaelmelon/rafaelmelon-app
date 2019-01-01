@@ -1,11 +1,9 @@
 import { github, linkedin, twitter } from '@assets/index';
 
 const ENV = process.env.NODE_ENV === 'production';
-export const RM_API = ENV ? process.env.RM_API : process.env.RM_API_DEV;
+export const API_URL = ENV ? process.env.API_URL : process.env.API_URL_DEV;
 export const API_GITHUB = process.env.API_GITHUB;
 export const TOKEN_GITHUB = process.env.TOKEN_GITHUB;
-
-console.log(process.env.RM_API, process.env.RM_API_DEV, ENV, RM_API);
 
 export const VIEWPORT = {
   desktop: 992,
