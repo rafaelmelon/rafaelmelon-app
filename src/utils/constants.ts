@@ -5,6 +5,8 @@ export const API_URL = ENV ? process.env.API_URL : process.env.API_URL_DEV;
 export const API_GITHUB = process.env.API_GITHUB;
 export const TOKEN_GITHUB = process.env.TOKEN_GITHUB;
 
+console.log(process.env, API_URL);
+
 export const VIEWPORT = {
   desktop: 992,
   tablet: 768,
