@@ -1,6 +1,6 @@
 import { action } from 'typesafe-actions';
 
-import { request, requestJSON, API_URL } from '@utils/index';
+import { API_URL, request, requestJSON } from '@utils/index';
 import { User, UserActionTypes } from './types';
 
 export const fetchAuthSuccess = (payload: any) =>

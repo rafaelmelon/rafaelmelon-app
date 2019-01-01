@@ -1,6 +1,6 @@
 import { action } from 'typesafe-actions';
 
-import { request, API_URL } from '@utils/index';
+import { API_URL, request } from '@utils/index';
 import { RepositoriesActionTypes, Repository } from './types';
 
 export const fetchAllRepositoriesRequest = () =>

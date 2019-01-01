@@ -2,21 +2,23 @@
   "name": "rafaelmelon",
   "version": "0.0.1",
   "description": "Rafael Melón - Front-end Developer SPA Portfolio",
+  "author": "Rafael Melón <info@rafaelmelon.es> (http://rafaelmelon.es/)",
+  "license": "MIT",
   "private": true,
   "scripts": {
     "set:env": "node setenv.js > .env",
-    "launch": "node server/express.js",
+    "serve": "node server/express.js",
     "build": "yarn run clean && webpack -p --config configs/webpack/prod.js --progress",
     "clean": "rm -f -r -d dist",
     "lint": "tslint --project tsconfig.json 'src/**/*.{ts,tsx}' --fix --format stylish",
-    "start": "yarn run launch",
+    "start": "yarn run serve",
     "dev": "webpack-dev-server -d --config configs/webpack/dev.js --progress",
     "prettier": "prettier --write \"{,!(node_modules|dist|build|coverage)/**/}*.{js,jsx,ts,tsx,json}\"",
     "heroku-postbuild": "yarn && yarn run set:env && yarn run build"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/rafaelmelon/rafaelmelon.git"
+    "url": "git+https://github.com/rafaelmelon/rafaelmelon-app.git"
   },
   "keywords": [
     "react",
@@ -28,12 +30,10 @@
     "heroku",
     "prettier"
   ],
-  "author": "Rafael Melón <info@rafaelmelon.es> (http://rafaelmelon.es/)",
-  "license": "MIT",
   "bugs": {
-    "url": "https://github.com/rafaelmelon/rafaelmelon/issues"
+    "url": "https://github.com/rafaelmelon/rafaelmelon-app/issues"
   },
-  "homepage": "https://github.com/rafaelmelon/rafaelmelon#readme",
+  "homepage": "https://github.com/rafaelmelon/rafaelmelon-app#readme",
   "engines": {
     "node": ">=8.9.4",
     "yarn": "1.x"

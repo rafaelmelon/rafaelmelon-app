@@ -1,6 +1,6 @@
 import { action } from 'typesafe-actions';
 
-import { request, API_URL } from '@utils/index';
+import { API_URL, request } from '@utils/index';
 import { FormsActionTypes } from './types';
 
 export const resetContactForm = () => action(FormsActionTypes.FORM_RESET);
@@ -17,6 +17,8 @@ export const sendContactForm = values => dispatch => {
     method: 'POST',
     body: JSON.stringify(values),
   };
+
+  console.log(options)
 
   dispatch(sendFormRequest());
   request(`${API_URL}/contact`, options)

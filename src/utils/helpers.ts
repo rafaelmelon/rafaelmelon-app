@@ -1,5 +1,3 @@
-import { TOKEN_GITHUB } from './constants';
-
 export const setToken = token => {
   return window.localStorage.setItem('token', token);
 };
@@ -13,7 +11,6 @@ export const request = (url, options = {}) => {
     headers: {
       Accept: 'application/json',
       'Content-Type': 'application/json',
-      Authorization: 'Bearer ' + TOKEN_GITHUB,
     },
     ...options,
   };
