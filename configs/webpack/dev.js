@@ -1,8 +1,18 @@
 // development config
 const merge = require('webpack-merge');
 const webpack = require('webpack');
+const dotenv = require('dotenv');
 const { resolve } = require('path');
 const commonConfig = require('./common');
+
+// call dotenv and it will return an Object with a parsed key
+const env = dotenv.config().parsed;
+
+// reduce it to a nice object, the same as before
+const envKeys = Object.keys(env).reduce((prev, next) => {
+  prev[`process.env.${next}`] = JSON.stringify(env[next]);
+  return prev;
+}, {});
 
 module.exports = merge(commonConfig, {
   mode: 'development',
@@ -21,5 +31,6 @@ module.exports = merge(commonConfig, {
   plugins: [
     new webpack.HotModuleReplacementPlugin(), // enable HMR globally
     new webpack.NamedModulesPlugin(), // prints more readable module names in the browser console on HMR updates
+    new webpack.DefinePlugin(envKeys),
   ],
 });
