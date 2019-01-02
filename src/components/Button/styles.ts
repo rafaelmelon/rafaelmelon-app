@@ -13,7 +13,7 @@ export const CustomButton = styled('button')<ButtonStyle>`
   border: ${({ icon, theme }) =>
     icon
       ? theme.helpers.borderTransparent
-      : theme.helpers.borderDashed(theme.colors.black)};
+      : theme.helpers.borderDashedAlpha(theme.colors.black)};
   background: none;
   border-radius: ${({ theme }) => theme.helpers.radius10};
   transition: ${({ theme }) => theme.helpers.transitionAll};

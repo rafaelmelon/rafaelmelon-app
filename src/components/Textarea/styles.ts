@@ -12,7 +12,7 @@ export const CustomTextarea = styled.textarea<TextAreaStyle>`
   border: ${({ theme, error }) =>
     error
       ? theme.helpers.borderSolid(theme.colors.red)
-      : theme.helpers.borderDashed(theme.colors.black)};
+      : theme.helpers.borderDashedAlpha(theme.colors.black)};
   background: none;
   border-radius: ${({ theme }) => theme.helpers.radius10};
   transition: ${({ theme }) => theme.helpers.transitionAll};

@@ -8,7 +8,7 @@ import { CSSTransitionGroup } from 'react-transition-group';
 import { About, Elements, Footer, Header, Loader } from '@components/index';
 import { AppState } from '@redux/modules';
 import { fetchAllRepositories, Repository } from '@redux/modules/repositories';
-import { pageLoaded, fetchAuth, fetchUser, User } from '@redux/modules/user';
+import { fetchAuth, fetchUser, pageLoaded, User } from '@redux/modules/user';
 import { repositoriesMock, ROUTES, VIEWPORT } from '@utils/index';
 
 import { Container } from './styles';
