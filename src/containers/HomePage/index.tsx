@@ -1,3 +1,4 @@
+import { History } from 'history';
 import * as React from 'react';
 import ReactPageScroller from 'react-page-scroller';
 import { connect } from 'react-redux';
@@ -19,7 +20,7 @@ interface HomeProps {
   fetchAuth: () => any;
   fetchUser: () => any;
   fetchAllRepositories: () => any;
-  history: any;
+  history: History;
 }
 
 interface HomeState {
@@ -31,7 +32,7 @@ interface HomeState {
 }
 
 class HomePage extends React.Component<HomeProps, HomeState> {
-  private reactPageScroller: React.RefObject<{}>;
+  private reactPageScroller: ReactPageScroller;
   constructor(props: any) {
     super(props);
     this.state = {
@@ -46,9 +47,7 @@ class HomePage extends React.Component<HomeProps, HomeState> {
     this.handleResize = this.handleResize.bind(this);
     this.onNavigateContact = this.onNavigateContact.bind(this);
     this.onPageSection = this.onPageSection.bind(this);
-    this.renderHeader = this.renderHeader.bind(this);
-    this.renderElements = this.renderElements.bind(this);
-    this.renderFooter = this.renderFooter.bind(this);
+    this.renderSections = this.renderSections.bind(this);
   }
 
   public handleResize() {
@@ -79,42 +78,19 @@ class HomePage extends React.Component<HomeProps, HomeState> {
     this.reactPageScroller.goToPage(page);
   }
 
-  public renderHeader() {
-    return (
+  public renderSections() {
+    const sections = [
       <Header
+        key={'header'}
         user={this.props.user}
         onNavigateContact={this.onNavigateContact}
         onPageSection={this.onPageSection}
-        viewport={this.state.viewport}
-      />
-    );
-  }
-
-  public renderAbout() {
-    return (
-      <About
-        viewport={this.state.viewport}
-        onPageSection={this.onPageSection}
-      />
-    );
-  }
-
-  public renderElements() {
-    return (
-      <Elements
-        repositories={repositoriesMock}
-        viewport={this.state.viewport}
-      />
-    );
-  }
-
-  public renderFooter() {
-    return (
-      <Footer
-        onPageSection={this.onPageSection}
-        viewport={this.state.viewport}
-      />
-    );
+      />,
+      <About key={'about'} onPageSection={this.onPageSection} />,
+      <Elements key={'elements'} repositories={repositoriesMock} />,
+      <Footer key={'footer'} onNavigateContact={this.onNavigateContact} />,
+    ];
+    return sections.map(item => item);
   }
 
   public render() {
@@ -125,17 +101,6 @@ class HomePage extends React.Component<HomeProps, HomeState> {
       return <Loader viewport={this.state.viewport} />;
     }
 
-    if (isPhone) {
-      return (
-        <Container>
-          {this.renderHeader()}
-          {this.renderAbout()}
-          {this.renderElements()}
-          {this.renderFooter()}
-        </Container>
-      );
-    }
-
     return (
       <CSSTransitionGroup
         transitionName={'home'}
@@ -144,22 +109,15 @@ class HomePage extends React.Component<HomeProps, HomeState> {
         transitionEnterTimeout={300}
         transitionLeaveTimeout={300}>
         <Container>
-          <ReactPageScroller ref={c => (this.reactPageScroller = c)}>
-            <Header
-              user={this.props.user}
-              onNavigateContact={this.onNavigateContact}
-              onPageSection={this.onPageSection}
-              viewport={this.state.viewport}
-            />
-            <About
-              viewport={this.state.viewport}
-              onPageSection={this.onPageSection}
-            />
-            <Elements
-              repositories={repositoriesMock}
-              viewport={this.state.viewport}
-            />
-          </ReactPageScroller>
+          {!isPhone ? (
+            <ReactPageScroller
+              ref={c => (this.reactPageScroller = c)}
+              animationTimer={600}>
+              {this.renderSections()}
+            </ReactPageScroller>
+          ) : (
+            <React.Fragment>{this.renderSections()}</React.Fragment>
+          )}
         </Container>
       </CSSTransitionGroup>
     );

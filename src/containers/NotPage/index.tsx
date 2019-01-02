@@ -1,3 +1,4 @@
+import { History } from 'history';
 import * as React from 'react';
 import { FormattedMessage } from 'react-intl';
 import { CSSTransitionGroup } from 'react-transition-group';
@@ -8,7 +9,7 @@ import { ROUTES } from '@utils/index';
 import { Container, Title, Welcome } from './styles';
 
 interface NotProps {
-  history: any;
+  history: History;
 }
 
 class NotPage extends React.Component<NotProps> {

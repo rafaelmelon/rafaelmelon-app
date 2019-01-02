@@ -6,10 +6,6 @@ import { Container, ContainerElements } from './styles';
 
 interface ElementsProps {
   repositories: any[];
-  viewport: {
-    width: number | null;
-    height: number | null;
-  };
 }
 
 class Elements extends React.Component<ElementsProps> {

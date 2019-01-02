@@ -6,7 +6,7 @@ import { iconArrow, logoAlt } from '@assets/index';
 import { Button, Image } from '@components/index';
 import { User } from '@redux/modules/user';
 import { Theme } from '@theme/index';
-import { SOCIAL, VIEWPORT } from '@utils/index';
+import { SOCIAL } from '@utils/index';
 
 import {
   ButtonBottom,
@@ -22,22 +22,17 @@ import {
 interface HeaderProps {
   theme: Theme;
   user: User;
-  viewport: {
-    width: number | null;
-    height: number | null;
-  };
-  onNavigateContact: () => any;
+  onNavigateContact: (event: React.MouseEvent<HTMLElement>) => void;
   onPageSection: (page: number) => any;
 }
 
 class Header extends React.Component<HeaderProps> {
   public onNextPage = () => {
-    this.props.onPageSection(0);
+    this.props.onPageSection(1);
   };
 
   public render() {
-    const { theme, onNavigateContact, viewport } = this.props;
-    const isPhone = viewport.width && viewport.width <= VIEWPORT.phone;
+    const { theme, onNavigateContact } = this.props;
     // const { bio, name } = this.props.user;
 
     return (
@@ -69,11 +64,9 @@ class Header extends React.Component<HeaderProps> {
             <FormattedMessage id={'header.button'} />
           </Button>
         </Welcome>
-        {!isPhone && (
-          <ButtonBottom onClick={this.onNextPage} icon={true}>
-            <Image src={iconArrow} iconWidth={theme.iconSize.x1} />
-          </ButtonBottom>
-        )}
+        <ButtonBottom onClick={this.onNextPage} icon={true}>
+          <Image src={iconArrow} iconWidth={theme.iconSize.x1} />
+        </ButtonBottom>
       </Container>
     );
   }

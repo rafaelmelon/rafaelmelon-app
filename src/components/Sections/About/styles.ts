@@ -9,7 +9,15 @@ export const Container = styled.div`
   flex-direction: column;
   flex: 1;
   padding: 0 150px;
+  position: relative;
   ${({ theme }) => theme.media.phone`padding: 150px 20px;`}
+  &.home-appear {
+    opacity: 0.01;
+  }
+  &.home-appear-active {
+    opacity: 1;
+    transition: opacity 500ms ease-out;
+  }
 `;
 
 export const Grid = styled.div`
@@ -51,4 +59,5 @@ export const ButtonBottom = styled(Button)`
   flex-direction: column;
   position: absolute;
   bottom: 20px;
+  ${({ theme }) => theme.media.phone`display: none`}
 `;

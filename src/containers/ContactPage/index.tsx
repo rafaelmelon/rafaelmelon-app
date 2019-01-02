@@ -1,3 +1,4 @@
+import { History } from 'history';
 import * as React from 'react';
 import { FormattedMessage } from 'react-intl';
 import { connect } from 'react-redux';
@@ -24,7 +25,7 @@ import {
 
 interface ContactProps {
   theme: Theme;
-  history: any;
+  history: History;
   success: string;
   sending: boolean;
   sendContactForm: (values: any) => any;

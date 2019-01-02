@@ -5,7 +5,6 @@ import { withTheme } from 'styled-components';
 import { iconArrow } from '@assets/index';
 import { Image } from '@components/index';
 import { Theme } from '@theme/index';
-import { VIEWPORT } from '@utils/index';
 
 import {
   ButtonBottom,
@@ -19,10 +18,6 @@ import {
 
 interface AboutProps {
   theme: Theme;
-  viewport: {
-    width: number | null;
-    height: number | null;
-  };
   onPageSection: (page: number) => any;
 }
 
@@ -32,8 +27,7 @@ class About extends React.Component<AboutProps> {
   };
 
   public render() {
-    const { theme, viewport } = this.props;
-    const isPhone = viewport.width && viewport.width <= VIEWPORT.phone;
+    const { theme } = this.props;
 
     return (
       <Container>
@@ -60,11 +54,9 @@ class About extends React.Component<AboutProps> {
             </Text>
           </ColumnTwo>
         </Grid>
-        {!isPhone && (
-          <ButtonBottom onClick={this.onNextPage} icon={true}>
-            <Image src={iconArrow} iconWidth={theme.iconSize.x1} />
-          </ButtonBottom>
-        )}
+        <ButtonBottom onClick={this.onNextPage} icon={true}>
+          <Image src={iconArrow} iconWidth={theme.iconSize.x1} />
+        </ButtonBottom>
       </Container>
     );
   }

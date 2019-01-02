@@ -54,4 +54,5 @@ export const ButtonBottom = styled(Button)`
   flex-direction: column;
   position: absolute;
   bottom: 20px;
+  ${({ theme }) => theme.media.phone`display: none`}
 `;
