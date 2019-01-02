@@ -47,6 +47,6 @@ export interface UserState {
   readonly isAuth?: boolean;
   readonly user: object;
   readonly isFetching: boolean;
-  readonly isPageLoaded: boolean;
+  readonly isPageLoaded?: boolean;
   readonly error: any;
 }
