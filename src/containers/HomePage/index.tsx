@@ -63,7 +63,6 @@ class HomePage extends React.Component<HomeProps, HomeState> {
     setTimeout(() => this.setState({ loading: false }), 1500);
     this.handleResize();
     window.addEventListener('resize', this.handleResize);
-    document.title = 'Rafael Melón | Home';
   }
 
   public componentWillUnmount() {

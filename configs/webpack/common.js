@@ -5,6 +5,7 @@ const dotenv = require('dotenv');
 const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin');
 const { CheckerPlugin } = require('awesome-typescript-loader');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
 
 // call dotenv and it will return an Object with a parsed key
 const env = dotenv.config().parsed;
@@ -91,6 +92,7 @@ module.exports = {
       template: 'index.html',
     }),
     new webpack.DefinePlugin(envKeys),
+    new FaviconsWebpackPlugin(resolve(__dirname, '../../src/assets/img', 'favicon.png')),
   ],
   performance: {
     hints: false,
