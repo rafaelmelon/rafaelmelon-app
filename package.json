@@ -6,15 +6,20 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-    "set:env": "node setenv.js > .env",
-    "serve": "node server/express.js",
-    "build": "yarn run clean && webpack -p --config configs/webpack/prod.js --progress",
-    "clean": "rm -f -r -d dist",
+    "server:clean": "rm -f -r -d server",
+    "server:build": "yarn run server:clean && mkdir -p server && babel express -d server",
+    "server:dev": "nodemon --exec babel-node --inspect express/index.js",
+    "client:clean": "rm -f -r -d dist",
+    "client:build": "yarn run client:clean && webpack -p --config configs/webpack/prod.js --progress",
+    "client:dev": "webpack-dev-server -d --config configs/webpack/dev.js --progress",
+    "reinstall": "rm -rf node_modules && yarn",
+    "dev": "yarn run server:dev && yarn run client:dev",
     "lint": "tslint --project tsconfig.json 'src/**/*.{ts,tsx}' --fix --format stylish && yarn run prettier",
-    "start": "yarn run serve",
-    "dev": "webpack-dev-server -d --config configs/webpack/dev.js --progress",
     "prettier": "prettier --write \"{,!(node_modules|dist|build|coverage)/**/}*.{js,jsx,ts,tsx,json}\"",
-    "heroku-postbuild": "yarn && yarn run set:env && yarn run build"
+    "build": "yarn client:build && yarn server:build",
+    "serve": "node server/index.js",
+    "start": "yarn run serve",
+    "heroku-postbuild": "yarn && yarn run build"
   },
   "husky": {
     "hooks": {
@@ -46,7 +51,8 @@
   "devDependencies": {
     "@babel/cli": "^7.1.5",
     "@babel/core": "^7.1.6",
-    "@babel/preset-env": "^7.1.6",
+    "@babel/node": "^7.2.2",
+    "@babel/preset-env": "^7.2.3",
     "@babel/preset-react": "^7.0.0",
     "awesome-typescript-loader": "^5.2.1",
     "babel-loader": "^8.0.4",
@@ -77,7 +83,9 @@
     "@types/react-intl": "^2.3.14",
     "@types/react-router-dom": "^4.3.1",
     "@types/styled-components": "^4.1.0",
+    "body-parser": "^1.18.3",
     "dotenv": "^6.2.0",
+    "nodemailer": "^5.0.0",
     "react": "^16.6.3",
     "react-dom": "^16.6.3",
     "react-hot-loader": "^4.3.12",
