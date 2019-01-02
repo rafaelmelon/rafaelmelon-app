@@ -92,7 +92,9 @@ module.exports = {
       template: 'index.html',
     }),
     new webpack.DefinePlugin(envKeys),
-    new FaviconsWebpackPlugin(resolve(__dirname, '../../src/assets/img', 'favicon.png')),
+    new FaviconsWebpackPlugin(
+      resolve(__dirname, '../../src/assets/img', 'favicon.png'),
+    ),
   ],
   performance: {
     hints: false,

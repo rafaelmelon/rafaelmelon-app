@@ -6,10 +6,14 @@ const initialState: UserState = {
   user: {},
   error: undefined,
   isFetching: false,
+  isPageLoaded: false,
 };
 
 const reducer: Reducer<UserState> = (state = initialState, action) => {
   switch (action.type) {
+    case UserActionTypes.PAGE_LOADED: {
+      return { ...state, isPageLoaded: true };
+    }
     case UserActionTypes.AUTH_SUCCESS: {
       return { ...state, isAuth: true };
     }

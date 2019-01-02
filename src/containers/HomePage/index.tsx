@@ -8,15 +8,17 @@ import { CSSTransitionGroup } from 'react-transition-group';
 import { About, Elements, Footer, Header, Loader } from '@components/index';
 import { AppState } from '@redux/modules';
 import { fetchAllRepositories, Repository } from '@redux/modules/repositories';
-import { fetchAuth, fetchUser, User } from '@redux/modules/user';
+import { pageLoaded, fetchAuth, fetchUser, User } from '@redux/modules/user';
 import { repositoriesMock, ROUTES, VIEWPORT } from '@utils/index';
 
 import { Container } from './styles';
 
 interface HomeProps {
+  isPageLoaded: boolean;
   isAuth: boolean;
   repositories: Repository[];
   user: User;
+  pageLoaded: () => any;
   fetchAuth: () => any;
   fetchUser: () => any;
   fetchAllRepositories: () => any;
@@ -28,7 +30,6 @@ interface HomeState {
     width: number | null;
     height: number | null;
   };
-  loading: boolean;
 }
 
 class HomePage extends React.Component<HomeProps, HomeState> {
@@ -40,7 +41,6 @@ class HomePage extends React.Component<HomeProps, HomeState> {
         height: null,
         width: null,
       },
-      loading: true,
     };
 
     this.reactPageScroller = React.createRef();
@@ -60,7 +60,7 @@ class HomePage extends React.Component<HomeProps, HomeState> {
   }
 
   public componentDidMount() {
-    setTimeout(() => this.setState({ loading: false }), 1500);
+    setTimeout(() => this.props.pageLoaded(), 1500);
     this.handleResize();
     window.addEventListener('resize', this.handleResize);
   }
@@ -93,10 +93,10 @@ class HomePage extends React.Component<HomeProps, HomeState> {
   }
 
   public render() {
-    const { loading, viewport } = this.state;
+    const { viewport } = this.state;
     const isPhone = viewport.width && viewport.width <= VIEWPORT.phone;
 
-    if (loading) {
+    if (!this.props.isPageLoaded) {
       return <Loader viewport={this.state.viewport} />;
     }
 
@@ -126,11 +126,13 @@ class HomePage extends React.Component<HomeProps, HomeState> {
 export default withRouter(
   connect(
     (state: AppState) => ({
+      isPageLoaded: state.user.isPageLoaded,
       isAuth: state.user.isAuth,
       user: state.user.user,
       repositories: state.repositories.all,
     }),
     {
+      pageLoaded,
       fetchAuth,
       fetchUser,
       fetchAllRepositories,

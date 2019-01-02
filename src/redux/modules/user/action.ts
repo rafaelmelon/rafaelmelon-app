@@ -3,6 +3,8 @@ import { action } from 'typesafe-actions';
 import { API_URL, request, requestJSON } from '@utils/index';
 import { User, UserActionTypes } from './types';
 
+export const pageLoaded = () => action(UserActionTypes.PAGE_LOADED);
+
 export const fetchAuthSuccess = (payload: any) =>
   action(UserActionTypes.AUTH_SUCCESS, payload);
 export const fetchAuthFailure = (error: string) =>

@@ -35,6 +35,7 @@ export interface User {
 }
 
 export const enum UserActionTypes {
+  PAGE_LOADED = '@@user/PAGE_LOADED',
   AUTH_SUCCESS = '@@user/AUTH_SUCCESS',
   AUTH_FAILURE = '@@user/AUTH_FAILURE',
   USER_REQUEST = '@@user/USER_REQUEST',
@@ -46,5 +47,6 @@ export interface UserState {
   readonly isAuth?: boolean;
   readonly user: object;
   readonly isFetching: boolean;
+  readonly isPageLoaded: boolean;
   readonly error: any;
 }
