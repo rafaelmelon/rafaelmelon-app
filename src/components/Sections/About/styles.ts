@@ -10,7 +10,11 @@ export const Container = styled.div`
   flex: 1;
   padding: 0 150px;
   position: relative;
-  ${({ theme }) => theme.media.phone`padding: 150px 20px; border-bottom: ${theme.helpers.borderDottedAlpha(theme.colors.black)};`}
+  ${({ theme }) =>
+    theme.media
+      .phone`padding: 150px 20px; border-bottom: ${theme.helpers.borderDottedAlpha(
+      theme.colors.black,
+    )};`}
   &.home-appear {
     opacity: 0.01;
   }
