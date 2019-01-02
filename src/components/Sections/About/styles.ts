@@ -15,13 +15,6 @@ export const Container = styled.div`
       .phone`padding: 150px 20px; border-bottom: ${theme.helpers.borderDottedAlpha(
       theme.colors.black,
     )};`}
-  &.home-appear {
-    opacity: 0.01;
-  }
-  &.home-appear-active {
-    opacity: 1;
-    transition: opacity 500ms ease-out;
-  }
 `;
 
 export const Grid = styled.div`

@@ -60,7 +60,9 @@ class HomePage extends React.Component<HomeProps, HomeState> {
   }
 
   public componentDidMount() {
-    setTimeout(() => this.props.pageLoaded(), 1500);
+    if (!this.props.isPageLoaded) {
+      setTimeout(() => this.props.pageLoaded(), 1500);
+    }
     this.handleResize();
     window.addEventListener('resize', this.handleResize);
   }

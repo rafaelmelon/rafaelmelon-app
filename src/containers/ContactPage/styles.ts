@@ -1,15 +1,8 @@
 import { Button } from '@components/index';
 import { styled } from '@theme/index';
 
-interface ContactStyle {
-  viewport: {
-    height: number | null;
-    width: number | null;
-  };
-}
-
-export const Container = styled.div<ContactStyle>`
-  height: ${({ viewport }) => viewport.height}px;
+export const Container = styled.div`
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;

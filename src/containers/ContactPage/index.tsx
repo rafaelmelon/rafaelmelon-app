@@ -104,7 +104,7 @@ class ContactPage extends React.Component<ContactProps, ContactState> {
         transitionAppearTimeout={500}
         transitionEnterTimeout={300}
         transitionLeaveTimeout={300}>
-        <Container viewport={this.state.viewport}>
+        <Container>
           <ButtonLogo onClick={this.onNavigateHome} icon={true}>
             <Image src={logoAlt} iconWidth={theme.iconSize.x1} />
           </ButtonLogo>

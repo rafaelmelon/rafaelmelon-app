@@ -40,7 +40,7 @@ export const theme = {
   },
   fontSize: {
     xxl: '4.6rem',
-    xl: '2.4rem',
+    xl: '2.8rem',
     lg: '1.8rem',
     md: '1.3rem',
     nm: '1rem',
@@ -80,7 +80,7 @@ export const GlobalStyles = createGlobalStyle`
   ${reset}
   body {
     @import url('https://fonts.googleapis.com/css?family=Black+Han+Sans|Open+Sans');
-    @import url('https://fonts.googleapis.com/css?family=Montserrat:800');
+    @import url('https://fonts.googleapis.com/css?family=Montserrat:700,800');
     font-family: ${theme.fonts.openSans};
     color: ${theme.colors.black};
     letter-spacing: 0.02rem;

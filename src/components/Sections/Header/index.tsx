@@ -50,8 +50,12 @@ class Header extends React.Component<HeaderProps> {
             </ButtonMedia>
           ))}
         </SocialMedia>
+        <ButtonLogo onClick={onNavigateContact} icon={true}>
+          <Image src={logoAlt} iconWidth={theme.iconSize.x1} />
+        </ButtonLogo>
         <Welcome>
           <Title>
+            <FormattedMessage id="header.hi" />
             <FormattedMessage
               id="header.title"
               values={{ value: 'Rafael Melón' }}

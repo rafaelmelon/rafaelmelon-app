@@ -13,7 +13,7 @@ export const Container = styled.div`
     theme.media
       .phone`padding: 150px 20px; border-bottom: ${theme.helpers.borderDottedAlpha(
       theme.colors.black,
-    )};`}
+    )}; text-align: center;`}
 `;
 
 export const ButtonLogo = styled(Button)`
@@ -26,11 +26,19 @@ export const Welcome = styled.div``;
 
 export const Title = styled.h1`
   font-family: ${({ theme }) => theme.fonts.montserrat};
-  font-weight: ${({ theme }) => theme.fontWeight.extraBold};
   color: ${({ theme }) => theme.colors.black};
   font-size: ${({ theme }) => theme.fontSize.xxl};
+  font-weight: ${({ theme }) => theme.fontWeight.bold};
   margin-bottom: 20px;
-  ${({ theme }) => theme.media.tablet`font-size: ${theme.fontSize.xl};`}
+  ${({ theme }) =>
+    theme.media.phone`display: flex; flex-direction: column; font-size: ${
+      theme.fontSize.xl
+    };`}
+  span {
+    &:last-child {
+      font-weight: ${({ theme }) => theme.fontWeight.extraBold};
+    }
+  }
 `;
 
 export const Description = styled.h2`
@@ -47,6 +55,10 @@ export const SocialMedia = styled.div`
   position: absolute;
   top: 20px;
   right: 20px;
+  ${({ theme }) =>
+    theme.media.phone`border-left: ${theme.helpers.borderDottedAlpha(
+      theme.colors.black,
+    )};`}
 `;
 
 export const ButtonMedia = styled(Button)`
