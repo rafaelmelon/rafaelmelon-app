@@ -1,15 +1,15 @@
 import dotenv from 'dotenv';
 import nodemailer from 'nodemailer';
-dotenv.config()
+dotenv.config();
 
 export const env = {
   ...process.env,
-}
+};
 
 export const GitHubConfig = {
   scope: 'user',
-  state: Math.round(Math.random() * 10)
-}
+  state: Math.round(Math.random() * 10),
+};
 
 export const transporter = nodemailer.createTransport({
   host: env.HOST_EMAIL,
@@ -17,6 +17,6 @@ export const transporter = nodemailer.createTransport({
   secure: true,
   auth: {
     user: env.HOST_EMAIL_USER,
-    pass: env.HOST_EMAIL_PASS
-  }
+    pass: env.HOST_EMAIL_PASS,
+  },
 });

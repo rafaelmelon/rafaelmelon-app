@@ -1,18 +1,18 @@
 import express from 'express';
 import bodyParser from 'body-parser';
 
-import {
-  env,
-} from './config/index';
+import { env } from './config/index';
 import router from './routes/index';
 
 const app = express();
-const port = env.PORT || 8080
+const port = env.PORT || 8080;
 
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({
-  extended: false
-}));
+app.use(
+  bodyParser.urlencoded({
+    extended: false,
+  }),
+);
 app.use(express.static('dist'));
 
 app.use('/', router);
