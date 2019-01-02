@@ -1,20 +1,9 @@
 // shared config (dev and prod)
 const { resolve } = require('path');
-const webpack = require('webpack');
-const dotenv = require('dotenv');
 const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin');
 const { CheckerPlugin } = require('awesome-typescript-loader');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
-
-// call dotenv and it will return an Object with a parsed key
-const env = dotenv.config().parsed;
-
-// reduce it to a nice object, the same as before
-const envKeys = Object.keys(env).reduce((prev, next) => {
-  prev[`process.env.${next}`] = JSON.stringify(env[next]);
-  return prev;
-}, {});
 
 module.exports = {
   resolve: {
@@ -91,7 +80,6 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: 'index.html',
     }),
-    new webpack.DefinePlugin(envKeys),
     new FaviconsWebpackPlugin(
       resolve(__dirname, '../../src/assets/img', 'favicon.png'),
     ),
