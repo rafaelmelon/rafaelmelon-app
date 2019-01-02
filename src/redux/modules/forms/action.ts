@@ -18,8 +18,6 @@ export const sendContactForm = values => dispatch => {
     body: JSON.stringify(values),
   };
 
-  console.log(options)
-
   dispatch(sendFormRequest());
   request(`${API_URL}/contact`, options)
     .then(json => dispatch(sendFormSuccess(json)))

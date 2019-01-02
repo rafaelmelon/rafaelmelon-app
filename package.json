@@ -10,11 +10,16 @@
     "serve": "node server/express.js",
     "build": "yarn run clean && webpack -p --config configs/webpack/prod.js --progress",
     "clean": "rm -f -r -d dist",
-    "lint": "tslint --project tsconfig.json 'src/**/*.{ts,tsx}' --fix --format stylish",
+    "lint": "tslint --project tsconfig.json 'src/**/*.{ts,tsx}' --fix --format stylish && yarn run prettier",
     "start": "yarn run serve",
     "dev": "webpack-dev-server -d --config configs/webpack/dev.js --progress",
     "prettier": "prettier --write \"{,!(node_modules|dist|build|coverage)/**/}*.{js,jsx,ts,tsx,json}\"",
     "heroku-postbuild": "yarn && yarn run set:env && yarn run build"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn run lint"
+    }
   },
   "repository": {
     "type": "git",
@@ -48,6 +53,7 @@
     "babel-preset-minify": "^0.5.0",
     "file-loader": "^2.0.0",
     "html-webpack-plugin": "^3.2.0",
+    "husky": "^1.3.1",
     "image-webpack-loader": "^4.5.0",
     "prettier": "^1.15.2",
     "tsconfig-paths-webpack-plugin": "^3.2.0",
@@ -73,9 +79,9 @@
     "dotenv": "^6.2.0",
     "react": "^16.6.3",
     "react-dom": "^16.6.3",
-    "react-fully-scrolled": "^1.0.4",
     "react-hot-loader": "^4.3.12",
     "react-intl": "^2.7.2",
+    "react-page-scroller": "^1.4.2",
     "react-redux": "^5.1.1",
     "react-router-dom": "^4.3.1",
     "react-transition-group": "1.x",

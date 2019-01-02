@@ -1,10 +1,10 @@
 import * as React from 'react';
-import { Scroller, Section } from 'react-fully-scrolled';
+import ReactPageScroller from 'react-page-scroller';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import { CSSTransitionGroup } from 'react-transition-group';
 
-import { Elements, Footer, Header, Loader } from '@components/index';
+import { About, Elements, Footer, Header, Loader } from '@components/index';
 import { AppState } from '@redux/modules';
 import { fetchAllRepositories, Repository } from '@redux/modules/repositories';
 import { fetchAuth, fetchUser, User } from '@redux/modules/user';
@@ -12,11 +12,6 @@ import { repositoriesMock, ROUTES, VIEWPORT } from '@utils/index';
 
 import { Container } from './styles';
 
-declare global {
-  interface Window {
-    fpTurnTo: any;
-  }
-}
 interface HomeProps {
   isAuth: boolean;
   repositories: Repository[];
@@ -35,7 +30,8 @@ interface HomeState {
   loading: boolean;
 }
 
-class Home extends React.Component<HomeProps, HomeState> {
+class HomePage extends React.Component<HomeProps, HomeState> {
+  private reactPageScroller: React.RefObject<{}>;
   constructor(props: any) {
     super(props);
     this.state = {
@@ -46,6 +42,7 @@ class Home extends React.Component<HomeProps, HomeState> {
       loading: true,
     };
 
+    this.reactPageScroller = React.createRef();
     this.handleResize = this.handleResize.bind(this);
     this.onNavigateContact = this.onNavigateContact.bind(this);
     this.onPageSection = this.onPageSection.bind(this);
@@ -79,7 +76,7 @@ class Home extends React.Component<HomeProps, HomeState> {
   }
 
   public onPageSection(page: number) {
-    window.fpTurnTo(page);
+    this.reactPageScroller.goToPage(page);
   }
 
   public renderHeader() {
@@ -89,6 +86,15 @@ class Home extends React.Component<HomeProps, HomeState> {
         onNavigateContact={this.onNavigateContact}
         onPageSection={this.onPageSection}
         viewport={this.state.viewport}
+      />
+    );
+  }
+
+  public renderAbout() {
+    return (
+      <About
+        viewport={this.state.viewport}
+        onPageSection={this.onPageSection}
       />
     );
   }
@@ -123,6 +129,7 @@ class Home extends React.Component<HomeProps, HomeState> {
       return (
         <Container>
           {this.renderHeader()}
+          {this.renderAbout()}
           {this.renderElements()}
           {this.renderFooter()}
         </Container>
@@ -137,11 +144,22 @@ class Home extends React.Component<HomeProps, HomeState> {
         transitionEnterTimeout={300}
         transitionLeaveTimeout={300}>
         <Container>
-          <Scroller curPage={1} isEnabled={true}>
-            <Section>{this.renderHeader()}</Section>
-            <Section>{this.renderElements()}</Section>
-            <Section>{this.renderFooter()}</Section>
-          </Scroller>
+          <ReactPageScroller ref={c => (this.reactPageScroller = c)}>
+            <Header
+              user={this.props.user}
+              onNavigateContact={this.onNavigateContact}
+              onPageSection={this.onPageSection}
+              viewport={this.state.viewport}
+            />
+            <About
+              viewport={this.state.viewport}
+              onPageSection={this.onPageSection}
+            />
+            <Elements
+              repositories={repositoriesMock}
+              viewport={this.state.viewport}
+            />
+          </ReactPageScroller>
         </Container>
       </CSSTransitionGroup>
     );
@@ -160,5 +178,5 @@ export default withRouter(
       fetchUser,
       fetchAllRepositories,
     },
-  )(Home),
+  )(HomePage),
 );

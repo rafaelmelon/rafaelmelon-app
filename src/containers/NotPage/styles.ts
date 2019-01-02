@@ -1,13 +1,13 @@
 import { styled } from '@theme/index';
 
-interface NotFoundStyle {
+interface NotStyle {
   viewport: {
     height: number | null;
     width: number | null;
   };
 }
 
-export const Container = styled.div<NotFoundStyle>`
+export const Container = styled.div<NotStyle>`
   height: ${({ viewport }) => viewport.height}px;
   display: flex;
   justify-content: center;

@@ -1,9 +1,9 @@
-import Contact from './Contact';
-import Home from './Home';
-import NotFound from './NotFound';
+import ContactPage from './ContactPage';
+import HomePage from './HomePage';
+import NotPage from './NotPage';
 import Root from './Root';
 
-export { Home };
+export { HomePage };
 export { Root };
-export { Contact };
-export { NotFound };
+export { ContactPage };
+export { NotPage };

@@ -39,7 +39,7 @@ interface ContactState {
   nameValue: string;
 }
 
-class Contact extends React.Component<ContactProps, ContactState> {
+class ContactPage extends React.Component<ContactProps, ContactState> {
   constructor(props: any) {
     super(props);
     this.state = {
@@ -69,7 +69,7 @@ class Contact extends React.Component<ContactProps, ContactState> {
   public componentDidMount() {
     this.handleResize();
     window.addEventListener('resize', this.handleResize);
-    document.title = 'Rafael Melón | Contact';
+    document.title = 'Rafael Melón | ContactPage';
   }
 
   public componentWillUnmount() {
@@ -148,5 +148,5 @@ export default withRouter(
       sendContactForm,
       resetContactForm,
     },
-  )(withTheme(Contact)),
+  )(withTheme(ContactPage)),
 );

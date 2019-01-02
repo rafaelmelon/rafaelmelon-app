@@ -7,11 +7,11 @@ import { ROUTES } from '@utils/index';
 
 import { Container, Title, Welcome } from './styles';
 
-interface NotFoundProps {
+interface NotProps {
   history: any;
 }
 
-class NotFound extends React.Component<NotFoundProps> {
+class NotPage extends React.Component<NotProps> {
   public state = {
     viewport: {
       height: null,
@@ -64,4 +64,4 @@ class NotFound extends React.Component<NotFoundProps> {
   }
 }
 
-export default NotFound;
+export default NotPage;

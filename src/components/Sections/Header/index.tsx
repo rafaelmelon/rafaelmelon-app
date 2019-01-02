@@ -32,7 +32,7 @@ interface HeaderProps {
 
 class Header extends React.Component<HeaderProps> {
   public onNextPage = () => {
-    this.props.onPageSection(2);
+    this.props.onPageSection(0);
   };
 
   public render() {

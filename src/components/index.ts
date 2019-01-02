@@ -1,12 +1,13 @@
 import Button from './Button';
 import Element from './Element';
-import Elements from './Elements';
-import Footer from './Footer';
-import Header from './Header';
 import Image from './Image';
 import Input from './Input';
 import Link from './Link';
 import Loader from './Loader';
+import About from './Sections/About';
+import Elements from './Sections/Elements';
+import Footer from './Sections/Footer';
+import Header from './Sections/Header';
 import Textarea from './Textarea';
 
 export { Image };
@@ -19,3 +20,4 @@ export { Input };
 export { Textarea };
 export { Button };
 export { Header };
+export { About };

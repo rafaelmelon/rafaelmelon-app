@@ -12,7 +12,7 @@ interface ElementsProps {
   };
 }
 
-class Elements extends React.Component<ElementsProps, any> {
+class Elements extends React.Component<ElementsProps> {
   public render() {
     return (
       <Container>
