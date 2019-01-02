@@ -31,6 +31,10 @@ class Header extends React.Component<HeaderProps> {
     this.props.onPageSection(1);
   };
 
+  public onExternalNavigate = url => {
+    window.open(url,'_blank');
+  };
+
   public render() {
     const { theme, onNavigateContact } = this.props;
     // const { bio, name } = this.props.user;
@@ -44,7 +48,7 @@ class Header extends React.Component<HeaderProps> {
           {SOCIAL.map(item => (
             <ButtonMedia
               key={item.name}
-              onClick={onNavigateContact}
+              onClick={() => this.onExternalNavigate(item.url)}
               icon={true}>
               <Image src={item.urlImage} iconWidth={theme.iconSize.x1} />
             </ButtonMedia>
