@@ -4,8 +4,6 @@ const app = express();
 const portNumber = process.env.PORT || 8080;
 const sourceDir = 'dist';
 
-console.log(process.env);
-
 app.use(express.static(sourceDir));
 
 app.get('/*', (req, res) => {

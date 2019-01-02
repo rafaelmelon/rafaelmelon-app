@@ -14,7 +14,7 @@
   "contact.placeholder.name": "Name",
   "contact.placeholder.email": "Email",
   "contact.placeholder.textarea": "Notes",
-  "contact.button.reset": "Reset",
+  "contact.button.reset": "Back",
   "contact.button.send": "Send",
   "contact.success": "Thanks {name} for contacting",
 

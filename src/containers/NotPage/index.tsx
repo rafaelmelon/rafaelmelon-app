@@ -13,29 +13,8 @@ interface NotProps {
 }
 
 class NotPage extends React.Component<NotProps> {
-  public state = {
-    viewport: {
-      height: null,
-      width: null,
-    },
-  };
-
-  public handleResize = () =>
-    this.setState({
-      viewport: {
-        height: window.innerHeight,
-        width: window.innerWidth,
-      },
-    });
-
   public componentDidMount() {
-    this.handleResize();
-    window.addEventListener('resize', this.handleResize);
     document.title = 'Rafael Melón | Not found';
-  }
-
-  public componentWillUnmount() {
-    window.removeEventListener('resize', this.handleResize);
   }
 
   public onNavigateHome = () => {
@@ -50,7 +29,7 @@ class NotPage extends React.Component<NotProps> {
         transitionAppearTimeout={500}
         transitionEnterTimeout={300}
         transitionLeaveTimeout={300}>
-        <Container viewport={this.state.viewport}>
+        <Container>
           <Welcome>
             <Title>
               <FormattedMessage id="notfound.title" />

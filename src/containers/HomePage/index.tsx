@@ -60,6 +60,7 @@ class HomePage extends React.Component<HomeProps, HomeState> {
   }
 
   public componentDidMount() {
+    this.props.fetchAuth();
     if (!this.props.isPageLoaded) {
       setTimeout(() => this.props.pageLoaded(), 1500);
     }
@@ -99,7 +100,7 @@ class HomePage extends React.Component<HomeProps, HomeState> {
     const isPhone = viewport.width && viewport.width <= VIEWPORT.phone;
 
     if (!this.props.isPageLoaded) {
-      return <Loader viewport={this.state.viewport} />;
+      return <Loader />;
     }
 
     return (

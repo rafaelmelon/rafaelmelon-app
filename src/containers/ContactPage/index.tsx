@@ -33,10 +33,6 @@ interface ContactProps {
 }
 
 interface ContactState {
-  viewport: {
-    width: number | null;
-    height: number | null;
-  };
   nameValue: string;
 }
 
@@ -44,37 +40,17 @@ class ContactPage extends React.Component<ContactProps, ContactState> {
   constructor(props: any) {
     super(props);
     this.state = {
-      viewport: {
-        height: null,
-        width: null,
-      },
       nameValue: '',
     };
 
-    this.handleResize = this.handleResize.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
     this.onResetForm = this.onResetForm.bind(this);
     this.onNavigateHome = this.onNavigateHome.bind(this);
   }
 
-  public handleResize() {
-    this.setState({
-      viewport: {
-        height: window.innerHeight,
-        width: window.innerWidth,
-      },
-    });
-  }
-
   public componentDidMount() {
-    this.handleResize();
-    window.addEventListener('resize', this.handleResize);
     document.title = 'Rafael Melón | ContactPage';
-  }
-
-  public componentWillUnmount() {
-    window.removeEventListener('resize', this.handleResize);
   }
 
   public handleSubmit(values: object) {
@@ -113,7 +89,7 @@ class ContactPage extends React.Component<ContactProps, ContactState> {
           </ButtonClose>
           <ContainerForm>
             {sending ? (
-              <Loader viewport={this.state.viewport} />
+              <Loader />
             ) : success ? (
               <SuccessContainer>
                 <Success>

@@ -1,15 +1,7 @@
 import { styled } from '@theme/index';
 
-interface LoaderStyle {
-  viewport: {
-    height: number | null;
-    width: number | null;
-  };
-}
-
-export const Container = styled.div<LoaderStyle>`
-  height: ${({ viewport }) => viewport.height}px;
-  width: ${({ viewport }) => viewport.width}px;
+export const Container = styled.div`
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
