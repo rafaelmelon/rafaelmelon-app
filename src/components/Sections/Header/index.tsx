@@ -32,12 +32,12 @@ class Header extends React.Component<HeaderProps> {
   };
 
   public onExternalNavigate = url => {
-    window.open(url,'_blank');
+    window.open(url, '_blank');
   };
 
   public render() {
     const { theme, onNavigateContact } = this.props;
-    // const { bio, name } = this.props.user;
+    const { bio, name } = this.props.user;
 
     return (
       <Container>
@@ -62,11 +62,11 @@ class Header extends React.Component<HeaderProps> {
             <FormattedMessage id="header.hi" />
             <FormattedMessage
               id="header.title"
-              values={{ value: 'Rafael Melón' }}
+              values={{ value: name || 'Rafael Melón' }}
             />
           </Title>
           <Description>
-            <FormattedMessage id="header.subtitle" />
+            {bio || <FormattedMessage id="header.subtitle" />}
           </Description>
           <Button onClick={onNavigateContact}>
             <FormattedMessage id={'header.button'} />

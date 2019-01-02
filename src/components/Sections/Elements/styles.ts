@@ -17,3 +17,10 @@ export const ContainerElements = styled.div`
   justify-content: center;
   align-content: space-between;
 `;
+
+export const Title = styled.h2`
+  font-family: ${({ theme }) => theme.fonts.montserrat};
+  font-weight: ${({ theme }) => theme.fontWeight.extraBold};
+  color: ${({ theme }) => theme.colors.black};
+  font-size: ${({ theme }) => theme.fontSize.xl};
+`;

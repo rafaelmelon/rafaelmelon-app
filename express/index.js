@@ -17,4 +17,4 @@ app.use(express.static('dist'));
 
 app.use('/', router);
 
-app.listen(port, () => console.log(`Backend listening on port ${port}`));
+app.listen(port, () => console.log(`Web backend listening on port ${port}`));

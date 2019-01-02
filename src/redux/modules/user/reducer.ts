@@ -3,7 +3,7 @@ import { UserActionTypes, UserState } from './types';
 
 const initialState: UserState = {
   isAuth: false,
-  user: {},
+  user: null,
   error: undefined,
   isFetching: false,
   isPageLoaded: false,

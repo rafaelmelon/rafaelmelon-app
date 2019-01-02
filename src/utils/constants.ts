@@ -1,6 +1,6 @@
 import { github, linkedin, twitter } from '@assets/index';
 
-export const API_URL = 'http://localhost:8080';
+export const API_URL = 'https://rafaelmelon-api.herokuapp.com';
 
 export const VIEWPORT = {
   desktop: 992,

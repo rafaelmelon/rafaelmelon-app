@@ -41,7 +41,6 @@ export const Title = styled.h2`
   color: ${({ theme }) => theme.colors.black};
   font-size: ${({ theme }) => theme.fontSize.xl};
   margin-bottom: 20px;
-  ${({ theme }) => theme.media.tablet`font-size: ${theme.fontSize.xl};`}
 `;
 
 export const Text = styled.p`

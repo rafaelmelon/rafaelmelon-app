@@ -24,7 +24,7 @@ export const fetchUserFailure = (error: string) =>
 
 export const fetchUser = () => dispatch => {
   dispatch(fetchUserRequest());
-  request(`${API_URL}/users`)
+  request(`${API_URL}/user`)
     .then(json => dispatch(fetchUserSuccess(json)))
     .catch(error => dispatch(fetchUserFailure(error)));
 };

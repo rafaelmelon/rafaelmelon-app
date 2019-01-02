@@ -12,7 +12,7 @@ export const fetchAllRepositoriesFailure = (error: string) =>
 
 export const fetchAllRepositories = () => dispatch => {
   dispatch(fetchAllRepositoriesRequest());
-  request(`${API_URL}/users/rafaelmelon/repos`)
+  request(`${API_URL}/repos`)
     .then(json => dispatch(fetchAllRepositoriesSuccess(json)))
     .catch(error => dispatch(fetchAllRepositoriesFailure(error)));
 };

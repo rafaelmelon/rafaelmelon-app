@@ -18,6 +18,8 @@
   "contact.button.send": "Enviar",
   "contact.success": "Gracias {name} por contactar",
 
+  "elements.empty": "Ups, de momento los datos no se pueden mostrar ahora.",
+
   "notfound.button": "Volver",
   "notfound.title": "Página no encontrada",
 

@@ -9,7 +9,7 @@ import { About, Elements, Footer, Header, Loader } from '@components/index';
 import { AppState } from '@redux/modules';
 import { fetchAllRepositories, Repository } from '@redux/modules/repositories';
 import { fetchAuth, fetchUser, pageLoaded, User } from '@redux/modules/user';
-import { repositoriesMock, ROUTES, VIEWPORT } from '@utils/index';
+import { ROUTES, VIEWPORT } from '@utils/index';
 
 import { Container } from './styles';
 
@@ -60,7 +60,14 @@ class HomePage extends React.Component<HomeProps, HomeState> {
   }
 
   public componentDidMount() {
-    this.props.fetchAuth();
+    // this.props.fetchAuth();
+
+    if (!this.props.user) {
+      this.props.fetchUser();
+    }
+    if (this.props.repositories.length === 0) {
+      this.props.fetchAllRepositories();
+    }
     if (!this.props.isPageLoaded) {
       setTimeout(() => this.props.pageLoaded(), 1500);
     }
@@ -89,7 +96,7 @@ class HomePage extends React.Component<HomeProps, HomeState> {
         onPageSection={this.onPageSection}
       />,
       <About key={'about'} onPageSection={this.onPageSection} />,
-      <Elements key={'elements'} repositories={repositoriesMock} />,
+      <Elements key={'elements'} repositories={this.props.repositories} />,
       <Footer key={'footer'} onNavigateContact={this.onNavigateContact} />,
     ];
     return sections.map(item => item);
