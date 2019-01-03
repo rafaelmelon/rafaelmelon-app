@@ -36,8 +36,7 @@ class Header extends React.Component<HeaderProps> {
   };
 
   public render() {
-    const { theme, onNavigateContact } = this.props;
-    const { bio, name } = this.props.user;
+    const { theme, onNavigateContact, user } = this.props;
 
     return (
       <Container>
@@ -62,11 +61,15 @@ class Header extends React.Component<HeaderProps> {
             <FormattedMessage id="header.hi" />
             <FormattedMessage
               id="header.title"
-              values={{ value: name ? name : 'Rafael Melón' }}
+              values={{ value: user && user.name ? name : 'Rafael Melón' }}
             />
           </Title>
           <Description>
-            {bio ? bio : <FormattedMessage id="header.subtitle" />}
+            {user && user.bio ? (
+              user.bio
+            ) : (
+              <FormattedMessage id="header.subtitle" />
+            )}
           </Description>
           <Button onClick={onNavigateContact}>
             <FormattedMessage id={'header.button'} />
