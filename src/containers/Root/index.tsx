@@ -7,6 +7,7 @@ import { ThemeProvider } from 'styled-components';
 
 import messages_en from '@locales/en.json';
 import messages_es from '@locales/es.json';
+import messages_fr from '@locales/fr.json';
 import { configureStore } from '@redux/store';
 import Routes from '@routes/index';
 import { GlobalStyles, theme } from '@theme/index';
@@ -14,12 +15,14 @@ import { GlobalStyles, theme } from '@theme/index';
 const localeData = {
   es: messages_es,
   en: messages_en,
+  fr: messages_fr,
 };
 
 import en from 'react-intl/locale-data/en';
 import es from 'react-intl/locale-data/es';
+import fr from 'react-intl/locale-data/fr';
 
-addLocaleData([...en, ...es]);
+addLocaleData([...en, ...es, ...fr]);
 
 const language =
   (navigator.languages && navigator.languages[0]) || navigator.language;

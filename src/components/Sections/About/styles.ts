@@ -40,7 +40,8 @@ export const Title = styled.h2`
   font-weight: ${({ theme }) => theme.fontWeight.extraBold};
   color: ${({ theme }) => theme.colors.black};
   font-size: ${({ theme }) => theme.fontSize.xl};
-  margin-bottom: 20px;
+  line-height: 1;
+  margin-bottom: 30px;
 `;
 
 export const Text = styled.p`

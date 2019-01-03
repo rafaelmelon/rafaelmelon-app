@@ -62,11 +62,11 @@ class Header extends React.Component<HeaderProps> {
             <FormattedMessage id="header.hi" />
             <FormattedMessage
               id="header.title"
-              values={{ value: name || 'Rafael Melón' }}
+              values={{ value: name ? name :  'Rafael Melón' }}
             />
           </Title>
           <Description>
-            {bio || <FormattedMessage id="header.subtitle" />}
+            {bio ? bio : <FormattedMessage id="header.subtitle" />}
           </Description>
           <Button onClick={onNavigateContact}>
             <FormattedMessage id={'header.button'} />
