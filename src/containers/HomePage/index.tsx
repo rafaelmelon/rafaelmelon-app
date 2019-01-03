@@ -1,7 +1,7 @@
 import { History } from 'history';
 import * as React from 'react';
-import ReactPageScroller from 'react-page-scroller';
 import { InjectedIntl, injectIntl } from 'react-intl';
+import ReactPageScroller from 'react-page-scroller';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import { CSSTransitionGroup } from 'react-transition-group';
