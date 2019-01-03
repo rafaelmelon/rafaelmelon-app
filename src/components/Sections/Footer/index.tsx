@@ -1,11 +1,12 @@
 import * as React from 'react';
+import { FormattedMessage } from 'react-intl';
 import { withTheme } from 'styled-components';
 
 import { logo } from '@assets/index';
 import { Button, Image } from '@components/index';
 import { Theme } from '@theme/index';
 
-import { Container } from './styles';
+import { Container, Text } from './styles';
 
 interface FooterProps {
   theme: Theme;
@@ -21,6 +22,9 @@ class Footer extends React.Component<FooterProps> {
         <Button onClick={onNavigateContact} icon={true}>
           <Image src={logo} iconWidth={this.props.theme.iconSize.x3} />
         </Button>
+        <Text>
+          <FormattedMessage id="footer.copy" />
+        </Text>
       </Container>
     );
   }

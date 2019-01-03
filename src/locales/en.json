@@ -1,8 +1,9 @@
 {
+  "home.title.page": "Rafael Melón | Web Developer Portfolio",
+
   "header.hi": "Hi, ",
   "header.title": "I'm {value}",
   "header.subtitle": "Front-end Developer inspired by code & design principles • Focused mainly on Javascript • Connecting people",
-  "footer.title": "Rafael Melón · 2018",
   "header.button": "Contact me!",
 
   "about.columnone.a": "I’m passionate about building excellent software that improves the lives of those around me. I specialize in creating UI for clients ranging from small-businesses all the way to large enterprise corporations.",
@@ -17,12 +18,16 @@
   "contact.button.reset": "Back",
   "contact.button.send": "Send",
   "contact.success": "Thanks {name} for contacting",
+  "contact.title.page": "Rafael Melón | Contact form",
 
   "elements.empty": "Ups, at the moment the data can not be displayed now.",
 
   "notfound.button": "Return",
   "notfound.title": "Page not found",
+  "notfound.title.page": "Rafael Melón | Page not found",
 
   "elements.repo": "GitHub",
-  "elements.landing": "Landing"
+  "elements.landing": "Landing",
+
+  "footer.copy": "© Copyright Rafael Melón · 2019"
 }

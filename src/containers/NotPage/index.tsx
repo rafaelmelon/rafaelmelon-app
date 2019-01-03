@@ -1,6 +1,6 @@
 import { History } from 'history';
 import * as React from 'react';
-import { FormattedMessage } from 'react-intl';
+import { FormattedMessage, InjectedIntl, injectIntl } from 'react-intl';
 import { CSSTransitionGroup } from 'react-transition-group';
 
 import { Button } from '@components/index';
@@ -9,12 +9,15 @@ import { ROUTES } from '@utils/index';
 import { Container, Title, Welcome } from './styles';
 
 interface NotProps {
+  intl: InjectedIntl;
   history: History;
 }
 
 class NotPage extends React.Component<NotProps> {
   public componentDidMount() {
-    document.title = 'Rafael Melón | Not found';
+    document.title = this.props.intl.formatMessage({
+      id: 'notfound.title.page',
+    });
   }
 
   public onNavigateHome = () => {
@@ -44,4 +47,4 @@ class NotPage extends React.Component<NotProps> {
   }
 }
 
-export default NotPage;
+export default injectIntl(NotPage);

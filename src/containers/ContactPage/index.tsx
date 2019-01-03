@@ -1,6 +1,6 @@
 import { History } from 'history';
 import * as React from 'react';
-import { FormattedMessage } from 'react-intl';
+import { FormattedMessage, InjectedIntl, injectIntl } from 'react-intl';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import { CSSTransitionGroup } from 'react-transition-group';
@@ -24,6 +24,7 @@ import {
 } from './styles';
 
 interface ContactProps {
+  intl: InjectedIntl;
   theme: Theme;
   history: History;
   success: string;
@@ -50,7 +51,9 @@ class ContactPage extends React.Component<ContactProps, ContactState> {
   }
 
   public componentDidMount() {
-    document.title = 'Rafael Melón | ContactPage';
+    document.title = this.props.intl.formatMessage({
+      id: 'contact.title.page',
+    });
   }
 
   public handleSubmit(values: object) {
@@ -125,5 +128,5 @@ export default withRouter(
       sendContactForm,
       resetContactForm,
     },
-  )(withTheme(ContactPage)),
+  )(withTheme(injectIntl(ContactPage))),
 );

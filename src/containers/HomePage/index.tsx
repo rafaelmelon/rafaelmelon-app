@@ -1,6 +1,7 @@
 import { History } from 'history';
 import * as React from 'react';
 import ReactPageScroller from 'react-page-scroller';
+import { InjectedIntl, injectIntl } from 'react-intl';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import { CSSTransitionGroup } from 'react-transition-group';
@@ -14,6 +15,7 @@ import { ROUTES, VIEWPORT } from '@utils/index';
 import { Container } from './styles';
 
 interface HomeProps {
+  intl: InjectedIntl;
   isPageLoaded: boolean;
   isAuth: boolean;
   repositories: Repository[];
@@ -71,6 +73,9 @@ class HomePage extends React.Component<HomeProps, HomeState> {
     if (!this.props.isPageLoaded) {
       setTimeout(() => this.props.pageLoaded(), 1500);
     }
+    document.title = this.props.intl.formatMessage({
+      id: 'home.title.page',
+    });
     this.handleResize();
     window.addEventListener('resize', this.handleResize);
   }
@@ -147,5 +152,5 @@ export default withRouter(
       fetchUser,
       fetchAllRepositories,
     },
-  )(HomePage),
+  )(injectIntl(HomePage)),
 );

@@ -1,8 +1,9 @@
 {
+  "home.title.page": "Rafael Melón | Desarrollador Web Portfolio",
+
   "header.hi": "Hola, ",
   "header.title": "soy {value}",
   "header.subtitle": "Front-end Developer inspired by code & design principles • Focused mainly on Javascript • Connecting people",
-  "footer.title": "Rafael Melón · 2018",
   "header.button": "¡Contacta!",
 
   "about.columnone.a": "Me encanta crear excelente software que mejore la vida de los que me rodean. Estoy especializado en la creación de UI para clientes de todo tip, desde pequeñas empresas emergentes a grandes corporaciones.",
@@ -17,12 +18,16 @@
   "contact.button.reset": "Volver",
   "contact.button.send": "Enviar",
   "contact.success": "Gracias {name} por contactar",
+  "contact.title.page": "Rafael Melón | Contacto",
 
   "elements.empty": "Ups, de momento los datos no se pueden mostrar ahora.",
 
   "notfound.button": "Volver",
   "notfound.title": "Página no encontrada",
+  "notfound.title.page": "Rafael Melón | Contact",
 
   "elements.repo": "GitHub",
-  "elements.landing": "Landing"
+  "elements.landing": "Landing",
+
+  "footer.copy": "© Copyright Rafael Melón · 2019"
 }
