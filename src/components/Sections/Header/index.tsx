@@ -61,7 +61,7 @@ class Header extends React.Component<HeaderProps> {
             <FormattedMessage id="header.hi" />
             <FormattedMessage
               id="header.title"
-              values={{ value: user && user.name ? name : 'Rafael Melón' }}
+              values={{ value: 'Rafael Melón' }}
             />
           </Title>
           <Description>

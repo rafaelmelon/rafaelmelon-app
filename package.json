@@ -8,7 +8,7 @@
   "scripts": {
     "server:clean": "rm -f -r -d server",
     "server:build": "yarn run server:clean && mkdir -p server && babel express -d server",
-    "server:dev": "nodemon --exec babel-node --inspect express/index.js",
+    "server:dev": "nodemon --exec babel-node express/index.js",
     "client:clean": "rm -f -r -d dist",
     "client:build": "yarn run client:clean && webpack -p --config configs/webpack/prod.js --progress",
     "client:dev": "webpack-dev-server -d --config configs/webpack/dev.js --progress",
