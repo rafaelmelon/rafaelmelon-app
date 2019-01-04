@@ -19,8 +19,8 @@ import {
   ButtonLogo,
   Container,
   ContainerForm,
-  FeedbackText,
   Feedback,
+  FeedbackText,
 } from './styles';
 
 interface ContactProps {
