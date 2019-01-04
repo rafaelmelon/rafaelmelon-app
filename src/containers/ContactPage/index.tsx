@@ -19,8 +19,8 @@ import {
   ButtonLogo,
   Container,
   ContainerForm,
-  Success,
-  SuccessContainer,
+  FeedbackText,
+  Feedback,
 } from './styles';
 
 interface ContactProps {
@@ -45,6 +45,7 @@ class ContactPage extends React.Component<ContactProps, ContactState> {
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.renderContact = this.renderContact.bind(this);
     this.handleChange = this.handleChange.bind(this);
     this.onResetForm = this.onResetForm.bind(this);
     this.onNavigateHome = this.onNavigateHome.bind(this);
@@ -73,6 +74,48 @@ class ContactPage extends React.Component<ContactProps, ContactState> {
     this.props.history.push(ROUTES.home);
   }
 
+  public renderContact({ sending, success }) {
+    if (sending) {
+      return <Loader />;
+    }
+
+    if (success) {
+      if (success !== 'error') {
+        return (
+          <Feedback>
+            <FeedbackText>
+              <FormattedMessage
+                id="contact.success"
+                values={{ name: this.state.nameValue }}
+              />
+            </FeedbackText>
+            <Button onClick={this.onResetForm}>
+              <FormattedMessage id={'contact.button.reset'} />
+            </Button>
+          </Feedback>
+        );
+      } else {
+        return (
+          <Feedback>
+            <FeedbackText>
+              <FormattedMessage id="contact.error" />
+            </FeedbackText>
+            <Button onClick={this.onResetForm}>
+              <FormattedMessage id={'contact.button.reset'} />
+            </Button>
+          </Feedback>
+        );
+      }
+    }
+
+    return (
+      <ContactForm
+        onSubmit={this.handleSubmit}
+        handleChange={this.handleChange}
+      />
+    );
+  }
+
   public render() {
     const { theme, sending, success } = this.props;
 
@@ -91,26 +134,7 @@ class ContactPage extends React.Component<ContactProps, ContactState> {
             <Image src={iconClose} iconWidth={theme.iconSize.x1} />
           </ButtonClose>
           <ContainerForm>
-            {sending ? (
-              <Loader />
-            ) : success ? (
-              <SuccessContainer>
-                <Success>
-                  <FormattedMessage
-                    id="contact.success"
-                    values={{ name: this.state.nameValue }}
-                  />
-                </Success>
-                <Button onClick={this.onResetForm}>
-                  <FormattedMessage id={'contact.button.reset'} />
-                </Button>
-              </SuccessContainer>
-            ) : (
-              <ContactForm
-                onSubmit={this.handleSubmit}
-                handleChange={this.handleChange}
-              />
-            )}
+            {this.renderContact({ sending, success })}
           </ContainerForm>
         </Container>
       </CSSTransitionGroup>

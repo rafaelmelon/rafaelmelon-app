@@ -23,9 +23,9 @@ export const ContainerForm = styled.div`
   ${({ theme }) => theme.media.phone`width: 100%;`}
 `;
 
-export const SuccessContainer = styled.div``;
+export const Feedback = styled.div``;
 
-export const Success = styled.h2`
+export const FeedbackText = styled.h2`
   font-family: ${({ theme }) => theme.fonts.montserrat};
   color: ${({ theme }) => theme.colors.black};
   font-size: ${({ theme }) => theme.fontSize.xl};

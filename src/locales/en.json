@@ -19,6 +19,7 @@
   "contact.button.send": "Send",
   "contact.success": "Thanks {name} for contacting",
   "contact.title.page": "Rafael Melón | Contact form",
+  "contact.error": "Error when sending, try again",
 
   "elements.empty": "Ups, at the moment the data can not be displayed now.",
 

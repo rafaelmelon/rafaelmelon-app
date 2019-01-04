@@ -6,7 +6,7 @@ export const enum FormsActionTypes {
 }
 
 export interface FormsState {
-  readonly success: string;
+  readonly success: string | null;
   readonly error: any;
   readonly sending: boolean;
 }

@@ -2,7 +2,7 @@ import { Reducer } from 'redux';
 import { FormsActionTypes, FormsState } from './types';
 
 const initialState: FormsState = {
-  success: '',
+  success: null,
   error: null,
   sending: false,
 };
@@ -13,13 +13,13 @@ const reducer: Reducer<FormsState> = (state = initialState, action) => {
       return { ...state, sending: true };
     }
     case FormsActionTypes.FORM_RESET: {
-      return { success: '', error: null, sending: false };
+      return { success: null, error: null, sending: false };
     }
     case FormsActionTypes.FORM_SUCCESS: {
       return { success: action.payload, error: null, sending: false };
     }
     case FormsActionTypes.FORM_FAILURE: {
-      return { success: '', error: action.payload, sending: false };
+      return { success: null, error: action.payload, sending: false };
     }
     default: {
       return state;
