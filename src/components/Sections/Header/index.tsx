@@ -23,14 +23,9 @@ interface HeaderProps {
   theme: Theme;
   user: User;
   onNavigateContact: (event: React.MouseEvent<HTMLElement>) => void;
-  onPageSection: (page: number) => any;
 }
 
 class Header extends React.Component<HeaderProps> {
-  public onNextPage = () => {
-    this.props.onPageSection(1);
-  };
-
   public onExternalNavigate = url => {
     window.open(url, '_blank');
   };
@@ -75,7 +70,7 @@ class Header extends React.Component<HeaderProps> {
             <FormattedMessage id={'header.button'} />
           </Button>
         </Welcome>
-        <ButtonBottom onClick={this.onNextPage} icon={true}>
+        <ButtonBottom icon={true}>
           <Image src={iconArrow} iconWidth={theme.iconSize.x1} />
         </ButtonBottom>
       </Container>

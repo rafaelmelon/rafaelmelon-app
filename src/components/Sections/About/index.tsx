@@ -18,14 +18,9 @@ import {
 
 interface AboutProps {
   theme: Theme;
-  onPageSection: (page: number) => any;
 }
 
 class About extends React.Component<AboutProps> {
-  public onNextPage = () => {
-    this.props.onPageSection(2);
-  };
-
   public render() {
     const { theme } = this.props;
 
@@ -54,7 +49,7 @@ class About extends React.Component<AboutProps> {
             </Text>
           </ColumnTwo>
         </Grid>
-        <ButtonBottom onClick={this.onNextPage} icon={true}>
+        <ButtonBottom icon={true}>
           <Image src={iconArrow} iconWidth={theme.iconSize.x1} />
         </ButtonBottom>
       </Container>
