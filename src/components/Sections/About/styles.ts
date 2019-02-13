@@ -1,4 +1,4 @@
-import { Button } from '@components/index';
+import { pattern2 } from '@assets/index';
 import { styled } from '@theme/index';
 
 export const Container = styled.div`
@@ -8,8 +8,7 @@ export const Container = styled.div`
   align-items: center;
   flex-direction: column;
   flex: 1;
-  padding: 0 150px;
-  position: relative;
+  padding: 150px 40px;
   ${({ theme }) =>
     theme.media
       .phone`padding: 150px 20px; border-bottom: ${theme.helpers.borderDottedAlpha(
@@ -51,10 +50,11 @@ export const Text = styled.p`
   ${({ theme }) => theme.media.tablet`font-size: ${theme.fontSize.nm};`}
 `;
 
-export const ButtonBottom = styled(Button)`
-  display: flex;
-  flex-direction: column;
-  position: absolute;
-  bottom: 20px;
-  ${({ theme }) => theme.media.phone`display: none`}
+export const Box = styled.div`
+  background-image: url('${pattern2}');
+  background-position: center;
+  border: ${({ theme }) => theme.helpers.borderSolid(theme.colors.black)};
+  box-shadow: ${({ theme }) => theme.helpers.boxShadow(theme.colors.black)};
+  border-radius: ${({ theme }) => theme.helpers.radius10};
+  padding: 20px 30px 0 30px;
 `;

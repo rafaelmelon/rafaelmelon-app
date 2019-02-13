@@ -10,7 +10,8 @@ export const iconArrow = require('./svg/icon-arrow.svg');
 export const iconClose = require('./svg/icon-close.svg');
 
 export const avatar = require('./img/avatar.jpeg');
-export const bg = require('./img/bg.jpg');
+export const pattern1 = require('./img/pattern-1.png');
+export const pattern2 = require('./img/pattern-2.png');
 
 export const OpenSansRegular = require('./fonts/Open_Sans/OpenSans-Regular.ttf');
 export const MontserratExtraBold = require('./fonts/Montserrat/Montserrat-ExtraBold.ttf');

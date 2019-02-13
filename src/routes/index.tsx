@@ -1,12 +1,11 @@
 import * as React from 'react';
 import { Route, Switch } from 'react-router-dom';
 
-import { ContactPage, HomePage, NotPage } from '@containers/index';
+import { HomePage, NotPage } from '@containers/index';
 
 const Routes = () => (
   <Switch>
     <Route exact={true} path="/" component={HomePage} />
-    <Route path="/contact" component={ContactPage} />
     <Route component={NotPage} />
   </Switch>
 );

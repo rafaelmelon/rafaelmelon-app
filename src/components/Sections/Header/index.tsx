@@ -1,28 +1,12 @@
 import * as React from 'react';
 import { FormattedMessage } from 'react-intl';
-import { withTheme } from 'styled-components';
 
-import { iconArrow, logoAlt } from '@assets/index';
-import { Button, Image } from '@components/index';
 import { User } from '@redux/modules/user';
-import { Theme } from '@theme/index';
-import { SOCIAL } from '@utils/index';
 
-import {
-  ButtonBottom,
-  ButtonLogo,
-  ButtonMedia,
-  Container,
-  Description,
-  SocialMedia,
-  Title,
-  Welcome,
-} from './styles';
+import { Container, Description, Title, Welcome } from './styles';
 
 interface HeaderProps {
-  theme: Theme;
   user: User;
-  onNavigateContact: (event: React.MouseEvent<HTMLElement>) => void;
 }
 
 class Header extends React.Component<HeaderProps> {
@@ -31,26 +15,10 @@ class Header extends React.Component<HeaderProps> {
   };
 
   public render() {
-    const { theme, onNavigateContact, user } = this.props;
+    const { user } = this.props;
 
     return (
       <Container>
-        <ButtonLogo onClick={onNavigateContact} icon={true}>
-          <Image src={logoAlt} iconWidth={theme.iconSize.x1} />
-        </ButtonLogo>
-        <SocialMedia>
-          {SOCIAL.map(item => (
-            <ButtonMedia
-              key={item.name}
-              onClick={() => this.onExternalNavigate(item.url)}
-              icon={true}>
-              <Image src={item.urlImage} iconWidth={theme.iconSize.x1} />
-            </ButtonMedia>
-          ))}
-        </SocialMedia>
-        <ButtonLogo onClick={onNavigateContact} icon={true}>
-          <Image src={logoAlt} iconWidth={theme.iconSize.x1} />
-        </ButtonLogo>
         <Welcome>
           <Title>
             <FormattedMessage id="header.hi" />
@@ -66,16 +34,10 @@ class Header extends React.Component<HeaderProps> {
               <FormattedMessage id="header.subtitle" />
             )}
           </Description>
-          <Button onClick={onNavigateContact}>
-            <FormattedMessage id={'header.button'} />
-          </Button>
         </Welcome>
-        <ButtonBottom icon={true}>
-          <Image src={iconArrow} iconWidth={theme.iconSize.x1} />
-        </ButtonBottom>
       </Container>
     );
   }
 }
 
-export default withTheme(Header);
+export default Header;

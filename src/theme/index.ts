@@ -30,8 +30,10 @@ export const theme = {
   colors: {
     black: '#000000',
     white: '#FFFFFF',
-    jaffa: '#F08545',
-    confetti: '#EAEB5C',
+    jonquil: '#DBFF8E',
+    anakiwa: '#A7E4FF',
+    goldenrod: '#FFCD70',
+    swamp: '#00161C',
     red: '#FF0000',
   },
   fonts: {
@@ -39,6 +41,7 @@ export const theme = {
     openSans: '"Open Sans", sans-serif',
   },
   fontSize: {
+    xxxl: '6rem',
     xxl: '4.6rem',
     xl: '2.8rem',
     lg: '1.8rem',
@@ -84,18 +87,9 @@ export const GlobalStyles = createGlobalStyle`
     font-family: ${theme.fonts.openSans};
     color: ${theme.colors.black};
     letter-spacing: 0.02rem;
-    @media (min-width: 993px) {
-      background-color: ${theme.colors.confetti};
-    }
-    @media (max-width: 992px) {
-      background-color: ${theme.colors.jaffa};
-    }
-    @media (max-width: 768px) {
-      background-color: ${theme.colors.confetti};
-    }
-    @media (max-width: 576px) {
-      background-color: ${theme.colors.jaffa};
-    }
+  }
+  p {
+ 
   }
 `;
 

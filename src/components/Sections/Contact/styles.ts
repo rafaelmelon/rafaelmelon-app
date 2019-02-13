@@ -10,9 +10,10 @@ export const Container = styled.div`
   ${({ theme }) => theme.media.phone`padding: 150px 20px;`}
 `;
 
-export const Text = styled.p`
+export const Feedback = styled.div``;
+
+export const FeedbackText = styled.h2`
+  font-family: ${({ theme }) => theme.fonts.montserrat};
   color: ${({ theme }) => theme.colors.black};
-  font-size: ${({ theme }) => theme.fontSize.nm};
-  margin-top: 10px;
-  ${({ theme }) => theme.media.tablet`font-size: ${theme.fontSize.nm};`}
+  font-size: ${({ theme }) => theme.fontSize.xl};
 `;

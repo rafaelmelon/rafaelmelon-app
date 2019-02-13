@@ -5,9 +5,11 @@ import Input from './Input';
 import Link from './Link';
 import Loader from './Loader';
 import About from './Sections/About';
+import Contact from './Sections/Contact';
 import Elements from './Sections/Elements';
 import Footer from './Sections/Footer';
 import Header from './Sections/Header';
+import Menu from './Sections/Menu';
 import Textarea from './Textarea';
 
 export { Image };
@@ -20,4 +22,6 @@ export { Input };
 export { Textarea };
 export { Button };
 export { Header };
+export { Menu };
+export { Contact };
 export { About };

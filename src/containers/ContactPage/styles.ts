@@ -1,4 +1,3 @@
-import { Button } from '@components/index';
 import { styled } from '@theme/index';
 
 export const Container = styled.div`
@@ -31,14 +30,12 @@ export const FeedbackText = styled.h2`
   font-size: ${({ theme }) => theme.fontSize.xl};
 `;
 
-export const ButtonLogo = styled(Button)`
-  position: absolute;
-  top: 20px;
-  left: 20px;
-`;
-
-export const ButtonClose = styled(Button)`
-  position: absolute;
-  top: 20px;
-  right: 20px;
+export const MenuContact = styled.div`
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  flex: 1;
+  padding: 20px;
 `;

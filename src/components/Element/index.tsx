@@ -22,6 +22,7 @@ class Element extends React.Component<ElementProps> {
     return (
       <Container>
         <Title>{element.name}</Title>
+        <Date>{this.getLastUpdate(element.updated_at)}</Date>
         <Info>
           {element.homepage && (
             <Link href={element.homepage} target={'_blank'}>
@@ -31,7 +32,6 @@ class Element extends React.Component<ElementProps> {
           <Link href={element.html_url} target={'_blank'}>
             <FormattedMessage id="elements.repo" />
           </Link>
-          <Date>{this.getLastUpdate(element.updated_at)}</Date>
         </Info>
       </Container>
     );
