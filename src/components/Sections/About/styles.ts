@@ -1,4 +1,3 @@
-import { pattern2 } from '@assets/index';
 import { styled } from '@theme/index';
 
 export const Container = styled.div`
@@ -51,7 +50,7 @@ export const Text = styled.p`
 `;
 
 export const Box = styled.div`
-  background-image: url('${pattern2}');
+  background-color: ${({ theme }) => theme.colors.white};
   background-position: center;
   border: ${({ theme }) => theme.helpers.borderSolid(theme.colors.black)};
   box-shadow: ${({ theme }) => theme.helpers.boxShadow(theme.colors.black)};

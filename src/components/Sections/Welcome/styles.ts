@@ -14,11 +14,6 @@ export const Container = styled.div`
     )}; text-align: center;`}
 `;
 
-export const Welcome = styled.div`
-  justify-content: center;
-  align-items: center;
-`;
-
 export const Title = styled.h1`
   font-family: ${({ theme }) => theme.fonts.montserrat};
   color: ${({ theme }) => theme.colors.black};

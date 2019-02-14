@@ -12,7 +12,7 @@ export const CustomButton = styled('button')<ButtonStyle>`
   color: ${({ theme }) => theme.colors.black};
   border: ${({ icon, theme }) =>
     icon
-      ? theme.helpers.borderTransparent
+      ? theme.helpers.borderSolidAlpha(theme.colors.black)
       : theme.helpers.borderDashedAlpha(theme.colors.black)};
   background: none;
   border-radius: ${({ theme }) => theme.helpers.radius10};
@@ -22,6 +22,7 @@ export const CustomButton = styled('button')<ButtonStyle>`
     background-color: ${({ theme }) => theme.colors.white};
     border: ${({ theme }) => theme.helpers.borderSolid(theme.colors.black)};
     box-shadow: ${({ theme }) => theme.helpers.boxShadow(theme.colors.black)};
+    transform: translate(-2px, -2px);
   }
   &:disabled {
     background-color: ${({ theme }) => theme.colors.black};

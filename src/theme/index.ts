@@ -88,8 +88,8 @@ export const GlobalStyles = createGlobalStyle`
     color: ${theme.colors.black};
     letter-spacing: 0.02rem;
   }
-  p {
- 
+  h3 {
+    line-height: 1;
   }
 `;
 

@@ -11,9 +11,9 @@ import {
   Contact,
   Elements,
   Footer,
-  Header,
   Loader,
   Menu,
+  Welcome,
 } from '@components/index';
 import { AppState } from '@redux/modules';
 import { resetContactForm, sendContactForm } from '@redux/modules/forms';
@@ -93,7 +93,7 @@ class HomePage extends React.Component<HomeProps, any> {
         transitionLeaveTimeout={300}>
         <Container bgColor={this.state.bgColor}>
           <Menu />
-          <Header user={this.props.user} />
+          <Welcome user={this.props.user} />
           <About />
           <Elements repositories={this.props.repositories} />
           <Contact

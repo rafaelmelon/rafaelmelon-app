@@ -1,4 +1,3 @@
-import { pattern1 } from '@assets/index';
 import { styled } from '@theme/index';
 
 export const Container = styled.div`
@@ -6,13 +5,12 @@ export const Container = styled.div`
   flex-direction: column;
   flex: auto;
   justify-content: space-between;
-  background-image: url('${pattern1}');
-  background-position: center;
+  background-color: ${({ theme }) => theme.colors.white};
   border: ${({ theme }) => theme.helpers.borderSolid(theme.colors.black)};
   box-shadow: ${({ theme }) => theme.helpers.boxShadow(theme.colors.black)};
   border-radius: ${({ theme }) => theme.helpers.radius10};
   margin: 10px;
-  padding: 5px 10px;
+  padding: 10px;
 `;
 
 export const Title = styled.h3`

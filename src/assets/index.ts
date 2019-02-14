@@ -8,6 +8,7 @@ export const linkedin = require('./svg/linkedin.svg');
 export const twitter = require('./svg/twitter.svg');
 export const iconArrow = require('./svg/icon-arrow.svg');
 export const iconClose = require('./svg/icon-close.svg');
+export const iconWorld = require('./svg/world.svg');
 
 export const avatar = require('./img/avatar.jpeg');
 export const pattern1 = require('./img/pattern-1.png');
