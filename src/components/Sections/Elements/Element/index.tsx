@@ -1,9 +1,9 @@
 import * as React from 'react';
-import { FormattedMessage, InjectedIntl, injectIntl } from 'react-intl';
+import { InjectedIntl, injectIntl } from 'react-intl';
 import { withTheme } from 'styled-components';
 
-import { github, iconWorld } from '@assets/index';
-import { Button, Image, Link } from '@components/index';
+import { iconGithub, iconWorld } from '@assets/index';
+import { Image, Link } from '@components/index';
 import { Repository } from '@redux/modules/repositories';
 import { Theme } from '@theme/index';
 
@@ -29,19 +29,13 @@ class Element extends React.Component<ElementProps> {
         <Date>{this.getLastUpdate(element.updated_at)}</Date>
         <Info>
           {element.homepage && (
-            // <Link href={element.homepage} target={'_blank'}>
-            //   <FormattedMessage id="elements.landing" />
-            // </Link>
-            <Button onClick={() => null} icon={true}>
+            <Link href={element.homepage} target={'_blank'} icon={true}>
               <Image src={iconWorld} iconWidth={theme.iconSize.x1} />
-            </Button>
+            </Link>
           )}
-          {/* <Link href={element.html_url} target={'_blank'}>
-            <FormattedMessage id="elements.repo" />
-          </Link> */}
-          <Button onClick={() => null} icon={true}>
-            <Image src={github} iconWidth={theme.iconSize.x1} />
-          </Button>
+          <Link href={element.html_url} target={'_blank'} icon={true}>
+            <Image src={iconGithub} iconWidth={theme.iconSize.x1} />
+          </Link>
         </Info>
       </Container>
     );

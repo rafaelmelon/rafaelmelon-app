@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { withTheme } from 'styled-components';
 
-import { logoAlt } from '@assets/index';
+import { iconLogoAlt } from '@assets/index';
 import { Image } from '@components/index';
 import { Theme } from '@theme/index';
 import { SOCIAL } from '@utils/index';
@@ -23,7 +23,7 @@ class Menu extends React.Component<MenuProps> {
     return (
       <Container>
         <Logo>
-          <Image src={logoAlt} iconWidth={theme.iconSize.x1} />
+          <Image src={iconLogoAlt} iconWidth={theme.iconSize.x1} />
         </Logo>
         <SocialMedia>
           {SOCIAL.map(item => (

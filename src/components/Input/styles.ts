@@ -23,12 +23,15 @@ export const CustomInput = styled.input<InputStyle>`
     text-transform: uppercase;
   }
   &:hover {
+    background-color: ${({ theme }) => theme.colors.white};
     border: ${({ theme }) => theme.helpers.borderSolid(theme.colors.black)};
     box-shadow: ${({ theme }) => theme.helpers.boxShadow(theme.colors.black)};
+    transform: translate(-2px, -2px);
   }
   &:focus {
     border: ${({ theme }) => theme.helpers.borderSolid(theme.colors.white)};
     box-shadow: ${({ theme }) => theme.helpers.boxShadow(theme.colors.white)};
+    transform: translate(-2px, -2px);
     &::placeholder {
       color: ${({ theme }) => theme.colors.white};
     }

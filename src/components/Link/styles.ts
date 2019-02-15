@@ -16,3 +16,16 @@ export const CustomLink = styled.a<LinkStyle>`
     text-decoration: none;
   }
 `;
+
+export const LinkButton = styled.a`
+  padding: 5px;
+  border: ${({ theme }) => theme.helpers.borderSolidAlpha(theme.colors.black)};
+  border-radius: ${({ theme }) => theme.helpers.radius10};
+  transition: ${({ theme }) => theme.helpers.transitionAll};
+  &:hover {
+    background-color: ${({ theme }) => theme.colors.white};
+    border: ${({ theme }) => theme.helpers.borderSolid(theme.colors.black)};
+    box-shadow: ${({ theme }) => theme.helpers.boxShadow(theme.colors.black)};
+    transform: translate(-2px, -2px);
+  }
+`;

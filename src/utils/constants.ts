@@ -1,4 +1,4 @@
-import { github, linkedin, twitter } from '@assets/index';
+import { iconGithub, iconLinkedin, iconTwitter } from '@assets/index';
 
 export const API_URL = 'https://rafaelmelon-api.herokuapp.com';
 
@@ -18,16 +18,16 @@ export const SOCIAL = [
   {
     name: 'GitHub',
     url: 'https://github.com/rafaelmelon',
-    urlImage: github,
+    urlImage: iconGithub,
   },
   {
     name: 'LinkedIn',
     url: 'https://www.linkedin.com/in/rafaelmelon/',
-    urlImage: linkedin,
+    urlImage: iconLinkedin,
   },
   {
     name: 'Twitter',
     url: 'https://twitter.com/zitronensaure',
-    urlImage: twitter,
+    urlImage: iconTwitter,
   },
 ];

@@ -2,7 +2,7 @@ import * as React from 'react';
 import { CSSTransitionGroup } from 'react-transition-group';
 import { withTheme } from 'styled-components';
 
-import { loaderCircle } from '@assets/index';
+import { iconLoaderCircle } from '@assets/index';
 import { Image } from '@components/index';
 import { Theme } from '@theme/index';
 
@@ -22,7 +22,10 @@ class Loader extends React.Component<LoaderProps> {
         transitionEnterTimeout={300}
         transitionLeaveTimeout={300}>
         <Container>
-          <Image src={loaderCircle} iconWidth={this.props.theme.iconSize.x4} />
+          <Image
+            src={iconLoaderCircle}
+            iconWidth={this.props.theme.iconSize.x4}
+          />
         </Container>
       </CSSTransitionGroup>
     );

@@ -10,10 +10,7 @@ export const CustomButton = styled('button')<ButtonStyle>`
   padding: ${({ icon }) => (icon ? '5px' : '10px 30px')};
   text-transform: uppercase;
   color: ${({ theme }) => theme.colors.black};
-  border: ${({ icon, theme }) =>
-    icon
-      ? theme.helpers.borderSolidAlpha(theme.colors.black)
-      : theme.helpers.borderDashedAlpha(theme.colors.black)};
+  border: ${({ theme }) => theme.helpers.borderSolidAlpha(theme.colors.black)};
   background: none;
   border-radius: ${({ theme }) => theme.helpers.radius10};
   transition: ${({ theme }) => theme.helpers.transitionAll};
