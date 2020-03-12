@@ -1,7 +1,7 @@
-import HomePage from './HomePage';
+import Home from './Home';
 import NotPage from './NotPage';
 import Root from './Root';
 
-export { HomePage };
+export { Home };
 export { Root };
 export { NotPage };

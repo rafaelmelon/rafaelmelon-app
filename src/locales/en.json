@@ -1,10 +1,8 @@
 {
   "home.title.page": "Rafael Melón | Web Developer Portfolio",
 
-  "header.hi": "Hi, ",
-  "header.title": "I'm {value}",
-  "header.subtitle": "Front-end Developer inspired by code & design principles • Focused mainly on Javascript • Connecting people",
-  "header.button": "Contact me!",
+  "header.title": "Rafael Melón",
+  "header.subtitle": "User-centered Front-end Developer",
 
   "about.columnone.a": "I’m passionate about building excellent software that improves the lives of those around me. I specialize in creating UI for clients ranging from small-businesses all the way to large enterprise corporations.",
   "about.columnone.b": "As a developer I’ve more than 7+ years of well-rounded experience in web and mobile development and user-centered design.",

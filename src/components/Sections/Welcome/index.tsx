@@ -1,41 +1,38 @@
 import * as React from 'react';
 import { FormattedMessage } from 'react-intl';
+import { withTheme } from 'styled-components';
 
-import { User } from '@redux/modules/user';
+import { iconLogo } from '@assets/index';
+import { Image } from '@components/index';
+import { Theme } from '@theme/index';
+import { SOCIAL } from '@utils/index';
 
-import { Container, Description, Title } from './styles';
+import { ButtonMedia, Container, Description, SocialMedia, Title } from './styles';
 
 interface WelcomeProps {
-  user: User;
+  theme: Theme;
 }
 
-class Welcome extends React.Component<WelcomeProps> {
-  public onExternalNavigate = url => {
-    window.open(url, '_blank');
-  };
+const Welcome: React.SFC<WelcomeProps> = ({ theme }) => (
+  <Container>
+    <Image src={iconLogo} iconWidth={theme.iconSize.x4} />
+    <Title>
+      <FormattedMessage id="header.title" />
+    </Title>
+    <Description>
+      <FormattedMessage id="header.subtitle" />
+    </Description>
+    <SocialMedia>
+      {SOCIAL.map(item => (
+        <ButtonMedia
+          key={item.name}
+          onClick={() => this.onExternalNavigate(item.url)}
+          icon={true}>
+          <Image src={item.urlImage} iconWidth={theme.iconSize.x1} />
+        </ButtonMedia>
+      ))}
+    </SocialMedia>
+  </Container>
+);
 
-  public render() {
-    const { user } = this.props;
-
-    return (
-      <Container>
-        <Title>
-          <FormattedMessage id="header.hi" />
-          <FormattedMessage
-            id="header.title"
-            values={{ value: 'Rafael Melón' }}
-          />
-        </Title>
-        <Description>
-          {user && user.bio ? (
-            user.bio
-          ) : (
-            <FormattedMessage id="header.subtitle" />
-          )}
-        </Description>
-      </Container>
-    );
-  }
-}
-
-export default Welcome;
+export default withTheme(Welcome);

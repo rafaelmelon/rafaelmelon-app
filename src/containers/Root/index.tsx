@@ -1,15 +1,13 @@
 import * as React from 'react';
 import { hot } from 'react-hot-loader';
 import { addLocaleData, IntlProvider } from 'react-intl';
-import { Provider } from 'react-redux';
-import { BrowserRouter as Router } from 'react-router-dom';
 import { ThemeProvider } from 'styled-components';
 
+import { Home } from '@containers/index';
 import messages_en from '@locales/en.json';
 import messages_es from '@locales/es.json';
 import messages_fr from '@locales/fr.json';
-import { configureStore } from '@redux/store';
-import Routes from '@routes/index';
+import { Provider } from '@store/index';
 import { GlobalStyles, theme } from '@theme/index';
 
 const localeData = {
@@ -34,19 +32,15 @@ const messages =
   localeData[language] ||
   localeData.en;
 
-const { store } = configureStore();
-
 const Root = () => (
   <IntlProvider locale={language} messages={messages}>
-    <Provider store={store}>
-      <Router>
-        <ThemeProvider theme={theme}>
-          <React.Fragment>
-            <GlobalStyles />
-            <Routes />
-          </React.Fragment>
-        </ThemeProvider>
-      </Router>
+    <Provider>
+      <ThemeProvider theme={theme}>
+        <React.Fragment>
+          <GlobalStyles />
+          <Home />
+        </React.Fragment>
+      </ThemeProvider>
     </Provider>
   </IntlProvider>
 );

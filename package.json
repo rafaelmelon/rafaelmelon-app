@@ -36,8 +36,7 @@
     "babel",
     "typescript",
     "styled-components",
-    "redux",
-    "heroku",
+    "hooks",
     "prettier"
   ],
   "bugs": {
@@ -45,8 +44,9 @@
   },
   "homepage": "https://github.com/rafaelmelon/rafaelmelon-app#readme",
   "engines": {
-    "node": ">=8.9.4",
-    "yarn": "1.x"
+    "node": ">=10.15.3",
+    "yarn": ">=1.15.2",
+    "npm": ">=6.4.1"
   },
   "devDependencies": {
     "@babel/cli": "^7.1.5",
@@ -87,8 +87,8 @@
     "dotenv": "^6.2.0",
     "express": "^4.16.4",
     "nodemailer": "^5.0.0",
-    "react": "^16.6.3",
-    "react-dom": "^16.6.3",
+    "react": "^16.13.0",
+    "react-dom": "^16.13.0",
     "react-hot-loader": "^4.3.12",
     "react-intl": "^2.7.2",
     "react-redux": "^5.1.1",

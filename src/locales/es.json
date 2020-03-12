@@ -1,10 +1,8 @@
 {
   "home.title.page": "Rafael Melón | Desarrollador Web Portfolio",
 
-  "header.hi": "Hola, ",
-  "header.title": "soy {value}",
-  "header.subtitle": "Front-end Developer inspired by code & design principles • Focused mainly on Javascript • Connecting people",
-  "header.button": "¡Contacta!",
+  "header.title": "Rafael Melón",
+  "header.subtitle": "User-centered Front-end Developer",
 
   "about.columnone.a": "Me encanta crear excelente software que mejore la vida de los que me rodean. Estoy especializado en la creación de UI para clientes de todo tipo, desde pequeñas empresas emergentes a grandes corporaciones.",
   "about.columnone.b": "Como desarrollador tengo más de 7 años de experiencia en desarrollo para móviles y web y diseño centrado en el usuario.",

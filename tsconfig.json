@@ -20,7 +20,8 @@
       "@utils/*": ["utils/*"],
       "@locales/*": ["locales/*"],
       "@routes/*": ["routes/*"],
-      "@forms/*": ["forms/*"]
+      "@forms/*": ["forms/*"],
+      "@store/*": ["store/*"]
     },
     "allowSyntheticDefaultImports": true,
     "forceConsistentCasingInFileNames": true,
